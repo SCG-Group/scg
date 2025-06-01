@@ -1,0 +1,86 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": false,
+		"border": {
+			"color": false,
+			"radius": false,
+			"style": false,
+			"width": false
+		},
+		"color": {
+			"text": true,
+			"heading": true,
+			"background": true,
+			"link": true,
+			"caption": true,
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"duotone": [],
+			"gradients": [],
+			"palette": []
+		},
+		"custom": {},
+		"dimensions": {
+			"aspectRatio": false,
+			"aspectRatios": [],
+			"defaultAspectRatios": false,
+			"minHeight": false
+		},
+		"layout": {
+			"allowCustomContentAndWideSize": true,
+			"allowEditing": true,
+			"contentSize": "770px",
+			"wideSize": "1170px"
+		},
+		"position": {
+			"sticky": false
+		},
+		"shadow": {
+			"defaultPresets": false,
+			"presets": []
+		},
+		"spacing": {
+			"blockGap": true,
+			"customSpacingSize": false,
+			"defaultSpacingSizes": false,
+			"margin": false,
+			"padding": false,
+			"spacingScale": {
+				"steps": 0
+			},
+			"spacingSizes": []
+		},
+		"typography": {
+			"fluid": {
+				"maxViewportWidth": "768px",
+				"minViewportWidth": "375px"
+			},
+			"fontFamilies": [],
+			"customFontSize": false,
+			"defaultFontSizes": false,
+			"dropCap": false,
+			"fontSizes": [],
+			"fontStyle": false,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"lineHeight": false,
+			"textAlign": true,
+			"textColumns": false,
+			"textDecoration": true,
+			"textTransform": true,
+			"writingMode": false
+		},
+		"useRootPaddingAwareAlignments": true,
+		"blocks": {}
+	},
+	"styles": {},
+	"customTemplates": [],
+	"templateParts": [],
+	"patterns": []
+}
