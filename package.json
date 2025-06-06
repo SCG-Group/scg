@@ -3,9 +3,9 @@
 	"version": "1.0.0",
 	"main": "",
 	"scripts": {
-		"start": "wp-scripts start",
-		"build": "NODE_ENV=production wp-scripts build",
-		"build:prod": "npm run lint && npm run build",
+		"start": "wp-scripts start --experimental-modules",
+		"build": "NODE_ENV=production wp-scripts build --experimental-modules",
+		"build:prod": "npm run lint && npm run build --experimental-modules",
 		"lint:js": "wp-scripts format && wp-scripts lint-js --fix",
 		"lint:style": "wp-scripts lint-style --fix",
 		"lint": "npm run lint:js && npm run lint:style",
@@ -15,6 +15,11 @@
 	"license": "ISC",
 	"description": "",
 	"devDependencies": {
-		"@wordpress/scripts": "^30.17.0"
+		"@wordpress/scripts": "^30.17.0",
+		"path": "^0.12.7",
+		"webpack-remove-empty-scripts": "^1.1.1"
+	},
+	"dependencies": {
+		"@wordpress/interactivity": "^6.25.0"
 	}
 }
