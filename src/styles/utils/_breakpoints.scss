@@ -13,6 +13,9 @@ $break-small: 600px;
 $break-mobile: 480px;
 $break-zoomed-in: 280px;
 
+// Mobile layout breakpoint
+$break-mobile-layout: $break-small;
+
 /**
  * Breakpoint mixins
  */
@@ -76,6 +79,13 @@ $break-zoomed-in: 280px;
 @mixin break-zoomed-in() {
 
 	@media (min-width: #{ $break-zoomed-in }) {
+		@content;
+	}
+}
+
+@mixin break-mobile-layout() {
+
+	@media (min-width: #{ $break-mobile-layout }) {
 		@content;
 	}
 }

@@ -6,7 +6,7 @@
 
 		.scg-nav__mobile-only {
 
-			@include breakpoints.break-small {
+			@include breakpoints.break-mobile-layout {
 				display: none;
 			}
 		}
@@ -17,7 +17,7 @@
 		&.is-style-main {
 			font-size: 2rem;
 
-			@include breakpoints.break-small {
+			@include breakpoints.break-mobile-layout {
 				font-size: 1.2rem;
 			}
 		}
