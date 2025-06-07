@@ -63,3 +63,24 @@ function enqueue_editor_content_assets() {
 		);
 	}
 }
+
+/**
+ * Enqueue editor scripts.
+ */
+function enqueue_block_editor_assets() {
+	// Scripts.
+	$script_uri      = '/build/scg-editor-scripts.js';
+	$script_dep_path = '/build/scg-editor-scripts.asset.php';
+	$script          = include get_theme_file_path( $script_dep_path );
+	$editor_deps     = array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' );
+
+	if ( $script ) {
+		wp_enqueue_script(
+			'scg-editor-scripts',
+			get_theme_file_uri( $script_uri ),
+			array_merge( $script['dependencies'], $editor_deps ) ?? $editor_deps,
+			$script['version'] ?? SCG_THEME_VERSION,
+			true
+		);
+	}
+}

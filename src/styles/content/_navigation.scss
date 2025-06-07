@@ -1,11 +1,25 @@
 @use "../utils/breakpoints";
 
-.wp-block-navigation__container {
+.wp-block-navigation {
 
-	.scg-nav__mobile-only {
+	&__container {
 
-		@include breakpoints.break-small {
-			display: none;
+		.scg-nav__mobile-only {
+
+			@include breakpoints.break-small {
+				display: none;
+			}
+		}
+	}
+
+	&-link {
+
+		&.is-style-main {
+			font-size: 2rem;
+
+			@include breakpoints.break-small {
+				font-size: 1.2rem;
+			}
 		}
 	}
 }
