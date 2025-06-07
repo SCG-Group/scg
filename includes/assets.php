@@ -15,10 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue theme styles and scripts.
  */
-function enqueue_assets() {
+function enqueue_theme_assets() {
 	// Styles.
-	$styles_uri      = '/build/scg-styles.css';
-	$styles_dep_path = '/build/scg-styles.asset.php';
+	$styles_uri      = '/build/scg-theme.css';
+	$styles_dep_path = '/build/scg-theme.asset.php';
 	$styles          = include get_theme_file_path( $styles_dep_path );
 
 	if ( $styles ) {
@@ -41,6 +41,25 @@ function enqueue_assets() {
 			get_theme_file_uri( $script_uri ),
 			$script['dependencies'] ?? array(),
 			$script['version'] ?? SCG_THEME_VERSION
+		);
+	}
+}
+
+/**
+ * Enqueue editor content styles.
+ */
+function enqueue_editor_content_assets() {
+	// Styles.
+	$styles_uri      = '/build/scg-content.css';
+	$styles_dep_path = '/build/scg-content.asset.php';
+	$styles          = include get_theme_file_path( $styles_dep_path );
+
+	if ( $styles ) {
+		wp_enqueue_style(
+			'scg-content-styles',
+			get_theme_file_uri( $styles_uri ),
+			$styles['dependencies'] ?? array(),
+			$styles['version'] ?? SCG_THEME_VERSION
 		);
 	}
 }

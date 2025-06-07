@@ -18,10 +18,15 @@ module.exports = [
 		...moduleConfig,
 		...{
 			entry: {
-				'scg-styles': path.resolve(
+				'scg-theme': path.resolve(
 					process.cwd(),
 					'src/styles',
-					'scg.scss'
+					'scg-theme.scss'
+				),
+				'scg-content': path.resolve(
+					process.cwd(),
+					'src/styles',
+					'scg-content.scss'
 				),
 				'scg-scripts': path.resolve(
 					process.cwd(),

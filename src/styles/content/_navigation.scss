@@ -1,0 +1,11 @@
+@use "../utils/breakpoints";
+
+.wp-block-navigation__container {
+
+	.scg-nav__mobile-only {
+
+		@include breakpoints.break-small {
+			display: none;
+		}
+	}
+}
