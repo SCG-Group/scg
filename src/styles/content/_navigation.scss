@@ -6,6 +6,7 @@
 	--navigation--toggle--background-color: #000;
 	--navigation--toggle--color: #fff;
 	--navigation--responsive-container--background-color: #ff6347;
+	--navigation--responsive-container--border-color: #ff0;
 
 	.wp-block-site-logo {
 		position: sticky;
@@ -106,7 +107,7 @@
 					}
 
 					&-content {
-						animation: 1s navigation__fade-in-animation 0.3s ease-out;
+						animation: 1s navigation-content__fade-in-animation 0.3s ease-out;
 						animation-fill-mode: both;
 						padding-top: 0;
 
@@ -141,8 +142,10 @@
 		height: 100%;
 		background: var(--navigation--responsive-container--background-color);
 		transform: translateY(-100%);
-		transition: 0.3s transform ease-out;
+		transition: 0.3s transform 0.2s ease-in-out, 0.3s border-color ease-out;
 		z-index: 99998;
+		border: 5px solid transparent;
+		box-sizing: border-box;
 	}
 
 	// Menu closed state
@@ -169,6 +172,8 @@
 
 		&::before {
 			transform: translateY(0);
+			border-color: var(--navigation--responsive-container--border-color);
+			transition: 0.3s transform ease-out, 0.3s border-color 0.75s ease-in-out;
 		}
 
 		.wp-block-navigation__responsive-container-open {
@@ -209,7 +214,7 @@
 }
 
 // Fade-in animation
-@keyframes navigation__fade-in-animation {
+@keyframes navigation-content__fade-in-animation {
 
 	from {
 		opacity: 0;
