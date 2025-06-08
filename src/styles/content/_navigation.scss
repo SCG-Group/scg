@@ -1,5 +1,6 @@
 @use "../utils/breakpoints";
 
+// Site header configuration
 .scg-site-header {
 	--navigation--toggle--size: 56px;
 	--navigation--toggle--background-color: #000;
@@ -13,46 +14,28 @@
 		min-height: var(--navigation--toggle--size);
 		align-items: center;
 	}
-
-	&:has(.is-menu-open) {
-
-		.wp-block-site-logo {
-			// change color.
-		}
-	}
 }
 
+// Navigation block styles
 .wp-block-navigation {
-
-	@media (max-width: calc(#{ breakpoints.$break-mobile-layout} - 1px)) {
+	// Mobile layout
+	@media (max-width: calc(#{breakpoints.$break-mobile-layout} - 1px)) {
 		--navigation-layout-align: start;
 		--navigation-layout-direction: column;
 	}
 
-	&__container {
-
-		.scg-nav__mobile-only {
-
-			@include breakpoints.break-mobile-layout {
-				display: none;
-			}
-		}
-	}
-
+	// Responsive container
 	&__responsive-container {
 		display: flex;
-		transform: translateY(calc(-100% + var(--wp-admin--admin-bar--height, 0px)));
+		transform: translateY(calc(-100% - var(--wp-admin--admin-bar--height, 0px)));
 		background-color: transparent;
 		padding: 0;
-
-		@media (max-width: calc(#{ breakpoints.$break-mobile-layout} - 1px)) {
-			top: var(--wp-admin--admin-bar--height, 0);
-		}
 
 		@include breakpoints.break-mobile-layout {
 			transform: none;
 		}
 
+		// Toggle buttons (open/close)
 		&-close,
 		&-open {
 			width: var(--navigation--toggle--size);
@@ -63,18 +46,18 @@
 				display: none;
 			}
 
+			// Hamburger lines
 			&::before,
 			&::after {
 				content: "";
 				position: absolute;
 				left: 50%;
 				top: 50%;
-				transform-origin: 0;
-				transition: 0.3s transform ease-out;
 				width: 24px;
 				height: 2px;
 				border-radius: 1px;
 				background: var(--navigation--toggle--color);
+				transition: 0.3s transform ease-out;
 			}
 
 			&::before {
@@ -94,12 +77,19 @@
 			z-index: 99998;
 		}
 
+		// Menu open state
 		&.is-menu-open {
 			animation: none;
 			transform: translateY(0);
 			z-index: 99998;
+			top: var(--wp-admin--admin-bar--height, 0);
+			overflow: hidden;
 
 			.wp-block-navigation__responsive {
+
+				&-close {
+					--wp--style--global--wide-size: 100%;
+				}
 
 				&-container {
 
@@ -108,12 +98,10 @@
 
 						&::before {
 							transform: rotate(-45deg) translate3d(-50%, -50%, 0);
-
 						}
 
 						&::after {
 							transform: rotate(45deg) translate3d(-50%, -50%, 0);
-
 						}
 					}
 
@@ -121,17 +109,29 @@
 						animation: 1s navigation__fade-in-animation 0.3s ease-out;
 						animation-fill-mode: both;
 						padding-top: 0;
+
+						.wp-block-navigation__container,
+						.wp-block-navigation-item {
+							width: 100%;
+						}
 					}
 				}
 
 				&-dialog {
-					position: unset;
 					margin-top: var(--navigation--toggle--size);
+					position: absolute;
+					left: 0;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					overflow: auto;
+					padding: clamp(1rem, var(--wp--style--root--padding-top), 20rem) clamp(1rem, var(--wp--style--root--padding-right), 20rem) clamp(1rem, var(--wp--style--root--padding-bottom), 20rem) clamp(1rem, var(--wp--style--root--padding-left), 20rem);
 				}
 			}
 		}
 	}
 
+	// Background overlay for mobile menu
 	&:is(nav)::before {
 		content: "";
 		position: fixed;
@@ -140,15 +140,31 @@
 		right: 0;
 		height: 100%;
 		background: var(--navigation--responsive-container--background-color);
-		transform: translateY(calc(-100% + var(--wp-admin--admin-bar--height, 0px)));
+		transform: translateY(-100%);
 		transition: 0.3s transform ease-out;
 		z-index: 99998;
+	}
 
-		@include breakpoints.break-mobile-layout {
-			content: none;
+	// Menu closed state
+	&:not(:has(.is-menu-open)) {
+
+		.wp-block-navigation__responsive-container .scg-nav__mobile-only {
+
+			@include breakpoints.break-mobile-layout {
+				display: none;
+			}
+		}
+
+		.wp-block-navigation-link.is-style-main {
+			font-size: 2rem;
+
+			@include breakpoints.break-mobile-layout {
+				font-size: 1.2rem;
+			}
 		}
 	}
 
+	// Menu opened state
 	&:has(.is-menu-open) {
 
 		&::before {
@@ -157,38 +173,42 @@
 
 		.wp-block-navigation__responsive-container-open {
 
-			&::before {
+			&::before,
+			&::after {
 				margin-top: 0;
+			}
+
+			&::before {
 				transform: rotate(-45deg) translate3d(-50%, -50%, 0);
 			}
 
 			&::after {
-				margin-top: 0;
 				transform: rotate(45deg) translate3d(-50%, -50%, 0);
 			}
 		}
+
+		.wp-block-navigation-link.is-style-main {
+			font-size: 2rem;
+		}
 	}
 
+	// Transparent background override
 	&:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
 		background-color: transparent;
 	}
 
-	&-link {
-
-		&.is-style-main {
-			font-size: 2rem;
-
-			@include breakpoints.break-mobile-layout {
-				font-size: 1.2rem;
-			}
-		}
+	// Navigation item content
+	&-item__content {
+		width: 100%;
 	}
 }
 
-:is(.has-modal-open) .admin-bar .is-menu-open .wp-block-navigation__responsive-dialog {
+// Admin bar specific styles
+.has-modal-open .admin-bar .is-menu-open .wp-block-navigation__responsive-dialog {
 	margin-top: var(--navigation--toggle--size);
 }
 
+// Fade-in animation
 @keyframes navigation__fade-in-animation {
 
 	from {
