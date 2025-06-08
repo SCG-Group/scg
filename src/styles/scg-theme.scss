@@ -1,3 +1,6 @@
 /**
  * Theme styles enqueued only on the frontend
  */
+#wpadminbar {
+	z-index: 100000;
+}
