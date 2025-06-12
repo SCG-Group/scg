@@ -83,6 +83,11 @@
 	"customTemplates": [],
 	"templateParts": [
 		{
+			"name": "header",
+			"title": "Site Header",
+			"area": "header"
+		},
+		{
 			"name": "social-media-links",
 			"title": "Social Media Links",
 			"area": "uncategorized"
