@@ -81,6 +81,12 @@
 	},
 	"styles": {},
 	"customTemplates": [],
-	"templateParts": [],
+	"templateParts": [
+		{
+			"name": "social-media-links",
+			"title": "Social Media Links",
+			"area": "uncategorized"
+		}
+	],
 	"patterns": []
 }

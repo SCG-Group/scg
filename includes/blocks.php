@@ -39,3 +39,21 @@ function init_blocks() {
 		get_theme_file_path( '/build/blocks/scg-logo' )
 	);
 }
+
+/**
+ * Allow additional blocks inside core/navigation.
+ *
+ * @param array $metadata Metadata for registering a block type.
+ * @return array
+ */
+function modify_navigation_allowed_blocks( $metadata ) {
+
+	// Only apply the filter to Heading blocks.
+	if ( ! isset( $metadata['name'] ) || 'core/navigation' !== $metadata['name'] ) {
+		return $metadata;
+	}
+
+	$metadata['allowedBlocks'] = array_merge( $metadata['allowedBlocks'], array( 'scg/logo', 'core/template-part' ) );
+
+	return $metadata;
+}
