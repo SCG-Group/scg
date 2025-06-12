@@ -1,0 +1,12 @@
+@use "../utils/breakpoints";
+
+.scg-footer {
+
+	&__bottom {
+		flex-direction: column-reverse;
+
+		@include breakpoints.break-mobile-layout {
+			flex-direction: row;
+		}
+	}
+}

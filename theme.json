@@ -88,10 +88,14 @@
 			"area": "header"
 		},
 		{
+			"name": "footer",
+			"title": "Site Footer",
+			"area": "footer"
+		},
+		{
 			"name": "social-media-links",
 			"title": "Social Media Links",
 			"area": "uncategorized"
 		}
-	],
-	"patterns": []
+	]
 }

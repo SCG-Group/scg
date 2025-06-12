@@ -14,7 +14,7 @@ use function SCG\sanitize_svg;
 
 $wrapper_attributes = get_block_wrapper_attributes(
 	array(
-		'style' => $attributes['width'] ?? "width: {$attributes['width']}",
+		'style' => isset( $attributes['width'] ) ? "width: {$attributes['width']}" : null,
 	)
 );
 

@@ -22,7 +22,10 @@
 		{ "name": "inversion", "label": "Inversion" }
 	],
 	"supports": {
-		"html": true
+		"html": true,
+		"dimensions": {
+			"widthHeight": true
+		}
 	},
 	"textdomain": "scg",
 	"editorScript": "file:./index.js",
