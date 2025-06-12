@@ -8,12 +8,16 @@
 	--navigation--responsive-container--background-color: #ff6347;
 	--navigation--responsive-container--border-color: #ff0;
 
-	.wp-block-site-logo {
-		position: sticky;
-		z-index: 99999;
-		display: flex;
-		min-height: var(--navigation--toggle--size);
-		align-items: center;
+	.wp-block {
+
+		&-scg-logo,
+		&-site-logo {
+			position: sticky;
+			z-index: 99999;
+			display: flex;
+			min-height: var(--navigation--toggle--size);
+			align-items: center;
+		}
 	}
 }
 

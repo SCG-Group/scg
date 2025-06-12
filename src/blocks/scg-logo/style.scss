@@ -1,0 +1,46 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-scg-logo {
+	max-width: 100%;
+
+	svg {
+		width: 100%;
+		height: auto;
+	}
+
+	.scg-logo {
+
+		&--main {
+			fill: var(--scg-logo--main-color);
+		}
+
+		&--accent {
+			fill: var(--scg-logo--accent-color);
+		}
+	}
+
+	&.is-style-primary {
+		--scg-logo--main-color: goldenrod;
+		--scg-logo--accent-color: lime;
+	}
+
+	&,
+	&.is-style-secondary {
+		--scg-logo--main-color: violet;
+		--scg-logo--accent-color: grey;
+	}
+
+	&.is-style-inversion {
+		--scg-logo--main-color: orange;
+		--scg-logo--accent-color: darkred;
+	}
+
+	path {
+		transition: 0.3s fill ease-in;
+	}
+}

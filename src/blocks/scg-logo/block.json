@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "scg/logo",
+	"version": "0.1.0",
+	"title": "SCG Logo",
+	"category": "scg",
+	"description": "SCG logo",
+	"example": {},
+	"attributes": {
+		"width": {
+			"type": "string"
+		},
+		"isLink": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"styles": [
+		{ "name": "primary", "label": "Primary" },
+		{ "name": "secondary", "label": "Secondary", "isDefault": true },
+		{ "name": "inversion", "label": "Inversion" }
+	],
+	"supports": {
+		"html": true
+	},
+	"textdomain": "scg",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}
