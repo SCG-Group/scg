@@ -18,7 +18,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 	)
 );
 
-$logo_file = file_get_contents( get_theme_file_path( '/src/blocks/scg-logo/logo.svg') ); // @codingStandardsIgnoreLine.
+$logo_file = file_get_contents( get_theme_file_path( '/assets/images/logo.svg') ); // @codingStandardsIgnoreLine.
 ?>
 
 <?php if ( $attributes['isLink'] ) : ?>
