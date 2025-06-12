@@ -7,6 +7,7 @@
 	--navigation--toggle--color: #fff;
 	--navigation--responsive-container--background-color: #ff6347;
 	--navigation--responsive-container--border-color: #ff0;
+	--navigation--link--border-color: #ffc0cb;
 
 	.wp-block {
 
@@ -152,17 +153,17 @@
 		bottom: 0;
 		background: var(--navigation--responsive-container--background-color);
 		transform: translateY(-100%);
+		z-index: 99998;
+		border: 5px solid transparent;
+		box-sizing: border-box;
 
 		@media not (prefers-reduced-motion) {
 			transition: 0.3s transform 0.2s ease-in-out, 0.3s border-color ease-out;
 		}
-		z-index: 99998;
-		border: 5px solid transparent;
-		box-sizing: border-box;
 	}
 
 	// Menu closed state
-	&:not(:has(.is-menu-open)) {
+	&:is(nav):not(:has(.is-menu-open)) {
 
 		.wp-block-navigation__responsive-container .scg-nav__mobile-only {
 
@@ -176,6 +177,27 @@
 
 			@include breakpoints.break-mobile-layout {
 				font-size: 1.2rem;
+
+				a {
+					position: relative;
+
+					&::after {
+						content: "";
+						width: 100%;
+						height: 2px;
+						background-color: var(--navigation--link--border-color);
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						transform: scale(0, 1);
+						transform-origin: left center;
+						transition: 0.2s transform ease-in;
+					}
+
+					&:hover::after {
+						transform: scale(1, 1);
+					}
+				}
 			}
 		}
 	}
@@ -206,10 +228,6 @@
 			&::after {
 				transform: rotate(45deg) translate3d(-50%, -50%, 0);
 			}
-		}
-
-		.wp-block-navigation-link.is-style-main {
-			font-size: 2rem;
 		}
 	}
 
