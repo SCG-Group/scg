@@ -15,6 +15,7 @@
 	"license": "ISC",
 	"description": "",
 	"devDependencies": {
+		"@wordpress/icons": "^10.25.0",
 		"@wordpress/scripts": "^30.17.0",
 		"path": "^0.12.7",
 		"webpack-remove-empty-scripts": "^1.1.1"
