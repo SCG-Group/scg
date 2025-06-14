@@ -57,3 +57,21 @@ function modify_navigation_allowed_blocks( $metadata ) {
 
 	return $metadata;
 }
+
+/**
+ * Modify core/cover block to include adminbar.
+ *
+ * @param string $block_content The block content.
+ * @return string
+ */
+function modify_cover_block_render( $block_content ) {
+	$tags = new \WP_HTML_Tag_Processor( $block_content );
+
+	if ( $tags->next_tag( array( 'class_name' => 'wp-block-cover' ) ) ) {
+		$style         = $tags->get_attribute( 'style' );
+		$updated_style = str_replace( '100vh', 'calc(100vh - var(--wp-admin--admin-bar--height,0))', $style );
+		$tags->set_attribute( 'style', $updated_style );
+	}
+
+	return $tags->get_updated_html();
+}

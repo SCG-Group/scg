@@ -46,7 +46,7 @@ function enqueue_theme_assets() {
 }
 
 /**
- * Enqueue editor content styles.
+ * Enqueue content styles.
  */
 function enqueue_editor_content_assets() {
 	// Styles.
@@ -62,10 +62,26 @@ function enqueue_editor_content_assets() {
 			$styles['version'] ?? SCG_THEME_VERSION
 		);
 	}
+
+	// Editor only styles.
+	if ( is_admin() ) {
+		$styles_uri      = '/build/scg-editor.css';
+		$styles_dep_path = '/build/scg-editor.asset.php';
+		$styles          = include get_theme_file_path( $styles_dep_path );
+
+		if ( $styles ) {
+			wp_enqueue_style(
+				'scg-editor-styles',
+				get_theme_file_uri( $styles_uri ),
+				$styles['dependencies'] ?? array(),
+				$styles['version'] ?? SCG_THEME_VERSION
+			);
+		}
+	}
 }
 
 /**
- * Enqueue editor scripts.
+ * Enqueue editor styles and scripts.
  */
 function enqueue_block_editor_assets() {
 	// Scripts.

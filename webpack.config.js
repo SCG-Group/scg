@@ -33,6 +33,11 @@ module.exports = [
 					'src/scripts',
 					'scg.js'
 				),
+				'scg-editor': path.resolve(
+					process.cwd(),
+					'src/styles',
+					'scg-editor.scss'
+				),
 				'scg-editor-scripts': path.resolve(
 					process.cwd(),
 					'src/scripts',

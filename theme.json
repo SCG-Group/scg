@@ -80,7 +80,13 @@
 		"blocks": {}
 	},
 	"styles": {},
-	"customTemplates": [],
+	"customTemplates": [
+		{
+			"name": "page-with-cover",
+			"postTypes": ["page"],
+			"title": "Page with Cover Image"
+		}
+	],
 	"templateParts": [
 		{
 			"name": "header",

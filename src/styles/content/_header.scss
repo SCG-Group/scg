@@ -1,13 +1,33 @@
 @use "../utils/breakpoints";
 
-// Site header configuration
-.scg-site-header {
+:root {
 	--navigation--toggle--size: 56px;
 	--navigation--toggle--background-color: #000;
 	--navigation--toggle--color: #fff;
 	--navigation--responsive-container--background-color: #ff6347;
 	--navigation--responsive-container--border-color: #ff0;
 	--navigation--link--border-color: #ffc0cb;
+	--navigation--padding: 5px;
+	--navigation--border: 2px;
+	--navigation--height: var(--navigation--toggle--size);
+
+	@include breakpoints.break-mobile-layout {
+		--navigation--height: calc(var(--navigation--padding) * 2 + var(--navigation--border) + var(--navigation--toggle--size));
+	}
+}
+
+.scg-site-header {
+	position: fixed;
+	top: var(--wp-admin--admin-bar--height, 0);
+	left: 0;
+	z-index: 2;
+	right: 0;
+	border-bottom-width: var(--navigation--border);
+
+	@include breakpoints.break-mobile-layout {
+		padding-top: var(--navigation--padding);
+		padding-bottom: var(--navigation--padding);
+	}
 
 	.wp-block {
 

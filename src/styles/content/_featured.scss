@@ -1,0 +1,7 @@
+.wp-block-cover.scg-featured {
+	background-color: #00f; // @todo: use theme.json.
+
+	&:is(.has-custom-content-position.is-position-bottom-left) .wp-block-cover__inner-container {
+		width: 100%;
+	}
+}

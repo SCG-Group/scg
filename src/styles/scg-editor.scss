@@ -1,0 +1,16 @@
+:root :where(.wp-site-blocks) > main,
+:root :where(.is-layout-flow) > *:empty {
+	margin-top: 0;
+}
+
+.wp-block-cover.scg-featured {
+	color: #fff;
+
+	.wp-block-post-excerpt__more-text {
+		display: none;
+	}
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block.scg-site-header {
+	position: fixed; // @todo: revisit - scrolling on template page.
+}
