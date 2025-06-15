@@ -35,9 +35,10 @@ function add_block_category( $categories ) {
  */
 function init_blocks() {
 	// Logo.
-	register_block_type(
-		get_theme_file_path( '/build/blocks/scg-logo' )
-	);
+	register_block_type( get_theme_file_path( '/build/blocks/logo' ) );
+
+	// Fullscreen Image.
+	register_block_type( get_theme_file_path( '/build/blocks/fullscreen-image' ) );
 }
 
 /**
@@ -69,7 +70,7 @@ function modify_cover_block_render( $block_content ) {
 
 	if ( $tags->next_tag( array( 'class_name' => 'wp-block-cover' ) ) ) {
 		$style         = $tags->get_attribute( 'style' );
-		$updated_style = str_replace( '100vh', 'calc(100vh - var(--wp-admin--admin-bar--height,0))', $style );
+		$updated_style = str_replace( '100vh', 'calc(100vh - var(--wp-admin--admin-bar--height, 0px))', $style );
 		$tags->set_attribute( 'style', $updated_style );
 	}
 
