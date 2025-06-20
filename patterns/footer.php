@@ -9,8 +9,8 @@
  */
 
 ?>
-<!-- wp:group {"layout":{"type":"constrained","contentSize":"100%"}} -->
-<div class="wp-block-group">
+<!-- wp:group {"layout":{"type":"constrained","contentSize":"100%"},"className": "scg-site-footer"} -->
+<div class="wp-block-group scg-site-footer">
 	<!-- wp:columns {"style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
 	<div class="wp-block-columns">
 		<!-- wp:column -->
@@ -30,7 +30,7 @@
 	</div>
 	<!-- /wp:columns -->
 	<!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}, "className":"scg-footer__bottom"} -->
-	<div class="wp-block-group scg-footer__bottom">
+	<div class="wp-block-group scg-site-footer__bottom">
 		<!-- wp:scg/logo {"isLink":false, "className": "is-style-secondary"} /-->
 		<!-- wp:paragraph -->
 		<p>&copy; <?php echo esc_html( sprintf( '%1$s %2$s %3$s', __( 'Copyright', 'scg' ), gmdate( 'Y' ), get_bloginfo( 'name' ) ) ); ?></p>
