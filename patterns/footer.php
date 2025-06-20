@@ -31,7 +31,7 @@
 	<!-- /wp:columns -->
 	<!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}, "className":"scg-footer__bottom"} -->
 	<div class="wp-block-group scg-footer__bottom">
-		<!-- wp:scg/logo {"isLink":false, "className": "is-style-inversion"} /-->
+		<!-- wp:scg/logo {"isLink":false, "className": "is-style-secondary"} /-->
 		<!-- wp:paragraph -->
 		<p>&copy; <?php echo esc_html( sprintf( '%1$s %2$s %3$s', __( 'Copyright', 'scg' ), gmdate( 'Y' ), get_bloginfo( 'name' ) ) ); ?></p>
 		<!-- /wp:paragraph -->

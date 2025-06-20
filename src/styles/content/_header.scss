@@ -2,11 +2,11 @@
 
 :root {
 	--navigation--toggle--size: 56px;
-	--navigation--toggle--background-color: #000;
-	--navigation--toggle--color: #fff;
-	--navigation--responsive-container--background-color: #ff6347;
-	--navigation--responsive-container--border-color: #ff0;
-	--navigation--link--border-color: #ffc0cb;
+	--navigation--toggle--background-color: var(--wp--preset--color--accent);
+	--navigation--toggle--color: var(--wp--preset--color--white);
+	--navigation--responsive-container--background-color: var(--wp--preset--color--white);
+	--navigation--responsive-container--border-color: var(--wp--preset--color--accent);
+	--navigation--link--border-color: var(--wp--custom--border--base);
 	--navigation--padding: 5px;
 	--navigation--border: 2px;
 	--navigation--height: var(--navigation--toggle--size);

@@ -17,9 +17,8 @@
 		}
 	},
 	"styles": [
-		{ "name": "primary", "label": "Primary" },
-		{ "name": "secondary", "label": "Secondary", "isDefault": true },
-		{ "name": "inversion", "label": "Inversion" }
+		{ "name": "primary", "label": "Primary", "isDefault": true },
+		{ "name": "secondary", "label": "Secondary" }
 	],
 	"supports": {
 		"html": true,

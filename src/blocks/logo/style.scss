@@ -20,24 +20,17 @@
 		}
 
 		&--accent {
-			fill: var(--scg-logo--accent-color);
+			fill: var(--wp--preset--color--accent);
 		}
 	}
 
-	&.is-style-primary {
-		--scg-logo--main-color: goldenrod;
-		--scg-logo--accent-color: lime;
-	}
-
 	&,
-	&.is-style-secondary {
-		--scg-logo--main-color: violet;
-		--scg-logo--accent-color: grey;
+	&.is-style-primary {
+		--scg-logo--main-color: var(--wp--preset--color--base);
 	}
 
-	&.is-style-inversion {
-		--scg-logo--main-color: orange;
-		--scg-logo--accent-color: darkred;
+	&.is-style-secondary {
+		--scg-logo--main-color: var(--wp--preset--color--white);
 	}
 
 	path {

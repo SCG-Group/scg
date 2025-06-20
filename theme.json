@@ -12,9 +12,9 @@
 		"color": {
 			"text": true,
 			"heading": true,
-			"background": true,
-			"link": true,
-			"caption": true,
+			"background": false,
+			"link": false,
+			"caption": false,
 			"custom": false,
 			"customDuotone": false,
 			"customGradient": false,
@@ -23,9 +23,32 @@
 			"defaultPalette": false,
 			"duotone": [],
 			"gradients": [],
-			"palette": []
+			"palette": [
+				{
+					"color": "#415464",
+					"name": "Cold grey",
+					"slug": "base"
+				},
+				{
+					"color": "#F9A51A",
+					"name": "Yellow",
+					"slug": "accent"
+				},
+				{
+					"color": "#fff",
+					"name": "White",
+					"slug": "white"
+				}
+			]
 		},
-		"custom": {},
+		"custom": {
+			"border": {
+				"base": "rgba(65, 84, 100, 0.25)"
+			},
+			"color": {
+				"white-2": "rgba(255, 255, 255, 0.5)"
+			}
+		},
 		"dimensions": {
 			"aspectRatio": false,
 			"aspectRatios": [],
@@ -196,6 +219,9 @@
 			"fontStyle": "normal",
 			"lineHeight": "1.2",
 			"fontSize": "var:preset|font-size|18"
+		},
+		"color": {
+			"text": "var:preset|color|base"
 		},
 		"elements": {
 			"heading": {

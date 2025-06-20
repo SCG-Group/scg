@@ -1,9 +1,12 @@
 @use "../utils/breakpoints";
 
 .scg-footer {
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--white);
 
 	&__bottom {
 		flex-direction: column-reverse;
+		color: var(--wp--custom--color--white-2);
 
 		@include breakpoints.break-mobile-layout {
 			flex-direction: row;
