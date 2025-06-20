@@ -1,0 +1,9 @@
+@use "sass:list";
+
+@mixin transition($properties...) {
+	$property-list: if(list.length($properties) > 0, $properties, var(--wp--custom--transition--property));
+
+	transition-duration: var(--wp--custom--transition--duration);
+	transition-timing-function: var(--wp--custom--transition--easing);
+	transition-property: $property-list;
+}
