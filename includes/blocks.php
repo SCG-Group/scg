@@ -76,3 +76,20 @@ function modify_cover_block_render( $block_content ) {
 
 	return $tags->get_updated_html();
 }
+
+/**
+ * Modify available levels in core/heading block - remove h1 and h6.
+ *
+ * @param array  $args Array of arguments for registering a block type.
+ * @param string $block_type Block type name including namespace.
+ * @return array
+ */
+function modify_heading_block_levels( $args, $block_type ) {
+	if ( 'core/heading' !== $block_type ) {
+		return $args;
+	}
+
+	$args['attributes']['levelOptions']['default'] = array( 2, 3, 4, 5 );
+
+	return $args;
+}

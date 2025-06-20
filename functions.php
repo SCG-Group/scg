@@ -38,6 +38,7 @@ add_filter( 'block_categories_all', __NAMESPACE__ . '\add_block_category', 10, 2
 add_action( 'init', __NAMESPACE__ . '\init_blocks' );
 add_filter( 'block_type_metadata', __NAMESPACE__ . '\modify_navigation_allowed_blocks' );
 add_filter( 'render_block_core/cover', __NAMESPACE__ . '\modify_cover_block_render' );
+add_filter( 'register_block_type_args', __NAMESPACE__ . '\modify_heading_block_levels', 10, 2 );
 
 /**
  * Patterns.
