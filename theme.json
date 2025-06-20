@@ -57,10 +57,7 @@
 			"spacingSizes": []
 		},
 		"typography": {
-			"fluid": {
-				"maxViewportWidth": "768px",
-				"minViewportWidth": "375px"
-			},
+			"fluid": false,
 			"fontFamilies": [
 				{
 					"fontFace": [
@@ -115,7 +112,58 @@
 			"customFontSize": false,
 			"defaultFontSizes": false,
 			"dropCap": false,
-			"fontSizes": [],
+			"fontSizes": [
+				{
+					"name": "200/128",
+					"slug": "200",
+					"size": "clamp(8rem, 8rem + ((100vw - 23.4375rem) * 0.07964), max(12.5rem, calc(1vw + 11.7rem)))"
+				},
+				{
+					"name": "96/64",
+					"slug": "96",
+					"size": "clamp(4rem, 4rem + ((100vw - 23.4375rem) * 0.03536), max(6rem, calc(1vw + 5.2rem)))"
+				},
+				{
+					"name": "80/56",
+					"slug": "80",
+					"size": "clamp(3.5rem, 3.5rem + ((100vw - 23.4375rem) * 0.02652), max(5rem, calc(1vw + 4.2rem)))"
+				},
+				{
+					"name": "56/40",
+					"slug": "56",
+					"size": "clamp(2.5rem, 2.5rem + ((100vw - 23.4375rem) * 0.01768), max(3.5rem, calc(1vw + 2.7rem)))"
+				},
+				{
+					"name": "48/32",
+					"slug": "48",
+					"size": "clamp(2rem, 2rem + ((100vw - 23.4375rem) * 0.01768), max(3rem, calc(1vw + 2.2rem)))"
+				},
+				{
+					"name": "32/24",
+					"slug": "32",
+					"size": "clamp(1.5rem, 1.5rem + ((100vw - 23.4375rem) * 0.00884), max(2rem, calc(1vw + 1.2rem)))"
+				},
+				{
+					"name": "32/20",
+					"slug": "32-alt",
+					"size": "clamp(1.25rem, 1.25rem + ((100vw - 23.4375rem) * 0.01326), max(2rem, calc(1vw + 1.2rem)))"
+				},
+				{
+					"name": "18/16",
+					"slug": "18",
+					"size": "clamp(1rem, 1rem + ((100vw - 23.4375rem) * 0.00221), max(1.125rem, calc(1vw + 0.325rem)))"
+				},
+				{
+					"name": "16",
+					"slug": "16",
+					"size": "clamp(1rem, 1rem, max(1rem, calc(1vw + 0.2rem)))"
+				},
+				{
+					"name": "14",
+					"slug": "14",
+					"size": "clamp(0.875rem, 0.875rem, max(0.875rem, calc(1vw + 0.075rem)))"
+				}
+			],
 			"fontStyle": false,
 			"fontWeight": false,
 			"letterSpacing": false,
@@ -141,7 +189,8 @@
 			"fontFamily": "var:preset|font-family|body",
 			"fontWeight": "400",
 			"fontStyle": "normal",
-			"lineHeight": "1.2"
+			"lineHeight": "1.2",
+			"fontSize": "var:preset|font-size|18"
 		},
 		"elements": {
 			"heading": {
