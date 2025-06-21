@@ -63,7 +63,7 @@
 		"layout": {
 			"allowCustomContentAndWideSize": true,
 			"allowEditing": true,
-			"contentSize": "clamp(20.5rem, 20.5rem + ((100vw - 22.5rem) * 0.86087), calc(30vw + 46rem))"
+			"contentSize": "clamp(20.5rem, 20.5rem + ((100vw - 22.5rem) * 0.86087), 87.5vw)"
 		},
 		"position": {
 			"sticky": false

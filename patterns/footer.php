@@ -9,9 +9,9 @@
  */
 
 ?>
-<!-- wp:group {"layout":{"type":"constrained","contentSize":"100%"},"className": "scg-site-footer"} -->
-<div class="wp-block-group scg-site-footer">
-	<!-- wp:columns {"style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
+<!-- wp:group {"layout":{"type":"constrained"},"className": "scg-site-footer"} -->
+<div class="wp-block-group is-layout-constrained scg-site-footer">
+	<!-- wp:columns -->
 	<div class="wp-block-columns">
 		<!-- wp:column -->
 		<div class="wp-block-column">
@@ -29,7 +29,7 @@
 		<!-- /wp:column -->
 	</div>
 	<!-- /wp:columns -->
-	<!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}, "className":"scg-footer__bottom"} -->
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}, "className":"scg-footer__bottom"} -->
 	<div class="wp-block-group scg-site-footer__bottom">
 		<!-- wp:scg/logo {"isLink":false, "className": "is-style-secondary"} /-->
 		<!-- wp:paragraph -->

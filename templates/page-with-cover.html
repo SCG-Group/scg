@@ -2,8 +2,8 @@
 
 <!-- wp:group {"tagName":"main"} -->
 <main class="wp-block-group">
-	<!-- wp:cover {"useFeaturedImage":true,"hasParallax":true,"dimRatio":20,"overlayColor":"#000000","customOverlayColor":"#000000","isUserOverlayColor":true,"minHeight":100,"minHeightUnit":"vh","contentPosition":"bottom left","templateLock":"contentOnly","sizeSlug":"large", "className":"scg-featured"} -->
-		<div class="wp-block-cover has-parallax has-custom-content-position is-position-bottom-left scg-featured" style="min-height:100vh">
+	<!-- wp:cover {"useFeaturedImage":true,"hasParallax":true,"dimRatio":20,"overlayColor":"#000000","customOverlayColor":"#000000","isUserOverlayColor":true,"minHeight":100,"minHeightUnit":"vh","contentPosition":"bottom left","templateLock":"contentOnly","sizeSlug":"large", "className":"scg-featured", "layout": "constrained"} -->
+		<div class="wp-block-cover has-parallax has-custom-content-position is-position-bottom-left is-layout-constrained scg-featured" style="min-height:100vh">
 			<span aria-hidden="true" class="wp-block-cover__background has-000000-background-color has-background-dim-20 has-background-dim"></span>
 			<div class="wp-block-cover__inner-container">
 				<!-- wp:columns -->
@@ -23,9 +23,8 @@
 			</div>
 		</div>
 	<!-- /wp:cover -->
+	<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
 </main>
 <!-- /wp:group -->
-
-<!-- wp:post-content /-->
 
 <!-- wp:template-part {"slug":"footer","theme":"scg","area":"footer"} /-->
