@@ -85,10 +85,7 @@
 				border-radius: 1px;
 				background: var(--navigation--toggle--color);
 
-				@media not (prefers-reduced-motion) {
-
-					@include t.transition(transform);
-				}
+				@include t.transition(transform);
 			}
 
 			&::before {
