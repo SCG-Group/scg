@@ -1,9 +1,6 @@
 @use "../utils/breakpoints";
 
 .scg-site-footer {
-	width: 100%;
-	background-color: var(--wp--preset--color--base);
-	color: var(--wp--preset--color--white);
 
 	&__bottom {
 		flex-direction: column-reverse;

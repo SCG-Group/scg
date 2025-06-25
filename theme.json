@@ -111,6 +111,11 @@
 					"name": "20",
 					"size": "clamp(1.25rem, 1.25rem, max(1.25rem, calc(1vw + 0.45rem)))",
 					"slug": "20"
+				},
+				{
+					"name": "16",
+					"size": "1rem",
+					"slug": "16"
 				}
 			]
 		},
@@ -237,12 +242,21 @@
 			"textTransform": true,
 			"writingMode": false
 		},
-		"useRootPaddingAwareAlignments": true,
+		"useRootPaddingAwareAlignments": false,
 		"blocks": {
 			"scg/fullscreen-image": {
 				"background": {
 					"backgroundImage": true,
 					"backgroundSize": true
+				}
+			},
+			"core/group": {
+				"spacing": {
+					"padding": true,
+					"margin": true
+				},
+				"color": {
+					"background": true
 				}
 			}
 		}
@@ -321,6 +335,11 @@
 					}
 				},
 				"css": "&:is(ul) { list-style-type: disc; }"
+			},
+			"core/social-links": {
+				"spacing": {
+					"blockGap": "var:preset|spacing|16"
+				}
 			}
 		}
 	},

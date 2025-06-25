@@ -9,14 +9,14 @@
  */
 
 ?>
-<!-- wp:group {"layout":{"type":"constrained"},"className": "scg-site-footer"} -->
-<div class="wp-block-group is-layout-constrained scg-site-footer">
+<!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|128","bottom":"var:preset|spacing|128"}}},"backgroundColor":"base","textColor":"white"} -->
+<div class="wp-block-group is-layout-constrained has-base-background-color has-background has-white-color has-text-color" style="padding-top:var(--wp--preset--spacing--128);padding-bottom:var(--wp--preset--spacing--128);">
 	<!-- wp:columns -->
 	<div class="wp-block-columns">
 		<!-- wp:column -->
 		<div class="wp-block-column">
 			<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-			<p>Transport<br>excellence</p>
+			<p>Transport<br />excellence</p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -29,8 +29,8 @@
 		<!-- /wp:column -->
 	</div>
 	<!-- /wp:columns -->
-	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}, "className":"scg-footer__bottom"} -->
-	<div class="wp-block-group scg-site-footer__bottom">
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"className":"scg-footer__bottom","fontSize":"14"} -->
+	<div class="wp-block-group scg-site-footer__bottom has-14-font-size">
 		<!-- wp:scg/logo {"isLink":false, "className": "is-style-secondary"} /-->
 		<!-- wp:paragraph -->
 		<p>&copy; <?php echo esc_html( sprintf( '%1$s %2$s %3$s', __( 'Copyright', 'scg' ), gmdate( 'Y' ), get_bloginfo( 'name' ) ) ); ?></p>
