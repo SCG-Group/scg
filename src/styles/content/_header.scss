@@ -225,6 +225,7 @@
 		}
 
 		.wp-block-navigation-link.is-style-main {
+			text-decoration: none;
 
 			@include breakpoints.break-mobile-layout {
 				font-size: 1.2rem;

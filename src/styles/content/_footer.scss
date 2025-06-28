@@ -3,11 +3,25 @@
 .scg-site-footer {
 
 	&__bottom {
-		flex-direction: column-reverse;
 		color: var(--wp--custom--color--white-2);
 
-		@include breakpoints.break-mobile-layout {
-			flex-direction: row;
+		@media (max-width: calc(breakpoints.$break-large - 1px)) {
+			flex-direction: column-reverse;
+
+			&.is-layout-flex,
+			.is-layout-flex {
+				align-items: start;
+			}
+		}
+
+		:is(
+		.wp-block-social-links
+		.wp-block-social-link.wp-social-link
+		.wp-block-social-link-anchor,
+		.wp-block-navigation
+		.wp-block-navigation-item__content.wp-block-navigation-item__content
+	):hover {
+			color: var(--wp--preset--color--white);
 		}
 	}
 }

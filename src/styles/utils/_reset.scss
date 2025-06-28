@@ -14,11 +14,6 @@ body {
 	margin: 0;
 }
 
-a {
-	text-decoration-thickness: 1px;
-	text-underline-offset: 0.1em;
-}
-
 h1,
 h2,
 h3,
@@ -31,4 +26,9 @@ figcaption,
 p {
 	text-rendering: optimizelegibility;
 	text-wrap: pretty;
+}
+
+ul,
+ol {
+	margin: 0;
 }

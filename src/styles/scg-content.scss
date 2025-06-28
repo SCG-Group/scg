@@ -1,8 +1,14 @@
 /**
  * Editor content styles enqueued in the editor and on the frontend
  */
+@use "utils/transitions" as t;
 @use "utils/reset";
 @use "content/header";
 @use "content/footer";
 @use "content/featured";
 @use "content/layout";
+
+a {
+
+	@include t.transition;
+}

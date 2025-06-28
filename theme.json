@@ -238,7 +238,7 @@
 			"lineHeight": false,
 			"textAlign": true,
 			"textColumns": false,
-			"textDecoration": true,
+			"textDecoration": false,
 			"textTransform": true,
 			"writingMode": false
 		},
@@ -317,7 +317,11 @@
 			"link": {
 				"typography": {
 					"textDecoration": "underline"
-				}
+				},
+				"color": {
+					"text": "currentColor"
+				},
+				"css": "text-underline-offset: 0.2em; &:hover { color: var(--wp--preset--color--accent); }"
 			},
 			"cite": {
 				"typography": {
@@ -340,6 +344,9 @@
 				"spacing": {
 					"blockGap": "var:preset|spacing|16"
 				}
+			},
+			"core/navigation-link": {
+				"css": "&:not(.is-style-main) a { text-decoration: underline; text-underline-offset: 0.2em; }"
 			}
 		}
 	},
