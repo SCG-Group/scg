@@ -14,3 +14,7 @@
 .block-editor-block-list__layout .block-editor-block-list__block.scg-site-header {
 	position: fixed; // @todo: revisit - scrolling on template page.
 }
+
+.block-editor-rich-text__editable p {
+	margin: 0;
+}

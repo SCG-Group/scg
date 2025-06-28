@@ -212,6 +212,11 @@
 					"size": "clamp(2rem, 2rem + ((100vw - 22.5rem) * 0.01768), max(3rem, calc(1vw + 2.2rem)))"
 				},
 				{
+					"name": "40/24",
+					"size": "clamp(1.5rem, 1.5rem + ((100vw - 22.5rem) * 0.01768), max(2.5rem, calc(1vw + 1.7rem)))",
+					"slug": "40"
+				},
+				{
 					"name": "32/24",
 					"slug": "32",
 					"size": "clamp(1.5rem, 1.5rem + ((100vw - 22.5rem) * 0.00884), max(2rem, calc(1vw + 1.2rem)))"
@@ -220,6 +225,11 @@
 					"name": "32/20",
 					"slug": "32-alt",
 					"size": "clamp(1.25rem, 1.25rem + ((100vw - 22.5rem) * 0.01326), max(2rem, calc(1vw + 1.2rem)))"
+				},
+				{
+					"name": "24/18",
+					"size": "clamp(1.125rem, 1.125rem + ((100vw - 22.5rem) * 0.00663), max(1.5rem, calc(1vw + 0.7rem)))",
+					"slug": "24"
 				},
 				{
 					"name": "18/16",
@@ -290,7 +300,8 @@
 			},
 			"h1": {
 				"typography": {
-					"fontSize": "var:preset|font-size|96"
+					"fontSize": "var:preset|font-size|96",
+					"lineHeight": "1"
 				}
 			},
 			"h2": {
