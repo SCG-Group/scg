@@ -5,7 +5,11 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+@use "../../styles/utils/transitions" as t;
+
 .wp-block-scg-logo {
+	--wp--custom--transition--property: fill;
+
 	max-width: 100%;
 
 	svg {
@@ -34,6 +38,7 @@
 	}
 
 	path {
-		transition: 0.3s fill ease-in;
+
+		@include t.transition;
 	}
 }

@@ -12,11 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use function SCG\sanitize_svg;
 
-$wrapper_attributes = get_block_wrapper_attributes(
-	array(
-		'style' => isset( $attributes['width'] ) ? "width: {$attributes['width']}" : null,
-	)
-);
+$wrapper_attributes = get_block_wrapper_attributes();
 
 $logo_file = file_get_contents( get_theme_file_path( '/assets/images/logo.svg') ); // @codingStandardsIgnoreLine.
 ?>

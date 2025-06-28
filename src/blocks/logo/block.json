@@ -8,9 +8,6 @@
 	"description": "SCG logo",
 	"example": {},
 	"attributes": {
-		"width": {
-			"type": "string"
-		},
 		"isLink": {
 			"type": "boolean",
 			"default": true
@@ -20,12 +17,6 @@
 		{ "name": "primary", "label": "Primary", "isDefault": true },
 		{ "name": "secondary", "label": "Secondary" }
 	],
-	"supports": {
-		"html": true,
-		"dimensions": {
-			"widthHeight": true
-		}
-	},
 	"textdomain": "scg",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",

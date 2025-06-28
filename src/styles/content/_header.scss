@@ -30,16 +30,13 @@
 		padding-bottom: var(--navigation--padding);
 	}
 
-	.wp-block {
-
-		&-scg-logo,
-		&-site-logo {
-			position: sticky;
-			z-index: 99999;
-			display: flex;
-			min-height: var(--navigation--toggle--size);
-			align-items: center;
-		}
+	&__logo {
+		position: sticky;
+		z-index: 99999;
+		display: flex;
+		min-height: var(--navigation--toggle--size);
+		align-items: center;
+		width: clamp(99px, 99px + ((100vw - 360px) * 0.07175), calc(1vw + 160px));
 	}
 }
 
