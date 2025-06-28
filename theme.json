@@ -84,32 +84,37 @@
 			"spacingSizes": [
 				{
 					"name": "128/64",
-					"size": "clamp(4rem, 4rem + ((100vw - 22.5rem) * 0.03536), max(8rem, calc(1vw + 7.2rem)))",
+					"size": "clamp(4rem, 4rem + ((100vw - 22.5rem) * 0.06957), calc(1vw + 7.2rem))",
 					"slug": "128"
 				},
 				{
 					"name": "80",
-					"size": "clamp(5rem, 5rem, max(5rem, calc(1vw + 4.2rem)))",
+					"size": "clamp(5rem, 5rem, calc(1vw + 4.2rem))",
 					"slug": "80"
 				},
 				{
 					"name": "64/32",
-					"size": "clamp(2rem, 2rem + ((100vw - 22.5rem) * 0.01768), max(4rem, calc(1vw + 3.2rem)))",
+					"size": "clamp(2rem, 2rem + ((100vw - 22.5rem) * 0.03479), calc(1vw + 3.2rem))",
 					"slug": "64"
 				},
 				{
 					"name": "32/24",
-					"size": "clamp(1.5rem, 1.5rem + ((100vw - 22.5rem) * 0.00884), max(2rem, calc(1vw + 1.2rem)))",
+					"size": "clamp(1.5rem, 1.5rem + ((100vw - 22.5rem) * 0.00870), calc(1vw + 1.2rem))",
 					"slug": "32"
 				},
 				{
+					"name": "32",
+					"size": "clamp(2rem, 2rem, calc(1vw + 1.2rem))",
+					"slug": "32-fixed"
+				},
+				{
 					"name": "24",
-					"size": "clamp(1.5rem, 1.5rem, max(1.5rem, calc(1vw + 0.7rem)))",
+					"size": "clamp(1.5rem, 1.5rem, calc(1vw + 0.7rem))",
 					"slug": "24"
 				},
 				{
 					"name": "20",
-					"size": "clamp(1.25rem, 1.25rem, max(1.25rem, calc(1vw + 0.45rem)))",
+					"size": "clamp(1.25rem, 1.25rem, calc(1vw + 0.45rem))",
 					"slug": "20"
 				},
 				{

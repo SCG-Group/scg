@@ -9,9 +9,9 @@
  */
 
 ?>
-<!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|128","bottom":"var:preset|spacing|128"}}},"backgroundColor":"base","textColor":"white"} -->
+<!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|128","bottom":"var:preset|spacing|128"},"blockGap":"var:preset|spacing|128"}},"backgroundColor":"base","textColor":"white"} -->
 <div class="wp-block-group is-layout-constrained has-base-background-color has-background has-white-color has-text-color" style="padding-top:var(--wp--preset--spacing--128);padding-bottom:var(--wp--preset--spacing--128);">
-	<!-- wp:columns -->
+	<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|32-fixed"}}}} -->
 	<div class="wp-block-columns">
 		<!-- wp:column -->
 		<div class="wp-block-column">
