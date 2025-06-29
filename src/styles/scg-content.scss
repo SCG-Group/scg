@@ -1,13 +1,20 @@
 /**
  * Editor content styles enqueued in the editor and on the frontend
  */
+
+// Utils
 @use "utils/transitions" as t;
 @use "utils/reset";
+
+// Content
 @use "content/header";
 @use "content/footer";
-@use "content/featured";
 @use "content/layout";
 
+// Page templates
+@use "templates/page-with-cover";
+
+// Global
 a {
 
 	@include t.transition;

@@ -9,11 +9,13 @@
 	--navigation--responsive-container--border-color: var(--wp--preset--color--accent);
 	--navigation--link--border-color: var(--wp--custom--border--base);
 	--navigation--padding: 5px;
-	--navigation--border: 2px;
+	--navigation--border--width: 2px;
+	--navigation--border: var(--navigation--border--width) solid rgba(23, 56, 73, 0.25);
+	--navigation--background: var(--wp--preset--color--white);
 	--navigation--height: var(--navigation--toggle--size);
 
 	@include breakpoints.break-mobile-layout {
-		--navigation--height: calc(var(--navigation--padding) * 2 + var(--navigation--border) + var(--navigation--toggle--size));
+		--navigation--height: calc(var(--navigation--padding) * 2 + var(--navigation--border--width) + var(--navigation--toggle--size));
 	}
 }
 
@@ -23,7 +25,8 @@
 	left: 0;
 	z-index: 2;
 	right: 0;
-	border-bottom-width: var(--navigation--border);
+	border-bottom: var(--navigation--border);
+	background-color: var(--navigation--background);
 
 	@include breakpoints.break-mobile-layout {
 		padding-top: var(--navigation--padding);

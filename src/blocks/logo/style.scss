@@ -1,11 +1,8 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
-
 @use "../../styles/utils/transitions" as t;
+
+:root {
+	--scg-logo--main-color: var(--wp--preset--color--base);
+}
 
 .wp-block-scg-logo {
 	--wp--custom--transition--property: fill;
@@ -28,7 +25,6 @@
 		}
 	}
 
-	&,
 	&.is-style-primary {
 		--scg-logo--main-color: var(--wp--preset--color--base);
 	}
