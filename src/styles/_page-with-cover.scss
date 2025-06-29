@@ -1,0 +1,29 @@
+body.page-template-page-with-cover {
+	--navigation--border--width: 0;
+	--navigation--border: none;
+	--navigation--background: transparent;
+	--scg-logo--main-color: var(--wp--preset--color--white);
+
+	main {
+		margin-top: 0;
+
+		> :first-child {
+			padding-top: var(--navigation--height);
+		}
+	}
+
+	.scg {
+
+		&-site-header {
+			position: fixed;
+		}
+
+		&-featured {
+			background-color: var(--wp--preset--color--base);
+
+			&:is(.has-custom-content-position.is-position-bottom-left) .wp-block-cover__inner-container {
+				width: 100%;
+			}
+		}
+	}
+}

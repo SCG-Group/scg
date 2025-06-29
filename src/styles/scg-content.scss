@@ -6,13 +6,10 @@
 @use "utils/transitions" as t;
 @use "utils/reset";
 
-// Content
-@use "content/header";
-@use "content/footer";
-@use "content/layout";
-
-// Page templates
-@use "templates/page-with-cover";
+// Theme
+@use "header";
+@use "footer";
+@use "page-with-cover";
 
 // Global
 a {
