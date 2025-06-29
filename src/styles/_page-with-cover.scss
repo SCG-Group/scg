@@ -22,6 +22,10 @@
 		&-featured {
 			background-color: var(--wp--preset--color--base);
 
+			.wp-block-cover__inner-container {
+				padding: var(--wp--preset--spacing--80) 0;
+			}
+
 			&:is(.has-custom-content-position.is-position-bottom-left) .wp-block-cover__inner-container {
 				width: 100%;
 			}
