@@ -4,9 +4,4 @@
 	&:is(.has-custom-content-position.is-position-bottom-left) .wp-block-cover__inner-container {
 		width: 100%;
 	}
-
-	.wp-block-post-excerpt {
-		font-family: var(--wp--preset--font-family--lead);
-		font-size: var(--wp--preset--font-size--32);
-	}
 }

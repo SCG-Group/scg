@@ -363,6 +363,12 @@
 			},
 			"core/navigation-link": {
 				"css": "&:not(.is-style-main) a { text-decoration: underline; text-underline-offset: 0.2em; }"
+			},
+			"core/post-excerpt": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|lead",
+					"fontSize": "var:preset|font-size|32"
+				}
 			}
 		}
 	},
