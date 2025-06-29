@@ -7,10 +7,10 @@
 	--navigation--toggle--color: var(--wp--preset--color--white);
 	--navigation--responsive-container--background-color: var(--wp--preset--color--white);
 	--navigation--responsive-container--border-color: var(--wp--preset--color--accent);
-	--navigation--link--border-color: var(--wp--custom--border--base);
-	--navigation--padding: 5px;
+	--navigation--link--hover-color: var(--wp--preset--color--accent);
+	--navigation--padding: var(--wp--preset--spacing--40);
 	--navigation--border--width: 2px;
-	--navigation--border: var(--navigation--border--width) solid rgba(23, 56, 73, 0.25);
+	--navigation--border: var(--navigation--border--width) solid var(--wp--custom--border--base);
 	--navigation--background: var(--wp--preset--color--white);
 	--navigation--height: var(--navigation--toggle--size);
 
@@ -29,17 +29,23 @@
 	background-color: var(--navigation--background);
 
 	@include breakpoints.break-mobile-layout {
-		padding-top: var(--navigation--padding);
-		padding-bottom: var(--navigation--padding);
+		padding: var(--navigation--padding);
 	}
 
 	&__logo {
 		position: sticky;
 		z-index: 99999;
 		display: flex;
-		min-height: var(--navigation--toggle--size);
 		align-items: center;
 		width: clamp(99px, 99px + ((100vw - 360px) * 0.07175), calc(1vw + 160px));
+
+		@media (max-width: calc(#{breakpoints.$break-mobile-layout} - 1px)) {
+			min-height: var(--navigation--toggle--size);
+
+			&:is(.wp-block-scg-logo) {
+				margin: 0 var(--wp--preset--spacing--16);
+			}
+		}
 	}
 }
 
@@ -51,15 +57,20 @@
 		--navigation-layout-direction: column;
 	}
 
+	&-link.is-style-main {
+		font-weight: 700;
+	}
+
 	// Responsive container
 	&__responsive-container {
 		display: flex;
 		transform: translateY(calc(-100% - var(--wp-admin--admin-bar--height, 0px)));
 		background-color: transparent;
-		padding: 0;
+		padding: var(--wp--preset--spacing--16);
 
 		@include breakpoints.break-mobile-layout {
 			transform: none;
+			padding: 0;
 		}
 
 		// Toggle buttons (open/close)
@@ -156,7 +167,8 @@
 					bottom: 0;
 					right: 0;
 					overflow: auto;
-					padding: clamp(1rem, var(--wp--style--root--padding-top), 20rem) clamp(1rem, var(--wp--style--root--padding-right), 20rem) clamp(1rem, var(--wp--style--root--padding-bottom), 20rem) clamp(1rem, var(--wp--style--root--padding-left), 20rem);
+					margin-bottom: 5px;
+					padding: var(--wp--preset--spacing--16);
 				}
 			}
 		}
@@ -210,7 +222,7 @@
 		}
 
 		.wp-block-navigation-link.is-style-main {
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 	}
 
@@ -228,16 +240,18 @@
 			text-decoration: none;
 
 			@include breakpoints.break-mobile-layout {
-				font-size: 1.2rem;
+				font-size: var(--wp--preset--font-size--16);
 
 				a {
 					position: relative;
+					padding: 0.5625em 0;
+					color: var(--navigation--link--color, currentColor);
 
 					&::after {
 						content: "";
 						width: 100%;
 						height: 2px;
-						background-color: var(--navigation--link--border-color);
+						background-color: var(--navigation--link--hover-color);
 						position: absolute;
 						left: 0;
 						bottom: 0;
@@ -248,8 +262,12 @@
 						transition-property: transform;
 					}
 
-					&:hover::after {
-						transform: scale(1, 1);
+					&:hover {
+						color: var(--navigation--link--hover-color);
+
+						&::after {
+							transform: scale(1, 1);
+						}
 					}
 				}
 			}
@@ -259,6 +277,11 @@
 	// Transparent background override
 	&:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
 		background-color: transparent;
+	}
+
+	// Navigation links color override
+	&:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
+		color: currentcolor;
 	}
 
 	// Navigation item content

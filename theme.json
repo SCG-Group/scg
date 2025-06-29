@@ -98,6 +98,11 @@
 					"slug": "64"
 				},
 				{
+					"name": "40",
+					"size": "clamp(2.5rem, 2.5rem + ((100vw - 22.5rem) * 0.01547), calc(1vw + 1.7rem))",
+					"slug": "40"
+				},
+				{
 					"name": "32/24",
 					"size": "clamp(1.5rem, 1.5rem + ((100vw - 22.5rem) * 0.00870), calc(1vw + 1.2rem))",
 					"slug": "32"
@@ -184,67 +189,67 @@
 				{
 					"name": "200/128",
 					"slug": "200",
-					"size": "clamp(8rem, 8rem + ((100vw - 22.5rem) * 0.07964), max(12.5rem, calc(1vw + 11.7rem)))"
+					"size": "clamp(8rem, 8rem + ((100vw - 22.5rem) * 0.07964), calc(1vw + 11.7rem))"
 				},
 				{
 					"name": "128/80",
 					"slug": "128",
-					"size": "clamp(5rem, 5rem + ((100vw - 22.5rem) * 0.04248), max(8rem, calc(1vw + 7.2rem)))"
+					"size": "clamp(5rem, 5rem + ((100vw - 22.5rem) * 0.04248), 1vw + 7.2rem))"
 				},
 				{
 					"name": "96/64",
 					"slug": "96",
-					"size": "clamp(4rem, 4rem + ((100vw - 22.5rem) * 0.03536), max(6rem, calc(1vw + 5.2rem)))"
+					"size": "clamp(4rem, 4rem + ((100vw - 22.5rem) * 0.03536), calc(1vw + 5.2rem))"
 				},
 				{
 					"name": "80/56",
 					"slug": "80",
-					"size": "clamp(3.5rem, 3.5rem + ((100vw - 22.5rem) * 0.02652), max(5rem, calc(1vw + 4.2rem)))"
+					"size": "clamp(3.5rem, 3.5rem + ((100vw - 22.5rem) * 0.02652), calc(1vw + 4.2rem))"
 				},
 				{
 					"name": "56/40",
 					"slug": "56",
-					"size": "clamp(2.5rem, 2.5rem + ((100vw - 22.5rem) * 0.01768), max(3.5rem, calc(1vw + 2.7rem)))"
+					"size": "clamp(2.5rem, 2.5rem + ((100vw - 22.5rem) * 0.01768), calc(1vw + 2.7rem))"
 				},
 				{
 					"name": "48/32",
 					"slug": "48",
-					"size": "clamp(2rem, 2rem + ((100vw - 22.5rem) * 0.01768), max(3rem, calc(1vw + 2.2rem)))"
+					"size": "clamp(2rem, 2rem + ((100vw - 22.5rem) * 0.01768), calc(1vw + 2.2rem))"
 				},
 				{
 					"name": "40/24",
-					"size": "clamp(1.5rem, 1.5rem + ((100vw - 22.5rem) * 0.01768), max(2.5rem, calc(1vw + 1.7rem)))",
+					"size": "clamp(1.5rem, 1.5rem + ((100vw - 22.5rem) * 0.01768), calc(1vw + 1.7rem))",
 					"slug": "40"
 				},
 				{
 					"name": "32/24",
 					"slug": "32",
-					"size": "clamp(1.5rem, 1.5rem + ((100vw - 22.5rem) * 0.00884), max(2rem, calc(1vw + 1.2rem)))"
+					"size": "clamp(1.5rem, 1.5rem + ((100vw - 22.5rem) * 0.00884), calc(1vw + 1.2rem))"
 				},
 				{
 					"name": "32/20",
 					"slug": "32-alt",
-					"size": "clamp(1.25rem, 1.25rem + ((100vw - 22.5rem) * 0.01326), max(2rem, calc(1vw + 1.2rem)))"
+					"size": "clamp(1.25rem, 1.25rem + ((100vw - 22.5rem) * 0.01326), calc(1vw + 1.2rem))"
 				},
 				{
 					"name": "24/18",
-					"size": "clamp(1.125rem, 1.125rem + ((100vw - 22.5rem) * 0.00663), max(1.5rem, calc(1vw + 0.7rem)))",
+					"size": "clamp(1.125rem, 1.125rem + ((100vw - 22.5rem) * 0.00663), calc(1vw + 0.7rem))",
 					"slug": "24"
 				},
 				{
 					"name": "18/16",
 					"slug": "18",
-					"size": "clamp(1rem, 1rem + ((100vw - 22.5rem) * 0.00221), max(1.125rem, calc(1vw + 0.325rem)))"
+					"size": "clamp(1rem, 1rem + ((100vw - 22.5rem) * 0.00221), calc(1vw + 0.325rem))"
 				},
 				{
 					"name": "16",
-					"slug": "16",
-					"size": "clamp(1rem, 1rem, max(1rem, calc(1vw + 0.2rem)))"
+					"size": "clamp(1rem, 1rem + ((100vw - 22.5rem) * 0.00221), calc(1vw + 0.2rem))",
+					"slug": "16"
 				},
 				{
 					"name": "14",
-					"slug": "14",
-					"size": "clamp(0.875rem, 0.875rem, max(0.875rem, calc(1vw + 0.075rem)))"
+					"size": "clamp(0.875rem, 0.875rem + ((100vw - 22.5rem) * 0.00221), calc(1vw + 0.075rem))",
+					"slug": "14"
 				}
 			],
 			"fontStyle": false,
