@@ -1,11 +1,11 @@
-body.page-template-page-with-cover {
+.scg-template--page-with-cover {
 	--navigation--border--width: 0;
 	--navigation--border: none;
 	--navigation--background: transparent;
 	--navigation--link--color: var(--wp--preset--color--white);
 	--scg-logo--main-color: var(--wp--preset--color--white);
 
-	main {
+	&:is(main) {
 		margin-top: 0;
 
 		> :first-child {
@@ -13,11 +13,11 @@ body.page-template-page-with-cover {
 		}
 	}
 
-	.scg {
+	&:is(.scg-site-header) {
+		position: fixed;
+	}
 
-		&-site-header {
-			position: fixed;
-		}
+	.scg {
 
 		&-featured {
 			background-color: var(--wp--preset--color--base);
