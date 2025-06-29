@@ -20,3 +20,12 @@ a {
 .has-headings-font-family {
 	line-height: 1.1;
 }
+
+.is-layout-constrained > :not(.alignleft):not(.alignright):not(.alignfull) {
+
+	@media (max-width: 359px) {
+		padding-left: var(--wp--preset--spacing--16);
+		padding-right: var(--wp--preset--spacing--16);
+		max-width: 100%;
+	}
+}
