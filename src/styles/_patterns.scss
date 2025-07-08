@@ -1,22 +1,40 @@
-.scg {
+// Splash & section splash.
+.scg-featured {
+	background-color: var(--wp--preset--color--base);
+	padding: 0;
 
-	&-featured {
-		background-color: var(--wp--preset--color--base);
-		padding: 0;
+	.wp-block-cover {
 
-		.wp-block-cover {
-
-			&__inner-container {
-				padding: var(--wp--preset--spacing--80) 0;
-			}
-
-			&__background {
-				background-color: #000;
-			}
+		&__inner-container {
+			padding: var(--wp--preset--spacing--80) 0;
 		}
 
-		&:is(.has-custom-content-position.is-position-bottom-center) .wp-block-cover__inner-container {
-			width: 100%;
+		&__background {
+			background-color: #000;
 		}
+	}
+
+	&:is(.has-custom-content-position.is-position-bottom-center) .wp-block-cover__inner-container {
+		width: 100%;
+	}
+}
+
+body:has(.entry-content > .scg-featured:first-child) {
+	--navigation--border--width: 0;
+	--navigation--border: none;
+	--navigation--background: transparent;
+	--navigation--link--color: var(--wp--preset--color--white);
+	--scg-logo--main-color: var(--wp--preset--color--white);
+
+	main {
+		margin-top: 0;
+	}
+
+	.entry-content > .wp-block-cover:first-child {
+		padding-top: var(--navigation--height);
+	}
+
+	.scg-site-header {
+		position: fixed;
 	}
 }
