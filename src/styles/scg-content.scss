@@ -29,3 +29,13 @@ a {
 		max-width: 100%;
 	}
 }
+
+.wp-block-list {
+
+	&.is-style-spaced {
+
+		> li:not(:last-child) {
+			padding-bottom: 1em;
+		}
+	}
+}

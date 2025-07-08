@@ -253,7 +253,7 @@
 				}
 			],
 			"fontStyle": false,
-			"fontWeight": false,
+			"fontWeight": true,
 			"letterSpacing": false,
 			"lineHeight": false,
 			"textAlign": true,

@@ -4,10 +4,15 @@ import { registerBlockStyle } from '@wordpress/blocks';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 
-// Add style for main navigation link.
+// Add style for core blocks.
 registerBlockStyle( 'core/navigation-link', {
 	name: 'main',
 	label: __( 'Main Navigation', 'scg' ),
+} );
+
+registerBlockStyle( 'core/list', {
+	name: 'spaced',
+	label: __( 'Spaced', 'scg' ),
 } );
 
 // Register text-shadow format
