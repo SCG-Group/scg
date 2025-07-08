@@ -374,6 +374,11 @@
 					"fontFamily": "var:preset|font-family|lead",
 					"fontSize": "var:preset|font-size|32"
 				}
+			},
+			"core/spacer": {
+				"color": {
+					"background": "var:custom|border|base"
+				}
 			}
 		}
 	},

@@ -1,10 +1,10 @@
 // Editor scripts.
 import { __ } from '@wordpress/i18n';
-import { registerBlockStyle } from '@wordpress/blocks';
+import { registerBlockStyle, registerBlockVariation } from '@wordpress/blocks';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 
-// Add style for core blocks.
+// Add block styles to core blocks.
 registerBlockStyle( 'core/navigation-link', {
 	name: 'main',
 	label: __( 'Main Navigation', 'scg' ),
@@ -15,7 +15,18 @@ registerBlockStyle( 'core/list', {
 	label: __( 'Spaced', 'scg' ),
 } );
 
-// Register text-shadow format
+// Register block variations.
+registerBlockVariation( 'core/spacer', {
+	name: 'scg/spacer',
+	title: __( 'SCG Spacer', 'scg' ),
+	isDefault: true,
+	category: 'scg',
+	attributes: {
+		height: '1px',
+	},
+} );
+
+// Register rich-text formats.
 registerFormatType( 'scg/text-shadow', {
 	title: __( 'Text Shadow', 'scg' ),
 	tagName: 'span',
