@@ -49,3 +49,18 @@ body:has(.entry-content > .scg-featured:first-child) {
 		grid-template-columns: 1fr;
 	}
 }
+
+// Media & text.
+.wp-block-media-text {
+
+	>.wp-block-media-text__content {
+		padding-right: calc((100vw - var(--wp--style--global--content-size)) / 2);
+	}
+
+	&.has-media-on-the-right {
+
+		>.wp-block-media-text__content {
+			padding-left: calc((100vw - var(--wp--style--global--content-size)) / 2);
+		}
+	}
+}
