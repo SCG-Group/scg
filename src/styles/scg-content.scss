@@ -39,3 +39,14 @@ a {
 		}
 	}
 }
+
+.scg-text-shadow {
+	color: currentcolor;
+	-webkit-text-fill-color: #fff;
+	// text-shadow: -1px -1px 0 currentcolor, 1px -1px 0 currentcolor, -1px 1px 0 currentcolor, 1px 1px 0 currentcolor;
+	filter:
+		drop-shadow(-1px -1px 0 currentcolor)
+		drop-shadow(1px -1px 0 currentcolor)
+		drop-shadow(-1px 1px 0 currentcolor)
+		drop-shadow(1px 1px 0 currentcolor);
+}
