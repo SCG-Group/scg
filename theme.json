@@ -192,8 +192,13 @@
 					"slug": "200"
 				},
 				{
+					"name": "160/96",
+					"size": "clamp(6rem, 6rem + ((100vw - 22.5rem) * 0.06957), calc(1vw + 9.2rem))",
+					"slug": "160"
+				},
+				{
 					"name": "128/80",
-					"size": "clamp(5rem, 5rem + ((100vw - 22.5rem) * 0.04248), 1vw + 7.2rem))",
+					"size": "clamp(5rem, 5rem + ((100vw - 22.5rem) * 0.04248), calc(1vw + 7.2rem))",
 					"slug": "128"
 				},
 				{
