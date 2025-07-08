@@ -1,0 +1,22 @@
+.scg {
+
+	&-featured {
+		background-color: var(--wp--preset--color--base);
+		padding: 0;
+
+		.wp-block-cover {
+
+			&__inner-container {
+				padding: var(--wp--preset--spacing--80) 0;
+			}
+
+			&__background {
+				background-color: #000;
+			}
+		}
+
+		&:is(.has-custom-content-position.is-position-bottom-center) .wp-block-cover__inner-container {
+			width: 100%;
+		}
+	}
+}

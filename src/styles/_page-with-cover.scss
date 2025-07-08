@@ -16,20 +16,4 @@
 	&:is(.scg-site-header) {
 		position: fixed;
 	}
-
-	.scg {
-
-		&-featured {
-			background-color: var(--wp--preset--color--base);
-			padding: 0;
-
-			.wp-block-cover__inner-container {
-				padding: var(--wp--preset--spacing--80) 0;
-			}
-
-			&:is(.has-custom-content-position.is-position-bottom-left) .wp-block-cover__inner-container {
-				width: 100%;
-			}
-		}
-	}
 }

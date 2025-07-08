@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Two column layout
- * Slug: scg/two-column-layout
+ * Title: Two Column List
+ * Slug: scg/two-column-list
  * Categories: columns
  * Block Types: core/columns
  *
