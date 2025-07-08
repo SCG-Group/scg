@@ -1,3 +1,5 @@
+@use "utils/breakpoints";
+
 // Splash & section splash.
 .scg-featured {
 	background-color: var(--wp--preset--color--base);
@@ -36,5 +38,14 @@ body:has(.entry-content > .scg-featured:first-child) {
 
 	.scg-site-header {
 		position: fixed;
+	}
+}
+
+// Grid layout on mobile.
+
+.wp-block-group.is-layout-grid {
+
+	@media (max-width: calc(#{breakpoints.$break-mobile-layout} - 1px)) {
+		grid-template-columns: 1fr;
 	}
 }
