@@ -34,11 +34,11 @@ function add_block_category( $categories ) {
  * Register theme blocks
  */
 function init_blocks() {
-	// Logo.
-	register_block_type( get_theme_file_path( '/build/blocks/logo' ) );
+	$blocks = array( 'carousel', 'fullscreen-image', 'logo' );
 
-	// Fullscreen Image.
-	register_block_type( get_theme_file_path( '/build/blocks/fullscreen-image' ) );
+	foreach ( $blocks as $block_name ) {
+		register_block_type( get_theme_file_path( "/build/blocks/{$block_name}" ) );
+	}
 }
 
 /**
@@ -92,4 +92,21 @@ function modify_heading_block_levels( $args, $block_type ) {
 	$args['attributes']['levelOptions']['default'] = array( 2, 3, 4, 5 );
 
 	return $args;
+}
+
+/**
+ * Modify scg/carousel block to add slider markup.
+ *
+ * @param string $block_content The block content.
+ * @return string
+ */
+function modify_carousel_block_render( $block_content ) {
+	$tags = new \WP_HTML_Tag_Processor( $block_content );
+
+	if ( $tags->next_tag( array( 'class_name' => 'wp-block-scg-carousel' ) ) ) {
+		$tags->set_attribute( 'data-wp-interactive', 'scg/carousel' );
+		$tags->set_attribute( 'data-wp-init', 'callbacks.initCarousel' );
+	}
+
+	return $tags->get_updated_html();
 }

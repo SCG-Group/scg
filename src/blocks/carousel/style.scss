@@ -1,0 +1,35 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-scg-carousel {
+	width: 100%;
+	display: flex;
+	overflow: hidden;
+
+	&__wrapper {
+		padding-right: calc(100vw - var(--wp--style--global--content-size));
+
+		> * {
+			margin: 0;
+			width: auto;
+		}
+
+		.wp-block-image img {
+			height: 30vh;
+			width: auto;
+			max-width: none;
+		}
+	}
+
+	&.alignfull {
+
+		.wp-block-scg-carousel__wrapper {
+			padding-left: calc((100vw - var(--wp--style--global--content-size)) / 2);
+			padding-right: var(--wp--style--block-gap, var(--wp--preset--spacing--32));
+		}
+	}
+}
