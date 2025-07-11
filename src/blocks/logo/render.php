@@ -18,7 +18,10 @@ $logo_file = file_get_contents( get_theme_file_path( '/assets/images/logo.svg') 
 ?>
 
 <?php if ( $attributes['isLink'] ) : ?>
-	<a href="<?php echo esc_url( get_home_url() ); ?>" <?php echo wp_kses_data( $wrapper_attributes ); ?> aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+	<?php
+		$url = isset( $attributes['url'] ) ? $attributes['url'] : get_home_url();
+	?>
+	<a href="<?php echo esc_url( $url ); ?>" <?php echo wp_kses_data( $wrapper_attributes ); ?> aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 		<?php echo wp_kses( $logo_file, sanitize_svg() ); ?>
 	</a>
 <?php else : ?>

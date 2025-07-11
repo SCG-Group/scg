@@ -243,7 +243,7 @@
 				},
 				{
 					"name": "18/16",
-					"size": "clamp(1rem, 1rem + ((100vw - 22.5rem) * 0.00221), calc(1vw + 0.325rem))",
+					"size": "clamp(1rem, 1rem + ((100vw - 22.5rem) * 0.004), calc(1vw + 0.325rem))",
 					"slug": "18"
 				},
 				{
@@ -398,6 +398,11 @@
 		{
 			"name": "header",
 			"title": "Site Header",
+			"area": "header"
+		},
+		{
+			"name": "header-one-page",
+			"title": "Site Header (One Page)",
 			"area": "header"
 		},
 		{

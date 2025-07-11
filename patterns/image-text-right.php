@@ -9,8 +9,8 @@
  */
 
 ?>
-<!-- wp:media-text {"align":"full","mediaId":94,"mediaLink":"https://scg.local/istockphoto-1166978137-2048x2048/","mediaType":"image","mediaWidth":45,"verticalAlignment":"top","imageFill":true} -->
-<div class="wp-block-media-text alignfull is-stacked-on-mobile is-vertically-aligned-top is-image-fill-element" style="grid-template-columns:45% auto"><figure class="wp-block-media-text__media"><img src="https://scg.local/wp-content/uploads/2025/06/istockphoto-1166978137-2048x2048-1-1024x683.jpg" alt="" class="wp-image-94 size-full" style="object-position:50% 50%"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
+<!-- wp:media-text {"align":"full","mediaId":94,"mediaLink":"https://scg.local/istockphoto-1166978137-2048x2048/","mediaType":"image","mediaWidth":48,"verticalAlignment":"top","imageFill":true} -->
+<div class="wp-block-media-text alignfull is-stacked-on-mobile is-vertically-aligned-top is-image-fill-element" style="grid-template-columns:48% auto"><figure class="wp-block-media-text__media"><img src="https://scg.local/wp-content/uploads/2025/06/istockphoto-1166978137-2048x2048-1-1024x683.jpg" alt="" class="wp-image-94 size-full" style="object-position:50% 50%"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">LTL</h3>
 <!-- /wp:heading -->
 

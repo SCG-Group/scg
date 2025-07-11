@@ -15,8 +15,8 @@
 	<div class="wp-block-columns are-vertically-aligned-center">
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
-			<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"80"} -->
-			<p class="has-headings-font-family has-80-font-size" style="line-height: 0.8;">Transport<br><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">excellence</mark></p>
+			<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"80","fontFamily":"headings"} -->
+			<p class="has-headings-font-family has-80-font-size">Transport<br><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">Excellence</mark></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->

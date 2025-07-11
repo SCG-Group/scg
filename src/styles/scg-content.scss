@@ -18,7 +18,9 @@ a {
 }
 
 .has-headings-font-family {
-	line-height: 1.1;
+	line-height: 1;
+	font-weight: 800;
+	font-style: italic;
 }
 
 .is-layout-constrained > :not(.alignleft):not(.alignright):not(.alignfull) {
@@ -30,6 +32,7 @@ a {
 	}
 }
 
+// Blocks
 .wp-block-list {
 
 	&.is-style-spaced {
@@ -40,10 +43,16 @@ a {
 	}
 }
 
+.wp-block-cover.is-light:not(.has-text-color) {
+	color: var(--wp--preset--color--white, #fff);
+}
+
+// Text Filters
 .scg-text-shadow {
 	letter-spacing: 0.01em;
 	color: currentcolor;
 	-webkit-text-fill-color: #fff;
+	/* stylelint-disable-next-line */
 	// text-shadow: -1px -1px 0 currentcolor, 1px -1px 0 currentcolor, -1px 1px 0 currentcolor, 1px 1px 0 currentcolor;
 	filter:
 		drop-shadow(-1px -1px 0 currentcolor)

@@ -9,8 +9,8 @@
  */
 
 ?>
-<!-- wp:group {"tagName":"section","metadata":{"name":"Stats"},"layout":{"type":"grid","minimumColumnWidth":null,"columnCount":2}} -->
-<section class="wp-block-group">
+<!-- wp:group {"tagName":"section","className":"scg-stats","metadata":{"name":"Stats"},"layout":{"type":"grid","minimumColumnWidth":null,"columnCount":2}} -->
+<section class="wp-block-group scg-stats">
 	<!-- wp:group {"style":{"layout":{"columnSpan":1},"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 	<div class="wp-block-group">
 		<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent"}}}},"textColor":"accent","fontSize":"128","fontFamily":"headings"} -->

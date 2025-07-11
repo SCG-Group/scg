@@ -11,6 +11,9 @@
 		"isLink": {
 			"type": "boolean",
 			"default": true
+		},
+		"url": {
+			"type":"string"
 		}
 	},
 	"styles": [

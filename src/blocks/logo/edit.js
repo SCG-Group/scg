@@ -1,10 +1,17 @@
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, ToggleControl } from '@wordpress/components';
+import { PanelBody, ToggleControl, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import Logo from './logo';
 
 export default function ( { attributes, setAttributes } ) {
-	const { isLink } = attributes;
+	const { isLink, url } = attributes;
+
+	const setUrl = ( value ) => {
+		if ( value.length && ! isLink ) {
+			setAttributes( { isLink: true } );
+		}
+		setAttributes( { url: value } );
+	};
 
 	return (
 		<>
@@ -15,6 +22,13 @@ export default function ( { attributes, setAttributes } ) {
 						checked={ isLink }
 						label={ __( 'Link to homepage', 'scg' ) }
 						onChange={ ( val ) => setAttributes( { isLink: val } ) }
+					/>
+					<TextControl
+						__nextHasNoMarginBottom
+						__next40pxDefaultSize
+						label={ __( 'Link href url', 'scg' ) }
+						value={ url }
+						onChange={ setUrl }
 					/>
 				</PanelBody>
 			</InspectorControls>

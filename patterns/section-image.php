@@ -14,8 +14,8 @@
 <h3 class="wp-block-heading">Benefits</h3>
 <!-- /wp:heading -->
 
-<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaId":94,"mediaLink":"https://scg.local/istockphoto-1166978137-2048x2048/","mediaType":"image","mediaWidth":45,"verticalAlignment":"top"} -->
-<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-top" style="grid-template-columns:auto 45%"><div class="wp-block-media-text__content"><!-- wp:list {"className":"is-style-spaced"} -->
+<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaId":94,"mediaLink":"https://scg.local/istockphoto-1166978137-2048x2048/","mediaType":"image","mediaWidth":40,"verticalAlignment":"top"} -->
+<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-top" style="grid-template-columns:auto 40%"><div class="wp-block-media-text__content"><!-- wp:list {"className":"is-style-spaced"} -->
 <ul class="wp-block-list is-style-spaced"><!-- wp:list-item -->
 <li>A competitive salary, a contract of employment, and high monthly bonuses guaranteed in the employment contract depending on the profit earned</li>
 <!-- /wp:list-item -->

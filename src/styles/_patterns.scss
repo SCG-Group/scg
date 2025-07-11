@@ -42,7 +42,6 @@ body:has(.entry-content > .scg-featured:first-child) {
 }
 
 // Grid layout on mobile.
-
 .wp-block-group.is-layout-grid {
 
 	@media (max-width: calc(#{breakpoints.$break-mobile-layout} - 1px)) {
@@ -61,6 +60,17 @@ body:has(.entry-content > .scg-featured:first-child) {
 
 		>.wp-block-media-text__content {
 			padding-left: calc((100vw - var(--wp--style--global--content-size)) / 2);
+		}
+	}
+}
+
+// Featured
+.wp-block-group {
+	// Stats
+	&.scg-stats {
+
+		@include breakpoints.break-wide {
+			max-width: calc(0.7 * var(--wp--style--global--content-size, 100%));
 		}
 	}
 }
