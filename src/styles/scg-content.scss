@@ -60,3 +60,8 @@ a {
 		drop-shadow(-1px 1px 0 currentcolor)
 		drop-shadow(1px 1px 0 currentcolor);
 }
+
+// Safe SVG.
+.safe-svg-cover svg {
+	fill: none;
+}

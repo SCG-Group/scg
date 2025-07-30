@@ -46,6 +46,10 @@ body:has(.entry-content > .scg-featured:first-child) {
 
 	@media (max-width: calc(#{breakpoints.$break-mobile-layout} - 1px)) {
 		grid-template-columns: 1fr;
+
+		> :is(*, div) {
+			grid-column: 1;
+		}
 	}
 }
 
@@ -72,5 +76,23 @@ body:has(.entry-content > .scg-featured:first-child) {
 		@include breakpoints.break-wide {
 			max-width: calc(0.7 * var(--wp--style--global--content-size, 100%));
 		}
+	}
+}
+
+// Border.
+.scg-border {
+	border-style: solid;
+	border-width: 4px;
+
+	&--accent {
+		border-color: var(--wp--preset--color--accent);
+	}
+}
+
+// Box.
+.scg-box {
+
+	&__content {
+		min-width: 200px;
 	}
 }
