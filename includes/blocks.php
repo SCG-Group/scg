@@ -34,29 +34,11 @@ function add_block_category( $categories ) {
  * Register theme blocks
  */
 function init_blocks() {
-	$blocks = array( 'carousel', 'logo' );
+	$blocks = array( 'carousel', 'logo', 'header' );
 
 	foreach ( $blocks as $block_name ) {
 		register_block_type( get_theme_file_path( "/build/blocks/{$block_name}" ) );
 	}
-}
-
-/**
- * Allow additional blocks inside core/navigation.
- *
- * @param array $metadata Metadata for registering a block type.
- * @return array
- */
-function modify_navigation_allowed_blocks( $metadata ) {
-
-	// Only apply the filter to Heading blocks.
-	if ( ! isset( $metadata['name'] ) || 'core/navigation' !== $metadata['name'] ) {
-		return $metadata;
-	}
-
-	$metadata['allowedBlocks'] = array_merge( $metadata['allowedBlocks'], array( 'scg/logo', 'core/template-part' ) );
-
-	return $metadata;
 }
 
 /**
@@ -106,6 +88,23 @@ function modify_carousel_block_render( $block_content ) {
 	if ( $tags->next_tag( array( 'class_name' => 'wp-block-scg-carousel' ) ) ) {
 		$tags->set_attribute( 'data-wp-interactive', 'scg/carousel' );
 		$tags->set_attribute( 'data-wp-init', 'callbacks.initCarousel' );
+	}
+
+	return $tags->get_updated_html();
+}
+
+/**
+ * Modify scg/header block to add scroll event when element is transparent.
+ *
+ * @param string $block_content The block content.
+ * @return string
+ */
+function modify_header_block_render( $block_content ) {
+	$tags = new \WP_HTML_Tag_Processor( $block_content );
+
+	if ( $tags->next_tag( array( 'class_name' => 'is-style-transparent' ) ) ) {
+		$tags->set_attribute( 'data-wp-bind--data-is-scrolled', 'context.isScrolled' );
+		$tags->set_attribute( 'data-wp-on-async-document--scroll', 'callbacks.onScroll' );
 	}
 
 	return $tags->get_updated_html();

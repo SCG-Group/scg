@@ -1,11 +1,21 @@
-:root :where(.wp-site-blocks) > main,
 :root :where(.is-layout-flow) > *:empty {
 	margin-top: 0;
+}
+
+.wp-site-blocks main {
+	margin: 0;
 }
 
 .wp-block-cover.scg-featured {
 
 	.wp-block-post-excerpt__more-text {
 		display: none;
+	}
+}
+
+.scg-site-header {
+
+	&.block-editor-block-list__block {
+		position: fixed;
 	}
 }

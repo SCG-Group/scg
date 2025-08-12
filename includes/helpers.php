@@ -32,3 +32,13 @@ function sanitize_svg() {
 	);
 	return array_merge( $kses_defaults, $svg_args );
 }
+
+/**
+ * Sanitizes SVG element - wp_kses helper.
+ *
+ * @param string $content HTML content to sanitize.
+ * @return string Sanitized HTML.
+ */
+function wp_kses_svg( $content ) {
+	return wp_kses( $content, sanitize_svg() );
+}

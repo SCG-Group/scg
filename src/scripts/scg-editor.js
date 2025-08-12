@@ -5,14 +5,14 @@ import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 
 // Add block styles to core blocks.
-registerBlockStyle( 'core/navigation-link', {
-	name: 'main',
-	label: __( 'Main Navigation', 'scg' ),
-} );
-
 registerBlockStyle( 'core/list', {
 	name: 'spaced',
 	label: __( 'Spaced', 'scg' ),
+} );
+
+registerBlockStyle( 'core/navigation', {
+	name: 'main',
+	label: __( 'Main Navigation', 'scg' ),
 } );
 
 // Register block variations.
