@@ -1,60 +1,5 @@
 @use "utils/breakpoints";
 
-// Page splash.
-.scg-featured {
-	padding: var(--navigation--height) 0 0;
-
-	.wp-block-cover {
-
-		&__inner-container {
-			padding: var(--wp--preset--spacing--80) 0;
-		}
-
-		&__background {
-			background-color: #000;
-		}
-	}
-
-	&:is(.has-custom-content-position.is-position-bottom-center) {
-		align-items: unset;
-
-		.wp-block-cover {
-
-			&__inner-container {
-				width: 100%;
-			}
-		}
-
-		.wp-block-columns {
-			height: 100%;
-
-			.wp-block-column:last-child {
-				align-self: end;
-			}
-		}
-	}
-
-	&--page-splash {
-		background-color: var(--wp--preset--color--base);
-		padding-bottom: var(--navigation--height);
-	}
-
-	&:not(.scg-featured--page-splash) {
-
-		.wp-block-cover {
-
-			&__image-background,
-			&__background {
-				top: var(--navigation--height);
-			}
-
-			&__image-background.has-parallax {
-				background-position: center top !important;
-			}
-		}
-	}
-}
-
 // Grid layout on mobile.
 .wp-block-group.is-layout-grid {
 
@@ -83,6 +28,54 @@
 }
 
 // Featured
+.wp-block-cover {
+	padding: var(--navigation--height) 0 0;
+	background-color: var(--wp--preset--color--base);
+
+	&__inner-container {
+		padding: var(--wp--preset--spacing--80) 0;
+		width: 100%;
+	}
+
+	&__background {
+		background-color: #000;
+	}
+
+	// Override default fixed background position settings.
+	&__image-background.has-parallax {
+		background-position: center top !important;
+	}
+
+	// Section splash.
+	&.is-style-section-splash {
+		align-items: unset;
+		justify-content: unset;
+
+		.wp-block-cover {
+
+			// Override content position settings.
+			&__inner-container {
+				margin-left: auto !important;
+				margin-right: auto !important;
+				width: 100% !important;
+			}
+		}
+
+		.wp-block-columns {
+			height: 100%;
+
+			.wp-block-column:last-child {
+				align-self: end;
+			}
+		}
+	}
+
+	// Page splash.
+	&.is-style-page-splash {
+		padding-bottom: var(--navigation--height);
+	}
+}
+
 .wp-block-group {
 	// Stats
 	&.scg-stats {

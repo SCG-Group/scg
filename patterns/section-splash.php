@@ -10,8 +10,8 @@
  */
 
 ?>
-<!-- wp:cover {"hasParallax":true,"dimRatio":20,"overlayColor":"#000000","customOverlayColor":"#000000","isUserOverlayColor":true,"minHeight":100,"minHeightUnit":"vh","contentPosition":"bottom center","tagName":"section","sizeSlug":"large","metadata":{"categories":["featured"],"patternName":"scg/section-splash","name":"Section Splash"},"align":"full","className":"scg-featured","layout":{"type":"constrained"}} -->
-<section class="wp-block-cover alignfull has-parallax has-custom-content-position is-position-bottom-center scg-featured" style="min-height:100vh">
+<!-- wp:cover {"hasParallax":true,"dimRatio":20,"overlayColor":"#000000","customOverlayColor":"#000000","isUserOverlayColor":true,"minHeight":100,"minHeightUnit":"vh","tagName":"section","sizeSlug":"large","metadata":{"categories":["featured"],"patternName":"scg/section-splash","name":"Section Splash"},"align":"full","className":"scg-featured","layout":{"type":"constrained"}} -->
+<section class="wp-block-cover alignfull has-parallax is-style-section-splash" style="min-height:100vh">
 	<span aria-hidden="true" class="wp-block-cover__background has-000000-background-color has-background-dim-20 has-background-dim"></span>
 	<div class="wp-block-cover__inner-container">
 	<!-- wp:columns -->

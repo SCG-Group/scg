@@ -15,6 +15,16 @@ registerBlockStyle( 'core/navigation', {
 	label: __( 'Main Navigation', 'scg' ),
 } );
 
+registerBlockStyle( 'core/cover', {
+	name: 'page-splash',
+	label: __( 'Page Splash', 'scg' ),
+} );
+
+registerBlockStyle( 'core/cover', {
+	name: 'section-splash',
+	label: __( 'Section Splash', 'scg' ),
+} );
+
 // Register block variations.
 registerBlockVariation( 'core/spacer', {
 	name: 'scg/spacer',

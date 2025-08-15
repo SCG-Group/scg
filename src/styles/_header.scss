@@ -9,3 +9,15 @@
 		position: fixed;
 	}
 }
+
+body:has(.scg-site-header) {
+
+	.wp-block-cover:not(.is-style-page-splash) {
+		background-color: unset;
+
+		.wp-block-cover__image-background,
+		.wp-block-cover__background {
+			top: var(--navigation--height);
+		}
+	}
+}
