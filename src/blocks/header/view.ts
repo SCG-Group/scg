@@ -94,7 +94,7 @@ const { callbacks } = store( 'scg/header', {
 							y: 10,
 						} )
 						.to( MOBILE_NAVIGATION, {
-							height: '100vh',
+							height: 'calc(100vh - var(--wp-admin--admin-bar--height, 0px))',
 							scaleY: 1,
 							duration: 0.5,
 							ease: 'back.out',

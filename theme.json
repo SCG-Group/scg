@@ -139,14 +139,18 @@
 							"fontStyle": "normal",
 							"fontWeight": "400",
 							"fontDisplay": "swap",
-							"src": ["file:./assets/fonts/InterTight-VariableFont_wght.woff2"]
+							"src": [
+								"file:./assets/fonts/InterTight-VariableFont_wght.woff2"
+							]
 						},
 						{
 							"fontFamily": "Inter Tight",
 							"fontStyle": "normal",
 							"fontWeight": "700",
 							"fontDisplay": "swap",
-							"src": ["file:./assets/fonts/InterTight-VariableFont_wght.woff2"]
+							"src": [
+								"file:./assets/fonts/InterTight-VariableFont_wght.woff2"
+							]
 						}
 					],
 					"fontFamily": "Inter Tight, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif",
@@ -160,7 +164,9 @@
 							"fontStyle": "normal",
 							"fontWeight": "300",
 							"fontDisplay": "swap",
-							"src": ["file:./assets/fonts/InterTight-VariableFont_wght.woff2"]
+							"src": [
+								"file:./assets/fonts/InterTight-VariableFont_wght.woff2"
+							]
 						}
 					],
 					"fontFamily": "Inter Tight Light, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif",
@@ -174,7 +180,9 @@
 							"fontStyle": "italic",
 							"fontWeight": "800",
 							"fontDisplay": "swap",
-							"src": ["file:./assets/fonts/InterTight-ExtraBoldItalic.woff2"]
+							"src": [
+								"file:./assets/fonts/InterTight-ExtraBoldItalic.woff2"
+							]
 						}
 					],
 					"fontFamily": "Inter Tight Italic, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif",
@@ -390,7 +398,7 @@
 	"customTemplates": [
 		{
 			"name": "page-no-title",
-			"postTypes": ["page"],
+			"postTypes": [ "page" ],
 			"title": "Page w/o title"
 		}
 	],

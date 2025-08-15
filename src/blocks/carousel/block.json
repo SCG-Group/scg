@@ -7,7 +7,7 @@
 	"category": "scg",
 	"description": "Image carousel block.",
 	"example": {},
-	"allowedBlocks": ["core/image"],
+	"allowedBlocks": [ "core/image" ],
 	"attributes": {
 		"spacing": {
 			"type": "object",
@@ -18,7 +18,7 @@
 	},
 	"supports": {
 		"html": false,
-		"align": ["wide", "full"],
+		"align": [ "wide", "full" ],
 		"spacing": {
 			"blockGap": true
 		},

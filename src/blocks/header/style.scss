@@ -7,7 +7,7 @@
 
 		&__bg {
 			transform: scale(1);
-			height: 100vh;
+			height: calc(100vh - var(--wp-admin--admin-bar--height, 0px));
 			border: var(--navigation--border);
 			transition: none;
 		}
@@ -51,17 +51,9 @@
 		transform: scale(1);
 		transform-origin: top;
 
-		@include t.transition(transform);
-	}
+		border-bottom: 2px solid var(--wp--custom--border--base);
 
-	&::after {
-		content: "";
-		height: 2px;
-		background-color: var(--wp--custom--border--base);
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		@include t.transition(transform);
 	}
 
 	@media (max-width: calc(breakpoints.$break-mobile-layout - 1px)) {
@@ -158,10 +150,7 @@
 
 		.wp-block-scg-header__bg {
 			transform: scale(1, 0);
-		}
-
-		&::after {
-			content: none;
+			border: 0;
 		}
 	}
 

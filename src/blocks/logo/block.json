@@ -13,7 +13,7 @@
 			"default": true
 		},
 		"url": {
-			"type":"string"
+			"type": "string"
 		}
 	},
 	"styles": [

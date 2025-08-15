@@ -10,10 +10,12 @@
 	"supports": {
 		"interactivity": true
 	},
-	"styles": [{
-		"name": "transparent",
-		"label": "Transparent"
-	}],
+	"styles": [
+		{
+			"name": "transparent",
+			"label": "Transparent"
+		}
+	],
 	"textdomain": "scg",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
