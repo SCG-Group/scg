@@ -1,5 +1,7 @@
 import { store, getElement } from '@wordpress/interactivity';
 
+const ANIMATION_TIME_PER_CHILD = 10;
+
 store( 'scg/carousel', {
 	callbacks: {
 		initCarousel( element?: HTMLElement ) {
@@ -10,6 +12,9 @@ store( 'scg/carousel', {
 
 			if ( el.clientWidth < wrapper.offsetWidth ) {
 				wrapper.style.animationPlayState = 'running';
+				wrapper.style.animationDuration = `${
+					wrapper.children.length * ANIMATION_TIME_PER_CHILD
+				}s`;
 			}
 		},
 	},

@@ -1,13 +1,14 @@
 import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 
 export default function () {
+	const blockProps = useBlockProps.save();
+	const innerBlocksProps = useInnerBlocksProps.save( {
+		className: 'wp-block-scg-carousel__wrapper',
+	} );
+
 	return (
-		<section { ...useBlockProps.save() }>
-			<div
-				{ ...useInnerBlocksProps.save( {
-					className: 'wp-block-scg-carousel__wrapper',
-				} ) }
-			/>
+		<section { ...blockProps }>
+			<div { ...innerBlocksProps } />
 		</section>
 	);
 }
