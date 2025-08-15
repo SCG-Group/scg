@@ -16,9 +16,8 @@ use function SCG\wp_kses_svg;
 // Generates a unique id for aria-controls.
 $unique_id = wp_unique_id( 'p-' );
 $context   = array(
-	'isOpen'            => false,
-	'isScrolled'        => false,
-	'animationTimeline' => null,
+	'isOpen'     => false,
+	'isScrolled' => false,
 );
 
 ?>

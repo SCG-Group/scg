@@ -11,20 +11,27 @@ const MOBILE_MENU = '.wp-block-scg-header__menu';
 const MOBILE_NAVIGATION = '.wp-block-scg-header__bg';
 const LOGO_PATH = '.wp-block-scg-logo .scg-logo--main';
 
-store( 'scg/header', {
+interface HeaderContext {
+	isOpen: boolean;
+	isScrolled: boolean;
+	animationTimeline?: gsap.core.Timeline;
+	element: HTMLElement;
+}
+
+const { callbacks } = store( 'scg/header', {
 	actions: {
 		toggleOpen: () => {
-			const ctx = getContext();
+			const ctx = getContext< HeaderContext >();
 			ctx.isOpen = ! ctx.isOpen;
 		},
 	},
 	callbacks: {
 		onScroll: () => {
-			const ctx = getContext();
+			const ctx = getContext< HeaderContext >();
 			ctx.isScrolled = window.scrollY > 0;
 		},
 		onResize: () => {
-			const ctx = getContext();
+			const ctx = getContext< HeaderContext >();
 
 			if ( window.innerWidth >= MOBILE_BREAKPOINT ) {
 				ctx.isOpen = false;
@@ -32,14 +39,15 @@ store( 'scg/header', {
 		},
 		// Set initial context.
 		onInit: () => {
-			const ctx = getContext();
+			const ctx = getContext< HeaderContext >();
 
+			ctx.element = getElement().ref as HTMLElement;
 			ctx.isScrolled = window.scrollY > 0;
 			ctx.animationTimeline = gsap.timeline();
 		},
 		// Handle context changes.
 		onChange: () => {
-			const ctx = getContext();
+			const ctx = getContext< HeaderContext >();
 
 			if ( ctx.isOpen ) {
 				document.documentElement.classList.add( MODAL_OPEN );
@@ -57,39 +65,27 @@ store( 'scg/header', {
 		},
 		// Close mobile menu when user clicks on link inside block content.
 		handleLinkClick: () => {
-			const ctx = getContext();
-			const elements = getElement().ref.querySelectorAll( MENU_LINKS );
+			const ctx = getContext< HeaderContext >();
+			const links = ctx.element.querySelectorAll( MENU_LINKS );
 
-			for ( const element of Array.from( elements ) ) {
-				element.addEventListener( 'click', () => {
+			for ( const link of Array.from( links ) ) {
+				link.addEventListener( 'click', () => {
 					ctx.isOpen = false;
 				} );
 			}
 		},
 		// Mobile menu animation.
 		initAnimation: () => {
-			const ctx = getContext();
-			const element = getElement().ref;
+			const ctx = getContext< HeaderContext >();
 			const animation = gsap.matchMedia();
-			const startCallback = () => {
-				window.requestAnimationFrame( () => {
-					element.querySelector(
-						MOBILE_NAVIGATION
-					).style.transition = 'none';
-				} );
-			};
-			const reverseCompleteCallback = () => {
-				ctx.animationTimeline.revert();
-				window.requestAnimationFrame( () => {
-					element.querySelector(
-						MOBILE_NAVIGATION
-					).style.transition = '';
-				} );
-			};
 
 			animation.add(
 				ANIMATION_MEDIA_QUERY,
 				() => {
+					if ( ! ctx.animationTimeline ) {
+						return;
+					}
+
 					ctx.animationTimeline.pause();
 
 					ctx.animationTimeline
@@ -135,16 +131,56 @@ store( 'scg/header', {
 							},
 							'-=0.35'
 						)
-						.eventCallback( 'onStart', startCallback )
-						.eventCallback(
-							'onReverseComplete',
-							reverseCompleteCallback
-						);
+						.eventCallback( 'onStart', () => {
+							callbacks.toggleOverlay(
+								ctx.element,
+								MOBILE_NAVIGATION
+							);
+						} )
+						.eventCallback( 'onReverseComplete', () => {
+							callbacks.resetAnimation(
+								ctx.element,
+								ctx.animationTimeline
+							);
+						} );
 
-					return reverseCompleteCallback;
+					return () => {
+						callbacks.resetAnimation(
+							ctx.element,
+							ctx.animationTimeline
+						);
+					};
 				},
-				element
+				ctx.element
 			);
+		},
+		// Toggle menu overlay transition, so that it works back on scroll changes.
+		toggleOverlay: (
+			element: HTMLElement | null,
+			selector: string,
+			disable = true
+		) => {
+			if ( ! element ) {
+				return;
+			}
+
+			window.requestAnimationFrame( () => {
+				const el = element.querySelector< HTMLElement >( selector );
+
+				if ( el ) {
+					el.style.transition = disable ? 'none' : '';
+				}
+			} );
+		},
+		resetAnimation: (
+			element: HTMLElement | null,
+			animationTimeline: HeaderContext[ 'animationTimeline' ]
+		) => {
+			if ( animationTimeline ) {
+				animationTimeline.revert();
+			}
+
+			callbacks.toggleOverlay( element, MOBILE_NAVIGATION, false );
 		},
 	},
 } );
