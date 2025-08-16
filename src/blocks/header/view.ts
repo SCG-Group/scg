@@ -96,7 +96,7 @@ const { callbacks } = store( 'scg/header', {
 						.to( MOBILE_NAVIGATION, {
 							height: 'calc(100vh - var(--wp-admin--admin-bar--height, 0px))',
 							scaleY: 1,
-							duration: 0.5,
+							duration: 0.65,
 							ease: 'back.out',
 						} )
 						.to( LOGO_PATH, {
@@ -127,7 +127,7 @@ const { callbacks } = store( 'scg/header', {
 							{
 								border: 'var(--navigation--border)',
 								ease: 'back.out',
-								duration: 0.35,
+								duration: 0.5,
 							},
 							'-=0.35'
 						)
