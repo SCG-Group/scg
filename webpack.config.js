@@ -28,11 +28,6 @@ module.exports = [
 					'src/styles',
 					'scg-content.scss'
 				),
-				'scg-scripts': path.resolve(
-					process.cwd(),
-					'src/scripts',
-					'scg.js'
-				),
 				'scg-editor': path.resolve(
 					process.cwd(),
 					'src/styles',
@@ -56,6 +51,18 @@ module.exports = [
 			],
 			stats: {
 				warnings: false,
+			},
+		},
+	},
+	{
+		...moduleConfig,
+		...{
+			entry: {
+				'scg-scripts': path.resolve(
+					process.cwd(),
+					'src/scripts',
+					'scg.ts'
+				),
 			},
 		},
 	},
