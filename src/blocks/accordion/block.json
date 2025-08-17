@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "scg/accordion",
+	"version": "0.1.0",
+	"title": "SCG Accordion",
+	"category": "scg",
+	"description": "Block containing collapisble elements with summary and content.",
+	"allowedBlocks": [ "scg/details", "core/spacer" ],
+	"example": {},
+	"supports": {
+		"interactivity": true,
+		"layout": true,
+		"spacing": {
+			"blockGap": true
+		}
+	},
+	"textdomain": "scg",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

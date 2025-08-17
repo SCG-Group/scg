@@ -40,6 +40,8 @@ add_filter( 'render_block_core/cover', __NAMESPACE__ . '\modify_cover_block_rend
 add_filter( 'register_block_type_args', __NAMESPACE__ . '\modify_heading_block_levels', 10, 2 );
 add_filter( 'render_block_scg/carousel', __NAMESPACE__ . '\modify_carousel_block_render' );
 add_filter( 'render_block_scg/header', __NAMESPACE__ . '\modify_header_block_render' );
+add_filter( 'render_block_scg/accordion', __NAMESPACE__ . '\modify_accordion_block_render', 10, 2 );
+add_filter( 'render_block_scg/details', __NAMESPACE__ . '\modify_details_block_render', 10, 2 );
 
 /**
  * Patterns.

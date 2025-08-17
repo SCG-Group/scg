@@ -120,3 +120,14 @@ a {
 		}
 	}
 }
+
+// Columns.
+.wp-block-column {
+
+	@media (max-width: calc(breakpoints.$break-mobile-layout - 1px)) {
+
+		&:empty {
+			display: none;
+		}
+	}
+}

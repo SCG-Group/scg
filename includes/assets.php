@@ -90,10 +90,10 @@ function enqueue_block_editor_assets() {
 	$script          = include get_theme_file_path( $script_dep_path );
 
 	if ( $script ) {
-		wp_enqueue_script_module(
+		wp_enqueue_script(
 			'scg-editor-scripts',
 			get_theme_file_uri( $script_uri ),
-			$script['dependencies'],
+			array_merge( $script['dependencies'], array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ) ),
 			$script['version'] ?? SCG_THEME_VERSION
 		);
 	}

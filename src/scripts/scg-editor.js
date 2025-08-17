@@ -1,8 +1,17 @@
 // Editor scripts.
 import { __ } from '@wordpress/i18n';
-import { registerBlockStyle, registerBlockVariation } from '@wordpress/blocks';
+import {
+	registerBlockStyle,
+	registerBlockVariation,
+	unregisterBlockType,
+} from '@wordpress/blocks';
 import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
+import domReady from '@wordpress/dom-ready';
+
+domReady( function () {
+	unregisterBlockType( 'core/details' );
+} );
 
 // Add block styles to core blocks.
 registerBlockStyle( 'core/list', {

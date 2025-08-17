@@ -1,0 +1,33 @@
+.wp-block-scg-details {
+
+	&[data-open="false"],
+	&:not([data-open]) {
+
+		> .wp-block-scg-details__content {
+			display: none;
+		}
+	}
+
+	&.is-selected,
+	&.has-child-selected {
+
+		> .wp-block-scg-details__content {
+			display: flex;
+		}
+	}
+
+	&__summary {
+
+		&:hover {
+			cursor: default;
+		}
+
+		&:active :where(p, .marker) {
+			opacity: 1;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+}

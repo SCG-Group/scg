@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "scg/details",
+	"version": "0.1.0",
+	"title": "SCG Details",
+	"category": "scg",
+	"description": "Collapsible block with summary and content.",
+	"example": {},
+	"attributes": {
+		"isOpen": {
+			"type": "boolean",
+			"default": false
+		},
+		"summary": {
+			"type": "rich-text",
+			"source": "rich-text",
+			"selector": ".wp-block-scg-details__summary > p",
+			"role": "content"
+		},
+		"hasIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"icon": {
+			"type": "string",
+			"default": "/wp-content/themes/scg/assets/images/details-icon.svg"
+		},
+		"iconId": {
+			"type": "number"
+		}
+	},
+	"supports": {
+		"interactivity": true
+	},
+	"textdomain": "scg",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScriptModule": "file:./view.ts"
+}
