@@ -1,0 +1,103 @@
+@use "../../styles/utils/breakpoints" as b;
+
+.wp-block-scg-cert-viewer {
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	top: var(--wp-admin--admin-bar--height, 0);
+	z-index: 1001;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&[hidden] {
+		display: none;
+	}
+
+	&__modal {
+		max-width: 1280px;
+		width: 87.5%;
+		height: 87.5%;
+		margin: auto;
+		overflow: hidden;
+		position: relative;
+		z-index: 2;
+		background: var(--wp--preset--color--white);
+		display: flex;
+		flex-direction: column;
+
+		&[hidden] {
+			display: none;
+		}
+
+		footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			column-gap: var(--wp--style--block-gap);
+			flex-wrap: wrap;
+
+			button {
+				border: none;
+				background: none;
+				padding: var(--wp--preset--spacing--16);
+				cursor: pointer;
+			}
+		}
+
+		&-close {
+			flex-grow: 1;
+			display: flex;
+			justify-content: end;
+		}
+	}
+
+	&__loading,
+	&__backdrop {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	&__backdrop {
+		background: var(--wp--custom--border--base);
+		cursor: n-resize;
+	}
+
+	&__loading {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+
+		&[hidden] {
+			display: none;
+		}
+	}
+
+	&__canvas {
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		display: flex;
+		align-items: center;
+	}
+
+	canvas {
+		display: block;
+		margin: auto;
+
+		&[hidden] {
+			display: none;
+		}
+	}
+
+	&__error {
+		width: 100%;
+		text-align: center;
+	}
+}

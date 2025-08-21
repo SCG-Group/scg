@@ -1,8 +1,8 @@
 import { store, getElement, getContext } from '@wordpress/interactivity';
 import { gsap } from 'gsap';
+import { MODAL_OPEN } from '../../scripts/constants.ts';
 
 const MOBILE_BREAKPOINT = 782;
-const MODAL_OPEN = 'has-modal-open';
 const MENU_LINKS = 'a:not([target="_blank"])';
 const ANIMATION_MEDIA_QUERY = `(max-width: ${ MOBILE_BREAKPOINT }px) and (prefers-reduced-motion: no-preference)`;
 const MENU_ITEMS =

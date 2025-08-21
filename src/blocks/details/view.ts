@@ -1,10 +1,10 @@
 import { store, getElement, getContext } from '@wordpress/interactivity';
 import gsap from 'gsap';
+import { REDUCED_MOTION_QUERY } from '../../scripts/constants.ts';
 
 const CONTENT = ':scope > .wp-block-scg-details__content';
 const CONTENT_ELEMENTS =
 	':scope > .wp-block-scg-details__content .wp-block-column > *';
-const ANIMATION_QUERY = '(prefers-reduced-motion: no-preference)';
 
 interface Details {
 	/* is open */
@@ -99,7 +99,7 @@ const { state, actions } = store( 'scg/details', {
 			ctx.animation = gsap.timeline();
 
 			gsap.matchMedia().add(
-				ANIMATION_QUERY,
+				REDUCED_MOTION_QUERY,
 				() => {
 					ctx.animation.pause();
 					ctx.animation

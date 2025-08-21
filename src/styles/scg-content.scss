@@ -131,3 +131,17 @@ a {
 		}
 	}
 }
+
+// Block state helpers.
+html.has-modal-open {
+	overflow: hidden;
+}
+
+// Aria.
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+}

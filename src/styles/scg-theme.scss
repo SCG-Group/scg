@@ -32,13 +32,3 @@
 		transform: translate3d(calc(100vw - 100%), 0, 0);
 	}
 }
-
-// @media (prefers-reduced-motion: no-preference) {
-
-// 	details {
-
-// 		> *:not(summary) {
-// 			visibility: hidden;
-// 		}
-// 	}
-// }

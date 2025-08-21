@@ -34,7 +34,7 @@ function add_block_category( $categories ) {
  * Register theme blocks
  */
 function init_blocks() {
-	$blocks = array( 'carousel', 'logo', 'header', 'details', 'accordion' );
+	$blocks = array( 'carousel', 'logo', 'header', 'details', 'accordion', 'cert', 'cert-viewer' );
 
 	foreach ( $blocks as $block_name ) {
 		register_block_type( get_theme_file_path( "/build/blocks/{$block_name}" ) );
@@ -185,7 +185,7 @@ function modify_accordion_block_render( $block_content ) {
 }
 
 /**
- * Modify scg/accordion block to add name attribute to details.
+ * Add interactivity to scg/accordion block.
  *
  * @param string $block_content The block content.
  * @param array  $block The full block, including name and attributes.
@@ -224,4 +224,47 @@ function modify_details_block_render( $block_content, $block ) {
 	}
 
 	return $tags->get_updated_html();
+}
+
+/**
+ * Add interactivity to scg/cert block.
+ *
+ * @param string $block_content The block content.
+ * @param array  $block The full block, including name and attributes.
+ * @return string
+ */
+function modify_cert_block_render( $block_content, $block ) {
+	$tags    = new \WP_HTML_Tag_Processor( $block_content );
+	$context = array(
+		'certUrl' => $block['attrs']['cert'] ?? false,
+	);
+
+	if ( $tags->next_tag( array( 'class_name' => 'wp-block-scg-cert' ) ) ) {
+		$tags->set_attribute( 'data-wp-interactive', 'scg/cert-viewer' );
+		$tags->set_attribute( 'data-wp-context', wp_json_encode( $context ) );
+	}
+
+	if ( $tags->next_tag( array( 'class_name' => 'wp-block-scg-cert__details' ) ) ) {
+		$tags->set_attribute( 'data-wp-on-async--click', 'actions.onCertClick' );
+		$tags->set_attribute( 'tabindex', '0' );
+	}
+
+	return $tags->get_updated_html();
+}
+
+/**
+ * Move scg/cert-viewer to document footer.
+ *
+ * @param string $block_content The block content.
+ * @return string
+ */
+function modify_cert_viewer_block_render( $block_content ) {
+	add_action(
+		'wp_footer',
+		function () use ( $block_content ) {
+			echo $block_content; // @codingStandardsIgnoreLine.
+		}
+	);
+
+	return '';
 }
