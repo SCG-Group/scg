@@ -103,3 +103,19 @@
 		min-width: 200px;
 	}
 }
+
+// Fleet model row.
+.scg-fleet-model {
+
+	@media ((min-width: breakpoints.$break-small) and (max-width: breakpoints.$break-xlarge)) {
+
+		.wp-block-image {
+			grid-column: span 4;
+		}
+
+		p,
+		ul {
+			grid-column: span 2;
+		}
+	}
+}
