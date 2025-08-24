@@ -34,7 +34,7 @@ function add_block_category( $categories ) {
  * Register theme blocks
  */
 function init_blocks() {
-	$blocks = array( 'carousel', 'logo', 'header', 'details', 'accordion', 'cert', 'cert-viewer' );
+	$blocks = array( 'carousel', 'logo', 'header', 'details', 'accordion', 'cert', 'cert-viewer', 'contact' );
 
 	foreach ( $blocks as $block_name ) {
 		register_block_type( get_theme_file_path( "/build/blocks/{$block_name}" ) );
@@ -267,4 +267,33 @@ function modify_cert_viewer_block_render( $block_content ) {
 	);
 
 	return '';
+}
+
+/**
+ * Add interactivity to scg/contact block.
+ *
+ * @param string $block_content The block content.
+ * @param array  $block The full block, including name and attributes.
+ * @return string
+ */
+function modify_contact_block_render( $block_content, $block ) {
+	$tags    = new \WP_HTML_Tag_Processor( $block_content );
+	$context = array(
+		'lat'    => $block['attrs']['lat'],
+		'lng'    => $block['attrs']['lng'],
+		'apiKey' => get_option( 'google_maps_api_key' ),
+		'mapId'  => get_option( 'google_maps_map_id' ),
+	);
+
+	if ( $tags->next_tag( array( 'class_name' => 'wp-block-scg-contact' ) ) ) {
+		$tags->set_attribute( 'data-wp-interactive', 'scg/contact' );
+		$tags->set_attribute( 'data-wp-context', wp_json_encode( $context ) );
+	}
+
+	if ( $tags->next_tag( array( 'class_name' => 'wp-block-scg-contact__map' ) ) ) {
+		$tags->set_attribute( 'data-wp-init--setup', 'callbacks.setupMaps' );
+		$tags->set_attribute( 'data-wp-init', 'callbacks.initMap' );
+	}
+
+	return $tags->get_updated_html();
 }

@@ -277,12 +277,6 @@
 		},
 		"useRootPaddingAwareAlignments": false,
 		"blocks": {
-			"scg/fullscreen-image": {
-				"background": {
-					"backgroundImage": true,
-					"backgroundSize": true
-				}
-			},
 			"core/group": {
 				"spacing": {
 					"padding": true,

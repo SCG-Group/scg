@@ -17,6 +17,10 @@ main {
 	margin: 0;
 }
 
+:where(.wp-site-blocks) > footer {
+	margin-top: 0;
+}
+
 // Global
 a {
 

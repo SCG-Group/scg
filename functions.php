@@ -44,8 +44,14 @@ add_filter( 'render_block_scg/accordion', __NAMESPACE__ . '\modify_accordion_blo
 add_filter( 'render_block_scg/details', __NAMESPACE__ . '\modify_details_block_render', 10, 2 );
 add_filter( 'render_block_scg/cert', __NAMESPACE__ . '\modify_cert_block_render', 10, 2 );
 add_filter( 'render_block_scg/cert-viewer', __NAMESPACE__ . '\modify_cert_viewer_block_render' );
+add_filter( 'render_block_scg/contact', __NAMESPACE__ . '\modify_contact_block_render', 10, 2 );
 
 /**
  * Patterns.
  */
 add_filter( 'should_load_remote_block_patterns', '__return_false' );
+
+/**
+ * Settings.
+ */
+add_action( 'admin_init', __NAMESPACE__ . '\add_google_maps_settings' );
