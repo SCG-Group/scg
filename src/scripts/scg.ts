@@ -3,12 +3,22 @@ import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 const ANCHOR_LINKS = 'a[href*="#"]';
+const AT_MASK = '$$$';
+const MAILTO_MASK = 'mailto:%%%';
+const TEL_MASK = 'tel:&&&';
+const CONTACT_LINKS = `a[href*="${ AT_MASK }"], a[href^="${ MAILTO_MASK }"], a[href^="${ TEL_MASK }"]`;
 const getSamePageHash = ( url: string ) => {
 	const parsed = new URL( url, String( window.location ) );
 	return parsed.origin === window.location.origin &&
 		parsed.pathname === window.location.pathname
 		? parsed.hash
 		: '';
+};
+const getContactLink = ( href: string ) => {
+	return href
+		.replace( AT_MASK, '@' )
+		.replace( MAILTO_MASK, 'mailto:' )
+		.replace( TEL_MASK, 'tel:' );
 };
 
 const { actions, callbacks } = store( 'scg', {
@@ -34,11 +44,17 @@ const { actions, callbacks } = store( 'scg', {
 			}
 
 			// Handle internal links.
+			callbacks.handleInternalLinks();
+
+			// Handle contact links.
+			callbacks.handleContactLinks();
+		},
+		handleInternalLinks: () => {
 			gsap.registerPlugin( ScrollToPlugin );
 
-			const links = document.querySelectorAll( ANCHOR_LINKS );
+			const internalLinks = document.querySelectorAll( ANCHOR_LINKS );
 
-			for ( const link of Array.from( links ) ) {
+			for ( const link of Array.from( internalLinks ) ) {
 				const hrefHash = link.getAttribute( 'href' ) || '';
 				const hash = getSamePageHash( hrefHash );
 
@@ -48,6 +64,15 @@ const { actions, callbacks } = store( 'scg', {
 						actions.scrollTo( hash );
 					} );
 				}
+			}
+		},
+		handleContactLinks: () => {
+			const contactLinks =
+				document.querySelectorAll< HTMLAnchorElement >( CONTACT_LINKS );
+
+			for ( const link of Array.from( contactLinks ) ) {
+				link.href = getContactLink( link.href );
+				link.innerText = getContactLink( link.innerText );
 			}
 		},
 	},

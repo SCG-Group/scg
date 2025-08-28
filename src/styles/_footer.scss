@@ -2,6 +2,13 @@
 
 .scg-site-footer {
 
+	&__content {
+
+		a {
+			text-decoration: none;
+		}
+	}
+
 	&__bottom {
 		color: var(--wp--custom--color--white-2);
 

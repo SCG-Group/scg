@@ -297,3 +297,18 @@ function modify_contact_block_render( $block_content, $block ) {
 
 	return $tags->get_updated_html();
 }
+
+/**
+ * Masks vulerable elements in link hrefs
+ * * mailto: => $$$
+ * * tel: => &&&
+ * * @ => %%%
+ *
+ * @param string $block_content The block content.
+ * @return string
+ */
+function escape_contact_links( $block_content ) {
+	$result = str_replace( array( '@', 'mailto:', 'tel:' ), array( '$$$', 'mailto:%%%', 'tel:&&&' ), $block_content );
+
+	return $result;
+}

@@ -11,8 +11,8 @@
 ?>
 <!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|128","bottom":"var:preset|spacing|128"},"blockGap":"var:preset|spacing|128"}},"backgroundColor":"base","textColor":"white"} -->
 <div class="wp-block-group is-layout-constrained has-base-background-color has-background has-white-color has-text-color" style="padding-top:var(--wp--preset--spacing--128);padding-bottom:var(--wp--preset--spacing--128);">
-	<!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|32-fixed","left":"var:preset|spacing|32-fixed"}}}} -->
-	<div class="wp-block-columns are-vertically-aligned-center">
+	<!-- wp:columns {"className":"scg-site-footer__content","verticalAlignment":"center","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|32-fixed","left":"var:preset|spacing|32-fixed"}}}} -->
+	<div class="wp-block-columns are-vertically-aligned-center scg-site-footer__content">
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
 			<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"80","fontFamily":"headings"} -->
@@ -23,7 +23,7 @@
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
 			<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"32"} -->
-			<p class="has-32-font-size">For all inquires please contact us at <strong>contact@scgtransport.com</strong> <br>or <strong>0048 539 926 274</strong></p>
+			<p class="has-32-font-size">For all inquires please contact us at <strong><a href="mailto:contact@scgtransport.com">contact@scgtransport.com</a></strong> <br>or <strong><a href="tel:0048539926274">0048 539 926 274</a></strong></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -31,8 +31,8 @@
 	<!-- /wp:columns -->
 	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"className":"scg-footer__bottom","fontSize":"14"} -->
 	<div class="wp-block-group scg-site-footer__bottom has-14-font-size">
-		<!-- wp:group {"className":"scg-site-footer__bottom","layout":{"type":"flex","flexWrap":"wrap"}} -->
-		<div class="wp-block-group scg-site-footer__bottom">
+		<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
+		<div class="wp-block-group">
 			<!-- wp:scg/logo {"isLink":false, "className": "is-style-secondary"} /-->
 			<!-- wp:paragraph -->
 			<p>&copy; <?php echo esc_html( sprintf( '%1$s %2$s %3$s', __( 'Copyright', 'scg' ), gmdate( 'Y' ), get_bloginfo( 'name' ) ) ); ?></p>
