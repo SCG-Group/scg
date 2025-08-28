@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "scg/job-offer",
+	"version": "0.1.0",
+	"title": "SCG Job Offer",
+	"category": "scg",
+	"icon": "smiley",
+	"description": "Block containing a link to external job ad.",
+	"example": {},
+	"attributes": {
+		"url": {
+			"type": "string"
+		},
+		"position": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "scg",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

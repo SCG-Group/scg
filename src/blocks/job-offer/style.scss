@@ -1,0 +1,11 @@
+.wp-block-scg-job-offer {
+	display: flex;
+	gap: var(--wp--style--block-gap);
+	align-items: center;
+	text-decoration: none;
+
+	span {
+		flex-grow: 1;
+		font-weight: 700;
+	}
+}
