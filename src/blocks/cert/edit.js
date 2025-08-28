@@ -2,23 +2,15 @@ import { useBlockProps } from '@wordpress/block-editor';
 import Marker from './marker';
 import Controls from './controls';
 
-export default function Edit( { attributes, setAttributes } ) {
+export default ( props ) => {
 	const blockProps = useBlockProps( {
 		className: 'is-layout-grid',
 	} );
-	const { name, category, img, imgId, certId, certFilename } = attributes;
+	const { name, category, img, certId } = props.attributes;
 
 	return (
 		<>
-			<Controls
-				setAttributes={ setAttributes }
-				category={ category }
-				img={ img }
-				imgId={ imgId }
-				certId={ certId }
-				docName={ certFilename }
-				name={ name }
-			/>
+			<Controls { ...props } />
 			<div { ...blockProps }>
 				{ category && (
 					<div className="wp-block-scg-cert__category">
@@ -40,4 +32,4 @@ export default function Edit( { attributes, setAttributes } ) {
 			</div>
 		</>
 	);
-}
+};
