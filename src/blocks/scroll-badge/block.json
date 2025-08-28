@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "scg/scroll-badge",
+	"version": "0.1.0",
+	"title": "SCG Scroll Badge",
+	"category": "scg",
+	"icon": "media-interactive",
+	"description": "Block prompting viewers to scroll down. Used in splash section of one-page template.",
+	"example": {},
+	"supports": {
+		"interactivity": true
+	},
+	"textdomain": "scg",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
+	"viewScriptModule": "file:./view.ts"
+}

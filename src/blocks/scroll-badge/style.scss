@@ -1,0 +1,53 @@
+:root {
+	--scg-splash--badge--size: clamp(8rem, 8rem + ((100vw - 22.5rem) * 0.06957), calc(1vw + 7.2rem));
+}
+
+.wp-block-scg-scroll-badge {
+	display: flex;
+	width: var(--scg-splash--badge--size);
+	height: var(--scg-splash--badge--size);
+	animation: forwards 0.65s badge-appear ease-in-out;
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	#scg-scroll-badge-arrow {
+		animation: bounce2 1.2s ease infinite 0.65s;
+	}
+}
+
+@keyframes badge-appear {
+
+	0% {
+		transform: scale(0);
+	}
+
+	85% {
+		transform: scale(1.15);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes bounce2 {
+
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-7%);
+	}
+
+	60% {
+		transform: translateY(-4%);
+	}
+}

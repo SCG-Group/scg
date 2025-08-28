@@ -34,7 +34,8 @@ function add_block_category( $categories ) {
  * Register theme blocks
  */
 function init_blocks() {
-	$blocks = array( 'carousel', 'logo', 'header', 'details', 'accordion', 'cert', 'cert-viewer', 'contact', 'job-offer' );
+	$blocks = array( 'carousel', 'logo', 'header', 'details', 'accordion', 'cert', 'cert-viewer', 'contact', 'job-offer', 'scroll-badge' );
+	sort( $blocks );
 
 	foreach ( $blocks as $block_name ) {
 		register_block_type( get_theme_file_path( "/build/blocks/{$block_name}" ) );
@@ -311,4 +312,21 @@ function escape_contact_links( $block_content ) {
 	$result = str_replace( array( '@', 'mailto:', 'tel:' ), array( '$$$', 'mailto:%%%', 'tel:&&&' ), $block_content );
 
 	return $result;
+}
+
+/**
+ * Modify scg/scroll-trigger block to add scroll animation.
+ *
+ * @param string $block_content The block content.
+ * @return string
+ */
+function modify_scroll_badge_block_render( $block_content ) {
+	$tags = new \WP_HTML_Tag_Processor( $block_content );
+
+	if ( $tags->next_tag( array( 'class_name' => 'wp-block-scg-scroll-badge' ) ) ) {
+		$tags->set_attribute( 'data-wp-interactive', 'scg/scroll-badge' );
+		$tags->set_attribute( 'data-wp-init', 'callbacks.initScrollBadge' );
+	}
+
+	return $tags->get_updated_html();
 }
