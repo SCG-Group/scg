@@ -54,3 +54,21 @@ function google_maps_api_key_field() {
 function google_maps_map_id_field() {
 	echo '<input type="text" name="google_maps_map_id" value="' . esc_attr( get_option( 'google_maps_map_id' ) ) . '" class="regular-text" />';
 }
+
+/**
+ * Use webp format for uploaded images.
+ *
+ * @param string[] $formats An array of mime type mappings. Maps a source mime type to a new destination mime type. Default empty array.
+ * @return string[]
+ */
+function use_webp( $formats ) {
+	$formats['image/jpg']           = 'image/webp';
+	$formats['image/jpeg']          = 'image/webp';
+	$formats['image/png']           = 'image/webp';
+	$formats['image/heic']          = 'image/webp';
+	$formats['image/heif']          = 'image/webp';
+	$formats['image/heic-sequence'] = 'image/webp';
+	$formats['image/heif-sequence'] = 'image/webp';
+
+	return $formats;
+}

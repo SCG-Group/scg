@@ -23,6 +23,7 @@ define( 'SCG_THEME_VERSION', '1.0.0' );
  * Setup.
  */
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup_theme' );
+add_filter( 'image_editor_output_format', __NAMESPACE__ . '\use_webp' );
 
 /**
  * Styles and scripts.
