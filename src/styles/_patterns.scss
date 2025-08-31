@@ -1,13 +1,24 @@
 @use "utils/breakpoints";
 
-// Grid layout on mobile.
+// Grid layouts on mobile.
 .wp-block-group.is-layout-grid {
 
-	@media (max-width: calc(#{breakpoints.$break-mobile-layout} - 1px)) {
-		grid-template-columns: 1fr;
+	// Info grid.
+	&.scg-info-grid {
 
-		> :is(*, div) {
-			grid-column: 1;
+		@media (max-width: calc(#{breakpoints.$break-xlarge} - 1px)) {
+			grid-template-columns: repeat(auto-fill, minmax(min(14rem, 100%), 1fr));
+		}
+	}
+
+	&:not(.scg-info-grid) {
+
+		@media (max-width: calc(#{breakpoints.$break-mobile-layout} - 1px)) {
+			grid-template-columns: 1fr;
+
+			> :is(*, div) {
+				grid-column: 1;
+			}
 		}
 	}
 }
