@@ -65,23 +65,9 @@
 		}
 	}
 
-	.wp-block-column {
-
-		&:first-child {
-			padding-top: var(--wp--preset--spacing--32);
-		}
-
-		&:last-child {
-			padding-bottom: var(--wp--preset--spacing--32);
-		}
-
-		@include b.break-mobile-layout {
-			padding-top: var(--wp--preset--spacing--32);
-			padding-bottom: var(--wp--preset--spacing--32);
-		}
-	}
-
 	.wp-block-columns {
 		margin-bottom: 0;
+		padding-top: var(--wp--preset--spacing--32);
+		padding-bottom: var(--wp--preset--spacing--32);
 	}
 }
