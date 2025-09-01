@@ -6,15 +6,21 @@
 	display: flex;
 	width: var(--scg-splash--badge--size);
 	height: var(--scg-splash--badge--size);
-	animation: forwards 0.65s badge-appear ease-in-out;
+
+	@media (prefers-reduced-motion: no-preference) {
+		animation: forwards 0.65s badge-appear ease-in-out;
+	}
 
 	svg {
 		width: 100%;
 		height: 100%;
 	}
 
-	#scg-scroll-badge-arrow {
-		animation: bounce2 1.2s ease infinite 0.65s;
+	@media (prefers-reduced-motion: no-preference) {
+
+		#scg-scroll-badge-arrow {
+			animation: bounce2 1.2s ease infinite 0.65s;
+		}
 	}
 }
 
