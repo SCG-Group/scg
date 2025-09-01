@@ -34,7 +34,7 @@ function add_block_category( $categories ) {
  * Register theme blocks
  */
 function init_blocks() {
-	$blocks = array( 'carousel', 'logo', 'header', 'details', 'accordion', 'cert', 'cert-viewer', 'contact', 'job-offer', 'scroll-badge' );
+	$blocks = array( 'carousel', 'logo', 'header', 'details', 'accordion', 'cert', 'cert-viewer', 'contact', 'job-offer', 'scroll-badge', 'data-counter' );
 	sort( $blocks );
 
 	foreach ( $blocks as $block_name ) {
@@ -315,7 +315,7 @@ function escape_contact_links( $block_content ) {
 }
 
 /**
- * Modify scg/scroll-trigger block to add scroll animation.
+ * Add scroll animation to scg/scroll-trigger block.
  *
  * @param string $block_content The block content.
  * @return string

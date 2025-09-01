@@ -1,0 +1,53 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "scg/data-counter",
+	"version": "0.1.0",
+	"title": "Data Counter",
+	"category": "scg",
+	"description": "Block that takes data point and animates its numerical value to grow from 0.",
+	"example": {},
+	"attributes": {
+		"value": {
+			"type": "number",
+			"default": 1000
+		},
+		"step": {
+			"type": "number",
+			"default": 1
+		},
+		"prefix": {
+			"type": "string",
+			"default": "+"
+		},
+		"suffix": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"interactivity": true,
+		"color": {
+			"text": true
+		},
+		"typography": {
+			"fontSize": true,
+			"textAlign": true,
+			"__experimentalFontFamily": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+			"__experimentalWritingMode": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		}
+	},
+	"textdomain": "scg",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
+	"render": "file:/render.php",
+	"viewScriptModule": "file:./view.ts"
+}
