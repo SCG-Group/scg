@@ -16,7 +16,12 @@ domReady( function () {
 // Add block styles to core blocks.
 registerBlockStyle( 'core/list', {
 	name: 'spaced',
-	label: __( 'Spaced', 'scg' ),
+	label: __( 'With spacing', 'scg' ),
+} );
+
+registerBlockStyle( 'core/list', {
+	name: 'inside',
+	label: __( 'Marker inside', 'scg' ),
 } );
 
 registerBlockStyle( 'core/navigation', {

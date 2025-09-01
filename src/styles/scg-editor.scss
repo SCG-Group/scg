@@ -19,3 +19,14 @@
 		position: fixed;
 	}
 }
+
+
+.wp-block-list {
+
+	&.is-style-inside {
+
+		.wp-block-list-item > * {
+			display: inline;
+		}
+	}
+}
