@@ -9,13 +9,9 @@
  */
 
 ?>
-<!-- wp:group {"tagName":"section","className":"scg-stats","metadata":{"name":"Stats"},"layout":{"type":"grid","minimumColumnWidth":null,"columnCount":2}} -->
-<section class="wp-block-group scg-stats">
-	<!-- wp:group {"style":{"layout":{"columnSpan":1},"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-	<div class="wp-block-group">
-		<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent"}}}},"textColor":"accent","fontSize":"128","fontFamily":"headings"} -->
-		<p class="has-accent-color has-text-color has-link-color has-headings-font-family has-128-font-size">122g</p>
-		<!-- /wp:paragraph -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"Stats","categories":["featured"],"patternName":"scg/stats-section"},"className":"scg-stats","layout":{"type":"grid","minimumColumnWidth":null,"columnCount":2}} -->
+<section class="wp-block-group scg-stats"><!-- wp:group {"style":{"layout":{"columnSpan":1},"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
+	<div class="wp-block-group"><!-- wp:scg/data-counter {"value":122,"prefix":"","suffix":"g","style":{"elements":{"link":{"color":{"text":"var:preset|color|accent"}}},"typography":{"textAlign":"center"}},"textColor":"accent","fontSize":"128","fontFamily":"headings"} /-->
 
 		<!-- wp:paragraph -->
 		<p>CO₂/km emissions</p>
@@ -24,10 +20,7 @@
 	<!-- /wp:group -->
 
 	<!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-	<div class="wp-block-group">
-		<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent"}}}},"textColor":"accent","fontSize":"128","fontFamily":"headings"} -->
-		<p class="has-accent-color has-text-color has-link-color has-headings-font-family has-128-font-size">+1,5K</p>
-		<!-- /wp:paragraph -->
+	<div class="wp-block-group"><!-- wp:scg/data-counter {"value":1500,"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent"}}},"typography":{"textAlign":"center"}},"textColor":"accent","fontSize":"128","fontFamily":"headings"} /-->
 
 		<!-- wp:paragraph -->
 		<p>Orders per month</p>
@@ -36,10 +29,7 @@
 	<!-- /wp:group -->
 
 	<!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-	<div class="wp-block-group">
-		<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent"}}}},"textColor":"accent","fontSize":"128","fontFamily":"headings"} -->
-		<p class="has-accent-color has-text-color has-link-color has-headings-font-family has-128-font-size">+1mln</p>
-		<!-- /wp:paragraph -->
+	<div class="wp-block-group"><!-- wp:scg/data-counter {"value":1000000,"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent"}}},"typography":{"textAlign":"center"}},"textColor":"accent","fontSize":"128","fontFamily":"headings"} /-->
 
 		<!-- wp:paragraph -->
 		<p>km/month</p>
@@ -48,10 +38,7 @@
 	<!-- /wp:group -->
 
 	<!-- wp:group {"style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
-	<div class="wp-block-group">
-		<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent"}}}},"textColor":"accent","fontSize":"128","fontFamily":"headings"} -->
-		<p class="has-accent-color has-text-color has-link-color has-headings-font-family has-128-font-size">+100</p>
-		<!-- /wp:paragraph -->
+	<div class="wp-block-group"><!-- wp:scg/data-counter {"value":100,"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent"}}},"typography":{"textAlign":"center"}},"textColor":"accent","fontSize":"128","fontFamily":"headings"} /-->
 
 		<!-- wp:paragraph -->
 		<p>Vehicles</p>
