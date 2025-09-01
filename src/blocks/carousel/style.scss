@@ -1,9 +1,8 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
+:root {
+	--scg-carousel--aspect-ration: 352 / 265;
+	--scg-cariysel--height: max(21vw, 14rem);
+	--scg-cariysel--max-height: 377px;
+}
 
 .wp-block-scg-carousel {
 	width: 100%;
@@ -16,12 +15,9 @@
 		> * {
 			margin: 0;
 			width: auto;
-		}
-
-		.wp-block-image img {
-			height: 38vh;
-			width: auto;
-			max-width: none;
+			aspect-ratio: var(--scg-carousel--aspect-ration);
+			height: var(--scg-cariysel--height);
+			max-height: var(--scg-cariysel--max-height);
 		}
 	}
 

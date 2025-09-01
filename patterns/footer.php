@@ -16,7 +16,7 @@
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
 			<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"80","fontFamily":"headings"} -->
-			<p class="has-headings-font-family has-80-font-size"><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">A partner</mark><br>you can trust</p>
+			<p class="has-headings-font-family has-80-font-size">A partner <br><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">you can trust</mark></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
