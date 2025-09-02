@@ -300,7 +300,7 @@ function modify_contact_block_render( $block_content, $block ) {
 }
 
 /**
- * Masks vulerable elements in link hrefs
+ * Masks vulnerable elements in link hrefs
  * * mailto: => $$$
  * * tel: => &&&
  * * @ => %%%
@@ -309,7 +309,7 @@ function modify_contact_block_render( $block_content, $block ) {
  * @return string
  */
 function escape_contact_links( $block_content ) {
-	$result = str_replace( array( '@', 'mailto:', 'tel:' ), array( '$$$', 'mailto:%%%', 'tel:&&&' ), $block_content );
+	$result = str_replace( array( '@', 'mailto:', 'tel:' ), array( '$$$@@@', 'mailto:%%%', 'tel:&&&' ), $block_content );
 
 	return $result;
 }

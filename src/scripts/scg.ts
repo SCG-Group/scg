@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 const ANCHOR_LINKS = 'a[href*="#"]';
-const AT_MASK = '$$$';
+const AT_MASK = '$$$@@@';
 const MAILTO_MASK = 'mailto:%%%';
 const TEL_MASK = 'tel:&&&';
 const CONTACT_LINKS = `a[href*="${ AT_MASK }"], a[href^="${ MAILTO_MASK }"], a[href^="${ TEL_MASK }"]`;
@@ -48,6 +48,9 @@ const { actions, callbacks } = store( 'scg', {
 
 			// Handle contact links.
 			callbacks.handleContactLinks();
+
+			// Handle mail mask in content.
+			callbacks.handleAtMask();
 		},
 		handleInternalLinks: () => {
 			gsap.registerPlugin( ScrollToPlugin );
@@ -73,6 +76,13 @@ const { actions, callbacks } = store( 'scg', {
 			for ( const link of Array.from( contactLinks ) ) {
 				link.href = getContactLink( link.href );
 				link.innerText = getContactLink( link.innerText );
+			}
+		},
+		handleAtMask: () => {
+			const blocks = document.querySelector( '.wp-site-blocks' );
+
+			if ( blocks ) {
+				blocks.innerHTML = blocks.innerHTML.replaceAll( AT_MASK, '@' );
 			}
 		},
 	},

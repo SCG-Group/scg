@@ -47,6 +47,8 @@ add_filter( 'render_block_scg/cert', __NAMESPACE__ . '\modify_cert_block_render'
 add_filter( 'render_block_scg/cert-viewer', __NAMESPACE__ . '\modify_cert_viewer_block_render' );
 add_filter( 'render_block_scg/contact', __NAMESPACE__ . '\modify_contact_block_render', 10, 2 );
 add_filter( 'render_block_core/paragraph', __NAMESPACE__ . '\escape_contact_links' );
+add_filter( 'render_block_core/list', __NAMESPACE__ . '\escape_contact_links' );
+add_filter( 'render_block_core/heading', __NAMESPACE__ . '\escape_contact_links' );
 add_filter( 'render_block_scg/scroll-badge', __NAMESPACE__ . '\modify_scroll_badge_block_render' );
 
 /**
