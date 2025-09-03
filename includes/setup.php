@@ -24,8 +24,8 @@ function setup_theme() {
 	// Set media sizes.
 	update_option( 'thumbnail_size_w', 500 );
 	update_option( 'thumbnail_size_h', 377 );
-	update_option( 'medium_size_w', 640 );
-	update_option( 'medium_size_h', 640 );
+	update_option( 'medium_size_w', 400 );
+	update_option( 'medium_size_h', 400 );
 	update_option( 'large_size_w', 1280 );
 	update_option( 'large_size_h', 1280 );
 }

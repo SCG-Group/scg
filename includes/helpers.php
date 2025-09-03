@@ -23,11 +23,26 @@ function sanitize_svg() {
 			'height'  => true,
 			'viewbox' => true,
 			'role'    => true,
+			'class'   => true,
 		),
 		'path' => array(
-			'd'     => true,
-			'fill'  => true,
-			'class' => true,
+			'd'                 => true,
+			'fill'              => true,
+			'class'             => true,
+			'stroke'            => true,
+			'stroke-width'      => true,
+			'stroke-miterlimit' => true,
+			'stroke-linecap'    => true,
+		),
+		'g'    => array(
+			'clip-path' => true,
+		),
+		'defs' => true,
+		'rect' => array(
+			'width'     => true,
+			'height'    => true,
+			'fill'      => true,
+			'transform' => true,
 		),
 	);
 	return array_merge( $kses_defaults, $svg_args );

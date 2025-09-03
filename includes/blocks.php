@@ -228,32 +228,6 @@ function modify_details_block_render( $block_content, $block ) {
 }
 
 /**
- * Add interactivity to scg/cert block.
- *
- * @param string $block_content The block content.
- * @param array  $block The full block, including name and attributes.
- * @return string
- */
-function modify_cert_block_render( $block_content, $block ) {
-	$tags    = new \WP_HTML_Tag_Processor( $block_content );
-	$context = array(
-		'certUrl' => $block['attrs']['cert'] ?? false,
-	);
-
-	if ( $tags->next_tag( array( 'class_name' => 'wp-block-scg-cert' ) ) ) {
-		$tags->set_attribute( 'data-wp-interactive', 'scg/cert-viewer' );
-		$tags->set_attribute( 'data-wp-context', wp_json_encode( $context ) );
-	}
-
-	if ( $tags->next_tag( array( 'class_name' => 'wp-block-scg-cert__details' ) ) ) {
-		$tags->set_attribute( 'data-wp-on-async--click', 'actions.onCertClick' );
-		$tags->set_attribute( 'tabindex', '0' );
-	}
-
-	return $tags->get_updated_html();
-}
-
-/**
  * Move scg/cert-viewer to document footer.
  *
  * @param string $block_content The block content.
