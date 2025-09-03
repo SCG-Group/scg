@@ -2,7 +2,10 @@ import { store, getContext, getElement } from '@wordpress/interactivity';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import formatNumber from './format.ts';
-import { REDUCED_MOTION_QUERY } from '../../scripts/constants.ts';
+import {
+	REDUCED_MOTION_QUERY,
+	WITH_MOTION_QUERY,
+} from '../../scripts/constants.ts';
 
 interface DataCounter {
 	value: number;
@@ -21,8 +24,8 @@ store( 'scg/data-counter', {
 
 			animation.add(
 				{
-					reducedMotion: '(prefers-reduced-motion: reduce)',
-					withMotion: REDUCED_MOTION_QUERY,
+					reducedMotion: REDUCED_MOTION_QUERY,
+					withMotion: WITH_MOTION_QUERY,
 				},
 				( context ) => {
 					const { withMotion } =

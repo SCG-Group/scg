@@ -7,7 +7,7 @@ import { getContext, getElement, store } from '@wordpress/interactivity';
 // @ts-ignore
 // eslint-disable-next-line import/no-unresolved
 import { getDocument, GlobalWorkerOptions } from 'pdfjs';
-import { MODAL_OPEN, REDUCED_MOTION_QUERY } from '../../scripts/constants.ts';
+import { MODAL_OPEN, WITH_MOTION_QUERY } from '../../scripts/constants.ts';
 import gsap from 'gsap';
 
 interface CertViewer {
@@ -278,7 +278,7 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 			const element = getElement().ref as HTMLElement;
 
 			gsap.matchMedia().add(
-				REDUCED_MOTION_QUERY,
+				WITH_MOTION_QUERY,
 				() => {
 					state.animation.pause();
 					state.animation

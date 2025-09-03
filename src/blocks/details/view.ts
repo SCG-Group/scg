@@ -1,6 +1,6 @@
 import { store, getElement, getContext } from '@wordpress/interactivity';
 import gsap from 'gsap';
-import { REDUCED_MOTION_QUERY } from '../../scripts/constants.ts';
+import { WITH_MOTION_QUERY } from '../../scripts/constants.ts';
 
 const CONTENT = ':scope > .wp-block-scg-details__content';
 const CONTENT_ELEMENTS =
@@ -99,7 +99,7 @@ const { state, actions } = store( 'scg/details', {
 			ctx.animation = gsap.timeline();
 
 			gsap.matchMedia().add(
-				REDUCED_MOTION_QUERY,
+				WITH_MOTION_QUERY,
 				() => {
 					ctx.animation.pause();
 					ctx.animation

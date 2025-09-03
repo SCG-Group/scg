@@ -1,7 +1,7 @@
 import { getElement, store } from '@wordpress/interactivity';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { REDUCED_MOTION_QUERY } from '../../scripts/constants.ts';
+import { WITH_MOTION_QUERY } from '../../scripts/constants.ts';
 
 store( 'scg/scroll-badge', {
 	callbacks: {
@@ -11,7 +11,7 @@ store( 'scg/scroll-badge', {
 
 			gsap.registerPlugin( ScrollTrigger );
 
-			animation.add( REDUCED_MOTION_QUERY, () => {
+			animation.add( WITH_MOTION_QUERY, () => {
 				gsap.to( '#scg-scroll-badge-frame', {
 					scrollTrigger: {
 						trigger: element,
