@@ -16,12 +16,7 @@ import { __ } from '@wordpress/i18n';
 
 export default ( {
 	setAttributes,
-	category,
-	img,
-	imgId,
-	certId,
-	docName,
-	name,
+	attributes: { category, img, imgId, certId, certFilename, name },
 } ) => (
 	<InspectorControls>
 		<PanelBody title={ __( 'Certificate details' ) }>
@@ -109,7 +104,7 @@ export default ( {
 							value={ certId }
 							render={ ( { open } ) => (
 								<Flex direction="column">
-									{ docName && (
+									{ certFilename && (
 										<FlexItem>
 											<Flex justify="start">
 												<FlexItem>
@@ -117,7 +112,7 @@ export default ( {
 												</FlexItem>
 												<FlexItem>
 													<Text weight="bold">
-														{ docName }
+														{ certFilename }
 													</Text>
 												</FlexItem>
 											</Flex>
