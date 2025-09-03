@@ -50,7 +50,7 @@ const { actions, callbacks } = store( 'scg', {
 			callbacks.handleContactLinks();
 
 			// Handle mail mask in content.
-			callbacks.handleAtMask();
+			// callbacks.handleAtMask();
 		},
 		handleInternalLinks: () => {
 			gsap.registerPlugin( ScrollToPlugin );
