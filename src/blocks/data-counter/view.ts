@@ -25,35 +25,24 @@ store( 'scg/data-counter', {
 					withMotion: REDUCED_MOTION_QUERY,
 				},
 				( context ) => {
-					const { withMotion } = context.conditions as {
-						withMotion: boolean;
-					};
+					const { withMotion } =
+						context.conditions as gsap.Conditions;
 
 					timeline.progress( 0 ).pause();
 					timeline.to( element, {
 						scrollTrigger: {
 							trigger: element,
 							onEnter: () => {
-								if ( withMotion ) {
-									timeline.play();
-								} else {
-									timeline.progress( 1 );
-								}
+								timeline.play();
 							},
 							onEnterBack: () => {
-								if ( withMotion ) {
-									timeline.play();
-								}
+								timeline.play();
 							},
 							onLeave: () => {
-								if ( withMotion ) {
-									timeline.pause();
-								}
+								timeline.pause();
 							},
 							onLeaveBack: () => {
-								if ( withMotion ) {
-									timeline.pause();
-								}
+								timeline.pause();
 							},
 						},
 						textContent: value,
@@ -63,7 +52,7 @@ store( 'scg/data-counter', {
 						snap: {
 							textContent: step,
 						},
-						duration: 3,
+						duration: withMotion ? 3 : 0,
 						onUpdate: () => {
 							element.textContent = formatNumber(
 								Number( element.textContent ),
@@ -73,22 +62,6 @@ store( 'scg/data-counter', {
 					} );
 				}
 			);
-
-			ScrollTrigger.create( {
-				trigger: element,
-				onEnter: () => {
-					timeline.play();
-				},
-				onEnterBack: () => {
-					timeline.play();
-				},
-				onLeave: () => {
-					timeline.pause();
-				},
-				onLeaveBack: () => {
-					timeline.pause();
-				},
-			} );
 		},
 	},
 } );

@@ -15,8 +15,7 @@
 		@media (max-width: calc(breakpoints.$break-large - 1px)) {
 			flex-direction: column-reverse;
 
-			&.is-layout-flex,
-			.is-layout-flex {
+			&.is-layout-flex {
 				align-items: start;
 			}
 		}
