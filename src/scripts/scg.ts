@@ -3,22 +3,12 @@ import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 const ANCHOR_LINKS = 'a[href*="#"]';
-const AT_MASK = '$$$@@@';
-const MAILTO_MASK = 'mailto:%%%';
-const TEL_MASK = 'tel:&&&';
-const CONTACT_LINKS = `a[href*="${ AT_MASK }"], a[href^="${ MAILTO_MASK }"], a[href^="${ TEL_MASK }"]`;
 const getSamePageHash = ( url: string ) => {
 	const parsed = new URL( url, String( window.location ) );
 	return parsed.origin === window.location.origin &&
 		parsed.pathname === window.location.pathname
 		? parsed.hash
 		: '';
-};
-const getContactLink = ( href: string ) => {
-	return href
-		.replace( AT_MASK, '@' )
-		.replace( MAILTO_MASK, 'mailto:' )
-		.replace( TEL_MASK, 'tel:' );
 };
 
 const { actions, callbacks } = store( 'scg', {
@@ -35,7 +25,6 @@ const { actions, callbacks } = store( 'scg', {
 		},
 	},
 	callbacks: {
-		// Handle smooth page scrolling to anchors.
 		onInit: () => {
 			// Handle url hash on page load.
 			if ( window.location.hash ) {
@@ -45,13 +34,8 @@ const { actions, callbacks } = store( 'scg', {
 
 			// Handle internal links.
 			callbacks.handleInternalLinks();
-
-			// Handle contact links.
-			callbacks.handleContactLinks();
-
-			// Handle mail mask in content.
-			// callbacks.handleAtMask();
 		},
+		// Handle smooth page scrolling to anchors.
 		handleInternalLinks: () => {
 			gsap.registerPlugin( ScrollToPlugin );
 
@@ -67,22 +51,6 @@ const { actions, callbacks } = store( 'scg', {
 						actions.scrollTo( hash );
 					} );
 				}
-			}
-		},
-		handleContactLinks: () => {
-			const contactLinks =
-				document.querySelectorAll< HTMLAnchorElement >( CONTACT_LINKS );
-
-			for ( const link of Array.from( contactLinks ) ) {
-				link.href = getContactLink( link.href );
-				link.innerText = getContactLink( link.innerText );
-			}
-		},
-		handleAtMask: () => {
-			const blocks = document.querySelector( '.wp-site-blocks' );
-
-			if ( blocks ) {
-				blocks.innerHTML = blocks.innerHTML.replaceAll( AT_MASK, '@' );
 			}
 		},
 	},

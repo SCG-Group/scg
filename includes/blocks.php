@@ -274,21 +274,6 @@ function modify_contact_block_render( $block_content, $block ) {
 }
 
 /**
- * Masks vulnerable elements in link hrefs
- * * mailto: => $$$
- * * tel: => &&&
- * * @ => %%%
- *
- * @param string $block_content The block content.
- * @return string
- */
-function escape_contact_links( $block_content ) {
-	$result = str_replace( array( '@', 'mailto:', 'tel:' ), array( '$$$@@@', 'mailto:%%%', 'tel:&&&' ), $block_content );
-
-	return $result;
-}
-
-/**
  * Add scroll animation to scg/scroll-trigger block.
  *
  * @param string $block_content The block content.

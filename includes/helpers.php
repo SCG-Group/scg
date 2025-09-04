@@ -57,3 +57,19 @@ function sanitize_svg() {
 function wp_kses_svg( $content ) {
 	return wp_kses( $content, sanitize_svg() );
 }
+
+/**
+ * Mask emails
+ *
+ * @param string $content Block content.
+ * @return string
+ */
+function mask_emails( $content ) {
+	return preg_replace_callback(
+		'/([a-z0-9\+_\-]+(?:\.[a-z0-9\+_\-]+)*@(?:[a-z0-9\-]+\.)+[a-z]{2,6})/i',
+		function ( $matches ) {
+			return antispambot( $matches[0] );
+		},
+		$content
+	);
+}

@@ -45,9 +45,6 @@ add_filter( 'render_block_scg/accordion', __NAMESPACE__ . '\modify_accordion_blo
 add_filter( 'render_block_scg/details', __NAMESPACE__ . '\modify_details_block_render', 10, 2 );
 add_filter( 'render_block_scg/cert-viewer', __NAMESPACE__ . '\modify_cert_viewer_block_render' );
 add_filter( 'render_block_scg/contact', __NAMESPACE__ . '\modify_contact_block_render', 10, 2 );
-add_filter( 'render_block_core/paragraph', __NAMESPACE__ . '\escape_contact_links' );
-add_filter( 'render_block_core/list', __NAMESPACE__ . '\escape_contact_links' );
-add_filter( 'render_block_core/heading', __NAMESPACE__ . '\escape_contact_links' );
 add_filter( 'render_block_scg/scroll-badge', __NAMESPACE__ . '\modify_scroll_badge_block_render' );
 
 /**
@@ -61,9 +58,10 @@ add_filter( 'should_load_remote_block_patterns', '__return_false' );
 add_action( 'admin_init', __NAMESPACE__ . '\add_google_maps_settings' );
 
 /**
- * Auto-updates.
+ * Security.
  */
 add_filter( 'auto_update_core', '__return_true' );
 add_filter( 'auto_update_plugin', '__return_true' );
 add_filter( 'auto_update_theme', '__return_true' );
 add_filter( 'auto_update_translation', '__return_true' );
+add_filter( 'render_block', __NAMESPACE__ . '\mask_emails' );
