@@ -94,7 +94,26 @@ function enqueue_block_editor_assets() {
 			'scg-editor-scripts',
 			get_theme_file_uri( $script_uri ),
 			array_merge( $script['dependencies'], array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ) ),
-			$script['version'] ?? SCG_THEME_VERSION
+			$script['version'] ?? SCG_THEME_VERSION,
+			array()
+		);
+	}
+}
+
+/**
+ * Enqueue styles for admin login page.
+ */
+function enqueue_login_page_assets() {
+	$styles_uri          = '/build/scg-admin-login.css';
+		$styles_dep_path = '/build/scg-admin-login.asset.php';
+		$styles          = include get_theme_file_path( $styles_dep_path );
+
+	if ( $styles ) {
+		wp_enqueue_style(
+			'scg-admin-login',
+			get_theme_file_uri( $styles_uri ),
+			$styles['dependencies'] ?? array(),
+			$styles['version'] ?? SCG_THEME_VERSION
 		);
 	}
 }

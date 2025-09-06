@@ -65,3 +65,8 @@ add_filter( 'auto_update_plugin', '__return_true' );
 add_filter( 'auto_update_theme', '__return_true' );
 add_filter( 'auto_update_translation', '__return_true' );
 add_filter( 'render_block', __NAMESPACE__ . '\mask_emails' );
+
+/**
+ * Admin
+ */
+add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\enqueue_login_page_assets' );

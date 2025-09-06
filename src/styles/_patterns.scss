@@ -39,16 +39,19 @@
 
 	@media (max-width: calc(#{breakpoints.$break-mobile-layout} - 1px)) {
 
-		>.wp-block-media-text__content {
+		&.is-stacked-on-mobile {
 
-			> *:first-child {
-				margin-top: 1em;
+			>.wp-block-media-text__content {
+
+				> *:first-child {
+					margin-top: 1em;
+				}
 			}
-		}
 
-		>.wp-block-media-text__media {
-			margin-left: calc((100vw - var(--wp--style--global--content-size)) / 2);
-			margin-right: calc((100vw - var(--wp--style--global--content-size)) / 2);
+			>.wp-block-media-text__media {
+				margin-left: calc((100vw - var(--wp--style--global--content-size)) / 2);
+				margin-right: calc((100vw - var(--wp--style--global--content-size)) / 2);
+			}
 		}
 	}
 }

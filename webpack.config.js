@@ -48,6 +48,11 @@ module.exports = [
 				'src/scripts',
 				'scg-editor.js'
 			),
+			'scg-admin-login': path.resolve(
+				process.cwd(),
+				'src/styles',
+				'scg-login.scss'
+			),
 		},
 		plugins: [
 			// Include WP's plugin config.

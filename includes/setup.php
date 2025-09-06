@@ -28,6 +28,7 @@ function setup_theme() {
 	update_option( 'medium_size_h', 400 );
 	update_option( 'large_size_w', 1280 );
 	update_option( 'large_size_h', 1280 );
+	add_image_size( 'thumbnail_small', 298, 224, true );
 }
 
 /**
