@@ -154,3 +154,11 @@ html.has-modal-open {
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 }
+
+// 404.
+.scg-404-heading {
+
+	@media (max-width: calc(breakpoints.$break-mobile-layout - 1px)) {
+		text-align: center;
+	}
+}
