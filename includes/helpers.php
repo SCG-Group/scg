@@ -33,6 +33,7 @@ function sanitize_svg() {
 			'stroke-width'      => true,
 			'stroke-miterlimit' => true,
 			'stroke-linecap'    => true,
+			'stroke-linejoin'   => true,
 		),
 		'g'    => array(
 			'clip-path' => true,

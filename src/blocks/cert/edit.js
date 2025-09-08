@@ -17,7 +17,7 @@ export default ( props ) => {
 						{ category }
 					</div>
 				) }
-				<div className="wp-block-scg-cert__details is-layout-flex ">
+				<div className="wp-block-scg-cert__details">
 					{ img && (
 						<img
 							src={ img }

@@ -20,6 +20,13 @@ $context = array(
 	'canvas'        => null,
 	'canvasContext' => null,
 );
+
+$icons = array(
+	'prev' => file_get_contents( get_theme_file_path( '/assets/images/prev-icon.svg') ), // @codingStandardsIgnoreLine
+	'next' => file_get_contents( get_theme_file_path( '/assets/images/next-icon.svg') ), // @codingStandardsIgnoreLine
+	'zoom_in' => file_get_contents( get_theme_file_path( '/assets/images/zoom-in-icon.svg') ), // @codingStandardsIgnoreLine
+	'zoom_out' => file_get_contents( get_theme_file_path( '/assets/images/zoom-out-icon.svg') ), // @codingStandardsIgnoreLine
+)
 ?>
 <div
 	role="dialog"
@@ -31,31 +38,32 @@ $context = array(
 	data-wp-watch--url="callbacks.handleUrlChange"
 	data-wp-watch--open="callbacks.handleModalOpen"
 	data-wp-bind--hidden="!state.isModalOpen"
+	aria-hidden="!state.isModalOpen"
 	data-wp-on-async-document--keydown="callbacks.escClose"
 	data-wp-init="callbacks.setupAnimation"
 	hidden>
-	<div class="wp-block-scg-cert-viewer__modal" data-wp-bind--hidden="state.documentLoading">
+	<div class="wp-block-scg-cert-viewer__modal" data-wp-bind--hidden="state.documentLoading" aria-hidden="state.documentLoading">
 		<div class="wp-block-scg-cert-viewer__canvas" tabindex="0">
-			<div class="wp-block-scg-cert-viewer__error" data-wp-bind--hidden="!state.error" role="alert"><?php esc_html_e( 'A problem occured while loading this document. Please try again later.', 'scg' ); ?></div>
-			<canvas data-wp-bind--hidden="state.error" aria-label="Certificate document"></canvas>
+			<div class="wp-block-scg-cert-viewer__error" data-wp-bind--hidden="!state.error" aria-hidden="!state.error" role="alert"><?php esc_html_e( 'A problem occured while loading this document. Please try again later.', 'scg' ); ?></div>
+			<canvas data-wp-bind--hidden="state.error" aria-hidden="state.error" aria-label="Certificate document"></canvas>
 		</div>
-		<footer>
-			<div data-wp-bind--hidden="!state.hasPages">
-				<button type="button" data-wp-on-async--click="actions.prevPage" data-wp-bind--disabled="!state.hasPrevPage" ><?php esc_html_e( 'Previous page', 'scg' ); ?></button>
-				<button type="button" data-wp-on-async--click="actions.nextPage" data-wp-bind--disabled="!state.hasNextPage" ><?php esc_html_e( 'Next page', 'scg' ); ?></button>
-			</div>
-			<div data-wp-bind--hidden="state.error">
-				<button type="button" data-wp-on-async--click="actions.zoomIn" data-wp-bind--disabled="!state.canZoomIn" ><?php esc_html_e( 'Zoom In', 'scg' ); ?></button>
-				<button type="button" data-wp-on-async--click="actions.zoomOut" data-wp-bind--disabled="!state.canZoomOut" ><?php esc_html_e( 'Zoom Out', 'scg' ); ?></button>
-			</div>
-			<div class="wp-block-scg-cert-viewer__modal-close">
-				<button type="button" data-wp-on-async--click="actions.closeModal"><?php esc_html_e( 'Close', 'scg' ); ?></button>
-			</div>
-		</footer>
+		<button class="wp-block-scg-cert-viewer__control wp-block-scg-cert-viewer__control--prev" type="button" data-wp-on-async--click="actions.prevPage" data-wp-bind--hidden="!state.hasPrevPage" aria-hidden="!state.hasPrevPage" aria-label="<?php esc_html_e( 'Previous page', 'scg' ); ?>">
+			<?php echo wp_kses_svg( $icons['prev'] ); // @codingStandardsIgnoreLine. ?>
+		</button>
+		<button class="wp-block-scg-cert-viewer__control wp-block-scg-cert-viewer__control--next" type="button" data-wp-on-async--click="actions.nextPage" data-wp-bind--hidden="!state.hasNextPage" aria-hidden="!state.hasNextPage" aria-label="<?php esc_html_e( 'Next page', 'scg' ); ?>">
+			<?php echo wp_kses_svg( $icons['next'] ); // @codingStandardsIgnoreLine. ?>
+		</button>
+		<button class="wp-block-scg-cert-viewer__control wp-block-scg-cert-viewer__control--close" type="button" data-wp-on-async--click="actions.closeModal" aria-label="<?php esc_html_e( 'Close', 'scg' ); ?>"></button>
+		<button class="wp-block-scg-cert-viewer__control wp-block-scg-cert-viewer__control--zoom-in" type="button" data-wp-on-async--click="actions.zoomIn" data-wp-bind--disabled="!state.canZoomIn" data-wp-bind--hidden="state.error" aria-hidden="state.error" aria-label="<?php esc_html_e( 'Zoom In', 'scg' ); ?>">
+			<?php echo wp_kses_svg( $icons['zoom_in'] ); // @codingStandardsIgnoreLine. ?>
+		</button>
+		<button class="wp-block-scg-cert-viewer__control wp-block-scg-cert-viewer__control--zoom-out" type="button" data-wp-on-async--click="actions.zoomOut" data-wp-bind--disabled="!state.canZoomOut" data-wp-bind--hidden="state.error" aria-hidden="state.error" aria-label="<?php esc_html_e( 'Zoom Out', 'scg' ); ?>">
+			<?php echo wp_kses_svg( $icons['zoom_out'] ); // @codingStandardsIgnoreLine. ?>
+		</button>
 	</div>
-	<div class="wp-block-scg-cert-viewer__loading" data-wp-bind--hidden="!state.isLoading" role="status">
+	<div class="wp-block-scg-cert-viewer__loading" data-wp-bind--hidden="!state.isLoading" aria-hidden="!state.isLoading" role="status">
 		<img src="<?php echo esc_attr( get_theme_file_uri( '/assets/images/spinner.svg' ) ); ?>" alt="Loading" aria-hidden="true" />
 		<span class="sr-only"><?php esc_html_e( 'Loading', 'scg' ); ?></span>
 	</div>
-	<div class="wp-block-scg-cert-viewer__backdrop" data-wp-on-async--click="actions.closeModal"></div>
+	<div class="wp-block-scg-cert-viewer__backdrop"></div>
 </div>

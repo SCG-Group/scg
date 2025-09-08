@@ -52,11 +52,11 @@ interface State {
 	animation: gsap.core.Timeline;
 }
 
-const MODAL_MAX_WIDTH = 1280;
-const ZOOM_MAX = 3;
+const MODAL_MAX_WIDTH = 1000;
+const ZOOM_MAX = 5;
 const ZOOM_MIN = -3;
 const SCALE_FACTOR = 1.25;
-const FOCUS = '.wp-block-scg-cert-viewer__canvas';
+const CANVAS = '.wp-block-scg-cert-viewer__canvas';
 const BACKDROP = '.wp-block-scg-cert-viewer__backdrop';
 const MODAL = '.wp-block-scg-cert-viewer__modal';
 
@@ -81,9 +81,6 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 			return state.currentPage < state.pages;
 		},
 		pages: 0,
-		get hasPages() {
-			return state.pages > 1;
-		},
 		zoom: 0,
 		get canZoomIn() {
 			return state.zoom < ZOOM_MAX;
@@ -238,7 +235,7 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 				state.documentLoading = false;
 				state.animation.play( 'modal' );
 				window.requestAnimationFrame( () => {
-					( el.querySelector( FOCUS ) as HTMLElement )?.focus();
+					( el.querySelector( CANVAS ) as HTMLElement )?.focus();
 				} );
 			}
 		},
@@ -260,7 +257,11 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 		},
 		getViewport: ( page: PDFPageProxy ) => {
 			const { width } = page.getViewport( { scale: 1 } );
-			state.scale = state.scale || MODAL_MAX_WIDTH / width;
+			const maxWidth =
+				window.innerWidth > MODAL_MAX_WIDTH
+					? MODAL_MAX_WIDTH
+					: window.innerWidth;
+			state.scale = state.scale || maxWidth / width;
 
 			return page.getViewport( { scale: state.scale } );
 		},
@@ -291,6 +292,9 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 						} )
 						.set( MODAL, {
 							visibility: 'hidden',
+							opacity: 0,
+						} )
+						.set( CANVAS, {
 							y: '-100vh',
 						} )
 						.to( BACKDROP, {
@@ -300,16 +304,16 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 							ease: 'back.out',
 						} )
 						.add( 'modal' )
-						.to(
-							MODAL,
-							{
-								visibility: 'visible',
-								y: 0,
-								duration: 0.5,
-								ease: 'power3.inOut',
-							},
-							'-=0.2'
-						)
+						.to( MODAL, {
+							visibility: 'visible',
+							opacity: 1,
+							duration: 0.25,
+						} )
+						.to( CANVAS, {
+							y: 0,
+							duration: 0.25,
+							ease: 'power3.inOut',
+						} )
 						.eventCallback( 'onReverseComplete', () => {
 							state.animation.revert();
 							state.animation.invalidate();
