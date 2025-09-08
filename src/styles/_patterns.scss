@@ -133,7 +133,7 @@
 			position: absolute;
 			bottom: 0;
 			left: 50%;
-			transform: translateX(-50%);
+			margin-left: calc(-1 * var(--scg-splash--badge--size) / 2) !important;
 
 			@include breakpoints.break-mobile {
 				left: unset;
