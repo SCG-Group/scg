@@ -37,8 +37,8 @@ const { actions, callbacks } = store( 'scg', {
 
 			// Handle dynamic viewport height (mobile browsers).
 			callbacks.setScreenHeight();
-			window.addEventListener(
-				'orientationchange',
+			window.screen.orientation.addEventListener(
+				'change',
 				callbacks.setScreenHeight
 			);
 		},
