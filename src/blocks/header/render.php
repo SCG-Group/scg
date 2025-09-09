@@ -31,6 +31,7 @@ $context   = array(
 	data-wp-init--init="callbacks.onInit"
 	data-wp-init--click="callbacks.handleLinkClick"
 	data-wp-init--animation="callbacks.initAnimation">
+	<div class="wp-block-scg-header__bg--scroll"></div>
 	<div class="wp-block-scg-header__bg"></div>
 	<?php echo wp_kses_svg( $content ); // @codingStandardsIgnoreLine. ?>
 	<button

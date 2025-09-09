@@ -94,8 +94,7 @@ const { callbacks } = store( 'scg/header', {
 							y: 10,
 						} )
 						.to( MOBILE_NAVIGATION, {
-							height: 'var(--viewport-height)',
-							scaleY: 1,
+							height: '100dvh',
 							duration: 0.65,
 							ease: 'power3.inOut',
 						} )
@@ -131,56 +130,23 @@ const { callbacks } = store( 'scg/header', {
 							},
 							'-=0.35'
 						)
-						.eventCallback( 'onStart', () => {
-							callbacks.toggleOverlay(
-								ctx.element,
-								MOBILE_NAVIGATION
-							);
-						} )
 						.eventCallback( 'onReverseComplete', () => {
-							callbacks.resetAnimation(
-								ctx.element,
-								ctx.animationTimeline
-							);
+							callbacks.resetAnimation( ctx.animationTimeline );
 						} );
 
 					return () => {
-						callbacks.resetAnimation(
-							ctx.element,
-							ctx.animationTimeline
-						);
+						callbacks.resetAnimation( ctx.animationTimeline );
 					};
 				},
 				ctx.element
 			);
 		},
-		// Toggle menu overlay transition, so that it works back on scroll changes.
-		toggleOverlay: (
-			element: HTMLElement | null,
-			selector: string,
-			disable = true
-		) => {
-			if ( ! element ) {
-				return;
-			}
-
-			window.requestAnimationFrame( () => {
-				const el = element.querySelector< HTMLElement >( selector );
-
-				if ( el ) {
-					el.style.transition = disable ? 'none' : '';
-				}
-			} );
-		},
 		resetAnimation: (
-			element: HTMLElement | null,
 			animationTimeline: HeaderContext[ 'animationTimeline' ]
 		) => {
 			if ( animationTimeline ) {
 				animationTimeline.revert();
 			}
-
-			callbacks.toggleOverlay( element, MOBILE_NAVIGATION, false );
 		},
 	},
 } );

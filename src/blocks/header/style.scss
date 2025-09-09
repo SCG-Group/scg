@@ -7,8 +7,8 @@
 	.wp-block-scg-header {
 
 		&__bg {
-			transform: scale(1);
-			height: var(--viewport-height);
+			height: 100vh;
+			height: 100dvh;
 			border: var(--navigation--border);
 			transition: none;
 		}
@@ -41,17 +41,24 @@
 	flex-direction: column;
 	position: relative;
 
-	&__bg {
-		position: absolute;
+	&__bg,
+	&__bg--scroll {
 		z-index: 0;
+		position: absolute;
 		left: 0;
 		top: 0;
 		right: 0;
-		height: var(--navigation--height);
 		background-color: var(--navigation--background);
+	}
+
+	&__bg {
+		height: 0;
+	}
+
+	&__bg--scroll {
+		height: var(--navigation--height);
 		transform: scale(1);
 		transform-origin: top;
-
 		border-bottom: 2px solid var(--wp--custom--border--base);
 
 		@include t.transition(transform);
@@ -115,6 +122,7 @@
 		border: 0;
 		cursor: pointer;
 		z-index: 2;
+		touch-action: manipulation;
 
 		@include m.close-icon($color: var(--navigation--background));
 	}
@@ -127,9 +135,9 @@
 			--navigation--link--color: var(--wp--preset--color--white);
 		}
 
-		.wp-block-scg-header__bg {
-			transform: scale(1, 0);
+		.wp-block-scg-header__bg--scroll {
 			border: 0;
+			transform: scale(1, 0);
 		}
 	}
 
@@ -138,8 +146,8 @@
 		--navigation--link--color: var(--wp--preset--color--base);
 		--scg-logo--main-color: var(--wp--preset--color--base);
 
-		.wp-block-scg-header__bg {
-			transform: scale(1, 1);
+		.wp-block-scg-header__bg--scroll {
+			transform: scale(1);
 		}
 	}
 
