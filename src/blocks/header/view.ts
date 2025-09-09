@@ -94,10 +94,10 @@ const { callbacks } = store( 'scg/header', {
 							y: 10,
 						} )
 						.to( MOBILE_NAVIGATION, {
-							height: 'calc(100vh - var(--wp-admin--admin-bar--height, 0px))',
+							height: 'var(--viewport-height)',
 							scaleY: 1,
 							duration: 0.65,
-							ease: 'back.out',
+							ease: 'power3.inOut',
 						} )
 						.to( LOGO_PATH, {
 							fill: 'var(--wp--preset--color--base)',

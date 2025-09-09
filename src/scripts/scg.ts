@@ -34,6 +34,13 @@ const { actions, callbacks } = store( 'scg', {
 
 			// Handle internal links.
 			callbacks.handleInternalLinks();
+
+			// Handle dynamic viewport height (mobile browsers).
+			callbacks.setScreenHeight();
+			window.addEventListener(
+				'orientationchange',
+				callbacks.setScreenHeight
+			);
 		},
 		// Handle smooth page scrolling to anchors.
 		handleInternalLinks: () => {
@@ -52,6 +59,20 @@ const { actions, callbacks } = store( 'scg', {
 					} );
 				}
 			}
+		},
+		setScreenHeight: () => {
+			const isMobile = /iPhone|iPad|Android/i.test( navigator.userAgent );
+
+			if ( ! isMobile ) {
+				return;
+			}
+
+			window.requestAnimationFrame( () => {
+				document.documentElement.style.setProperty(
+					'--screen-height',
+					`${ window.innerHeight }px`
+				);
+			} );
 		},
 	},
 } );

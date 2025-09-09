@@ -8,7 +8,7 @@
 
 		&__bg {
 			transform: scale(1);
-			height: calc(100vh - var(--wp-admin--admin-bar--height, 0px));
+			height: var(--viewport-height);
 			border: var(--navigation--border);
 			transition: none;
 		}
@@ -64,7 +64,7 @@
 			padding: var(--wp--preset--spacing--16);
 			width: 100%;
 			overflow-y: auto;
-			max-height: calc(100vh - var(--navigation--height) - var(--wp-admin--admin-bar--height, 0px) - var(--navigation--border--width));
+			max-height: calc(var(--viewport-height) - var(--navigation--height) - var(--navigation--border--width));
 			display: none;
 		}
 

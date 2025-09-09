@@ -13,6 +13,11 @@
 @use "patterns";
 
 // Layout
+:root {
+	--screen-height: 100vh;
+	--viewport-height: calc(var(--screen-height) - var(--wp-admin--admin-bar--height, 0px));
+}
+
 main {
 	margin: 0;
 }

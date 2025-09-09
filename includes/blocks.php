@@ -53,7 +53,7 @@ function modify_cover_block_render( $block_content ) {
 
 	if ( $tags->next_tag( array( 'class_name' => 'wp-block-cover' ) ) ) {
 		$style         = $tags->get_attribute( 'style' );
-		$updated_style = str_replace( '100vh', 'calc(100vh - var(--wp-admin--admin-bar--height, 0px))', $style );
+		$updated_style = str_replace( '100vh', 'var(--viewport-height)', $style );
 		$tags->set_attribute( 'style', $updated_style );
 	}
 
