@@ -38,7 +38,15 @@ a {
 	font-style: italic;
 }
 
-.is-layout-constrained > :not(.alignleft):not(.alignright):not(.alignfull) {
+.has-160-font-size,
+.has-200-font-size {
+
+	@media (max-width: 359px) {
+		hyphens: auto;
+	}
+}
+
+.is-layout-constrained > :not(.alignleft):not(.alignright):not(.alignfull):not(.is-layout-constrained):not(.is-layout-grid) {
 
 	@media (max-width: 359px) {
 		padding-left: var(--wp--preset--spacing--16);
