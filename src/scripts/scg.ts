@@ -4,6 +4,8 @@ import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 const ANCHOR_LINKS = 'a[href*="#"]';
 const ADMIN_BAR_HEIGHT = '--wp-admin--admin-bar--height';
+const SCREEN_HEIGHT = '--screen-height';
+
 const getSamePageHash = ( url: string ) => {
 	const parsed = new URL( url, String( window.location ) );
 	return parsed.origin === window.location.origin &&
@@ -70,6 +72,7 @@ const { actions, callbacks } = store( 'scg', {
 				}
 			}
 		},
+		// Set fixed screen height on mobile to avoid layout shift in browsers with dynamic toolbars.
 		setScreenHeight: () => {
 			const isMobile = /iPhone|iPad|Android/i.test( navigator.userAgent );
 
@@ -79,7 +82,7 @@ const { actions, callbacks } = store( 'scg', {
 
 			window.requestAnimationFrame( () => {
 				document.documentElement.style.setProperty(
-					'--screen-height',
+					SCREEN_HEIGHT,
 					`${ window.innerHeight }px`
 				);
 			} );
