@@ -1,16 +1,13 @@
 .scg-site-header {
 	top: var(--wp-admin--admin-bar--height, 0);
 	z-index: 1000;
-	position: sticky;
+	position: fixed;
 	left: 0;
 	right: 0;
-
-	&:has(.wp-block-scg-header.is-style-transparent) {
-		position: fixed;
-	}
 }
 
 body:has(.scg-site-header) {
+	padding-top: var(--navigation--height);
 
 	.wp-block-cover:not(.is-style-page-splash) {
 		background-color: unset;
@@ -20,4 +17,8 @@ body:has(.scg-site-header) {
 			top: var(--navigation--height);
 		}
 	}
+}
+
+body:has(.wp-block-scg-header.is-style-transparent) {
+	padding-top: 0;
 }

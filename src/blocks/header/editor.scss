@@ -1,9 +1,5 @@
 @use "../../styles/utils/breakpoints";
 
-.is-root-container:has(.wp-block-scg-header:not(.is-style-transparent)) main {
-	padding-top: var(--navigation--height);
-}
-
 .is-root-container:not(:has(> :not(.wp-block-scg-header))) {
 	background-color: var(--wp--preset--color--black, #000);
 
