@@ -87,6 +87,7 @@ export default () => {
 				data-is-open={ isOpen }
 				data-is-scrolled={ isScrolled }
 			>
+				<div className="wp-block-scg-header__bg--scroll" />
 				<div className="wp-block-scg-header__bg" />
 				{ children }
 				<button

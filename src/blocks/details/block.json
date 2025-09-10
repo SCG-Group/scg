@@ -15,7 +15,7 @@
 		"summary": {
 			"type": "rich-text",
 			"source": "rich-text",
-			"selector": ".wp-block-scg-details__summary > p",
+			"selector": ".wp-block-scg-details__summary-title > p",
 			"role": "content"
 		},
 		"hasIcon": {

@@ -1,11 +1,32 @@
+@use "../../styles/utils/transitions" as t;
+
 .wp-block-scg-job-offer {
 	display: flex;
 	gap: var(--wp--style--block-gap);
 	align-items: center;
 	text-decoration: none;
+	justify-content: space-between;
 
 	span {
-		flex-grow: 1;
 		font-weight: 700;
+		padding: 0.2em 0;
+
+		@include t.underline;
+	}
+
+	.marker {
+
+		@include t.transition;
+	}
+
+	&:hover {
+
+		span::after {
+			transform: scale(1, 1);
+		}
+
+		.marker {
+			transform: rotate(45deg);
+		}
 	}
 }

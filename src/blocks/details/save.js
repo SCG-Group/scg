@@ -13,8 +13,12 @@ export default ( { attributes } ) => {
 	return (
 		<div { ...useBlockProps.save() }>
 			<div className="wp-block-scg-details__summary">
-				{ hasIcon && icon && <img src={ icon } alt="icon" /> }
-				<RichText.Content value={ title } tagName="p" />
+				{ hasIcon && icon && (
+					<img src={ icon } alt="icon" loading="lazy" />
+				) }
+				<div className="wp-block-scg-details__summary-title">
+					<RichText.Content value={ title } tagName="p" />
+				</div>
 				<MarkerIcon />
 			</div>
 			<div

@@ -121,21 +121,27 @@ export default ( { attributes, setAttributes } ) => {
 			</InspectorControls>
 			<div { ...blockProps }>
 				<div className="wp-block-scg-details__summary">
-					{ hasIcon && icon && <img src={ icon } alt="icon" /> }
-					<RichText
-						identifier="summary"
-						aria-label={ __(
-							'Write summary. Press Enter to expand or collapse the details.'
-						) }
-						placeholder={ __( 'Section title', 'scg' ) }
-						allowedFormats={ [] }
-						withoutInteractiveFormatting
-						value={ summary }
-						onChange={ ( val ) =>
-							setAttributes( { summary: val } )
-						}
-						tagName="p"
-					/>
+					{ hasIcon && icon && (
+						<img src={ icon } alt="icon" loading="lazy" />
+					) }
+					<div className="wp-block-scg-details__summary-title">
+						<RichText
+							identifier="summary"
+							aria-label={ __(
+								'Write summary. Press Enter to expand or collapse the details.'
+							) }
+							placeholder={ __( 'Section title', 'scg' ) }
+							allowedFormats={ [] }
+							withoutInteractiveFormatting
+							disableLineBreaks
+							value={ summary }
+							onChange={ ( val ) =>
+								setAttributes( { summary: val } )
+							}
+							tagName="p"
+							spellCheck="false"
+						/>
+					</div>
 					<Marker />
 				</div>
 				<div { ...innerBlocksProps } />

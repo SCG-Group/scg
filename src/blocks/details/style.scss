@@ -7,9 +7,7 @@
 		display: flex;
 		gap: var(--wp--preset--spacing--16);
 
-		&:hover {
-			cursor: pointer;
-		}
+		@include t.transition;
 
 		> * {
 			margin-top: 0;
@@ -19,18 +17,36 @@
 		img {
 			flex-shrink: 0;
 			align-self: baseline;
+			flex-basis: 48px;
 
 			@media (max-width: calc(b.$break-mobile-layout - 1px)) {
 				width: 32px;
 				height: 32px;
+				flex-basis: 32px;
 			}
 		}
 
-		p {
+		&-title {
 			flex-grow: 1;
-			padding-top: 0.1em;
+			display: flex;
+		}
+
+		p {
+			padding: 0.05em 0 0.2em;
 			font-size: var(--wp--preset--font-size--32-alt);
 			font-weight: 700;
+			margin: 0;
+
+			@include t.underline;
+		}
+
+		&:hover {
+			cursor: pointer;
+			color: var(--wp--preset--color--accent);
+
+			p::after {
+				transform: scale(1, 1);
+			}
 		}
 
 		&:active :where(p, .marker) {
@@ -39,13 +55,13 @@
 
 		.marker {
 			align-self: center;
+			flex-shrink: 0;
 
 			&,
 			#horizontal,
 			#vertical {
 
 				@include t.transition;
-
 			}
 
 			[data-open="true"] > & {

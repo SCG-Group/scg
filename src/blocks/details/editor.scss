@@ -20,6 +20,7 @@
 
 		&:hover {
 			cursor: default;
+			color: inherit;
 		}
 
 		&:active :where(p, .marker) {
@@ -28,6 +29,10 @@
 
 		p {
 			margin: 0;
+
+			&::after {
+				content: none;
+			}
 		}
 	}
 }
