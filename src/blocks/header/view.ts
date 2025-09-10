@@ -94,7 +94,7 @@ const { callbacks } = store( 'scg/header', {
 							y: 10,
 						} )
 						.to( MOBILE_NAVIGATION, {
-							height: '100dvh',
+							height: 'var(--mobile-menu-height)',
 							duration: 0.65,
 							ease: 'power3.inOut',
 						} )

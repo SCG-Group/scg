@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 const ANCHOR_LINKS = 'a[href*="#"]';
+const ADMIN_BAR_HEIGHT = '--wp-admin--admin-bar--height';
 const getSamePageHash = ( url: string ) => {
 	const parsed = new URL( url, String( window.location ) );
 	return parsed.origin === window.location.origin &&
@@ -15,11 +16,20 @@ const { actions, callbacks } = store( 'scg', {
 	actions: {
 		// Scroll window to hash or position.
 		scrollTo: ( hash: string | number ) => {
+			const adminBarHeight = parseInt(
+				window
+					.getComputedStyle( document.documentElement )
+					.getPropertyValue( ADMIN_BAR_HEIGHT )
+					.trim()
+			);
+			const offsetY = isNaN( adminBarHeight ) ? 0 : adminBarHeight;
+
 			gsap.to( window, {
 				duration: 1.8,
 				ease: 'power3.inOut',
 				scrollTo: {
 					y: hash,
+					offsetY,
 				},
 			} );
 		},
