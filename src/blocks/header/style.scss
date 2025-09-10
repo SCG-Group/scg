@@ -78,6 +78,11 @@
 		.wp-block-navigation {
 			--navigation-layout-direction: column;
 			--navigation-layout-align: start;
+
+			&-item,
+			&-item__content {
+				width: 100%;
+			}
 		}
 	}
 
