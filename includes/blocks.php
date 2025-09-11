@@ -289,3 +289,21 @@ function modify_scroll_badge_block_render( $block_content ) {
 
 	return $tags->get_updated_html();
 }
+
+/**
+ * Allow SitePress language switcher block inside core/navigation.
+ *
+ * @param array $metadata Metadata for registering a block type.
+ * @return array
+ */
+function allow_language_switcher_in_navigation( $metadata ) {
+
+	// Only apply the filter to Heading blocks.
+	if ( ! isset( $metadata['name'] ) || 'core/navigation' !== $metadata['name'] ) {
+		return $metadata;
+	}
+
+	$metadata['allowedBlocks'] = array_merge( $metadata['allowedBlocks'], array( 'trp/language-switcher' ) );
+
+	return $metadata;
+}
