@@ -2,9 +2,5 @@
 
 .is-root-container:not(:has(> :not(.wp-block-scg-header))) {
 	background-color: var(--wp--preset--color--black, #000);
-
-	@media (max-width: calc(breakpoints.$break-mobile-layout - 1px)) {
-		min-height: 500px !important;
-
-	}
+	min-height: breakpoints.$break-mobile-height !important;
 }
