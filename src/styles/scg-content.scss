@@ -14,7 +14,7 @@
 
 // Layout
 :root {
-	--screen-height: 100vh;
+	--screen-height: 100dvh;
 	--viewport-height: calc(var(--screen-height) - var(--wp-admin--admin-bar--height, 0px));
 	--mobile-menu-height: calc(100dvh - var(--wp-admin--admin-bar--height, 0px));
 }

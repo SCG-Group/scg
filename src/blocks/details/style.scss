@@ -5,7 +5,9 @@
 
 	&__summary {
 		display: flex;
+		align-items: center;
 		gap: var(--wp--preset--spacing--16);
+		cursor: pointer;
 
 		@include t.transition;
 
@@ -16,7 +18,6 @@
 
 		img {
 			flex-shrink: 0;
-			align-self: baseline;
 			flex-basis: 48px;
 
 			@media (max-width: calc(b.$break-mobile-layout - 1px)) {
@@ -37,15 +38,23 @@
 			font-weight: 700;
 			margin: 0;
 
-			@include t.underline;
+			@include b.break-mobile-layout {
+
+				& {
+
+					@include t.underline;
+				}
+			}
 		}
 
-		&:hover {
-			cursor: pointer;
-			color: var(--wp--preset--color--accent);
+		@include b.break-mobile-layout {
 
-			p::after {
-				transform: scale(1, 1);
+			&:hover {
+				color: var(--wp--preset--color--accent);
+
+				p::after {
+					transform: scale(1, 1);
+				}
 			}
 		}
 
@@ -54,7 +63,6 @@
 		}
 
 		.marker {
-			align-self: center;
 			flex-shrink: 0;
 
 			&,

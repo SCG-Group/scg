@@ -1,10 +1,12 @@
 import { store } from '@wordpress/interactivity';
 import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const ANCHOR_LINKS = 'a[href*="#"]';
 const ADMIN_BAR_HEIGHT = '--wp-admin--admin-bar--height';
 const SCREEN_HEIGHT = '--screen-height';
+const PAGE_ELEMENTS = '.entry-content > *:not(.wp-block-cover)';
 
 const getSamePageHash = ( url: string ) => {
 	const parsed = new URL( url, String( window.location ) );
@@ -53,6 +55,9 @@ const { actions, callbacks } = store( 'scg', {
 				'change',
 				callbacks.setScreenHeight
 			);
+
+			// Animate elements on page load.
+			callbacks.showElements();
 		},
 		// Handle smooth page scrolling to anchors.
 		handleInternalLinks: () => {
@@ -86,6 +91,38 @@ const { actions, callbacks } = store( 'scg', {
 					`${ window.innerHeight }px`
 				);
 			} );
+		},
+		// Animate elements on page init.
+		showElements: () => {
+			gsap.registerPlugin( ScrollTrigger );
+
+			ScrollTrigger.batch( PAGE_ELEMENTS, {
+				batchMax: 3,
+				interval: 0.1,
+				once: true,
+				start: 'top bottom',
+				onEnter: ( batch ) =>
+					gsap.to( batch, {
+						startAt: {
+							opacity: 0,
+							y: 50,
+						},
+						opacity: 1,
+						y: 0,
+						stagger: 0.1,
+						duration: 0.35,
+					} ),
+			} );
+
+			// Watch container size changes.
+			const resizeObserver = new ResizeObserver( () => {
+				ScrollTrigger.refresh();
+			} );
+
+			const container = document.querySelector( '.wp-site-blocks' );
+			if ( container ) {
+				resizeObserver.observe( container );
+			}
 		},
 	},
 } );

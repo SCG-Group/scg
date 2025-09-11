@@ -32,3 +32,8 @@
 		transform: translate3d(calc(100vw - 100%), 0, 0);
 	}
 }
+
+// Page scroll animations.
+.entry-content > *:not(.wp-block-cover) {
+	opacity: 0;
+}
