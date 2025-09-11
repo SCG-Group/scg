@@ -19,6 +19,10 @@
 	--mobile-menu-height: calc(100dvh - var(--wp-admin--admin-bar--height, 0px));
 }
 
+body {
+	background-color: var(--wp--preset--color--white);
+}
+
 main {
 	margin: 0;
 }
