@@ -30,7 +30,7 @@
 	--navigation--border: var(--navigation--border--width) solid var(--wp--preset--color--accent);
 	--navigation--height: var(--navigation--toggle--size);
 
-	@include breakpoints.break-mobile-layout {
+	@include breakpoints.show-desktop-menu {
 		--navigation--height: calc(var(--navigation--padding) * 2 + max(1vw + 24px, var(--wp--preset--font-size--16) * 1.2 + 0.5625em * 2));
 	}
 }
@@ -64,7 +64,7 @@
 		@include t.transition(transform);
 	}
 
-	@media (max-width: calc(breakpoints.$break-mobile-layout - 1px)) {
+	@include breakpoints.show-mobile-menu {
 
 		&__menu {
 			order: 3;
@@ -86,7 +86,7 @@
 		}
 	}
 
-	@include breakpoints.break-mobile-layout {
+	@include breakpoints.show-desktop-menu {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
@@ -105,7 +105,7 @@
 		position: relative;
 		z-index: 2;
 
-		@media (max-width: calc(#{breakpoints.$break-mobile-layout} - 1px)) {
+		@include breakpoints.show-mobile-menu {
 			min-height: var(--navigation--toggle--size);
 			margin: 0 var(--wp--preset--spacing--16);
 		}
@@ -136,7 +136,7 @@
 	&.is-style-transparent {
 		--scg-logo--main-color: var(--wp--preset--color--white);
 
-		@include breakpoints.break-mobile-layout {
+		@include breakpoints.show-desktop-menu {
 			--navigation--link--color: var(--wp--preset--color--white);
 		}
 

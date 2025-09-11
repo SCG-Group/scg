@@ -16,10 +16,12 @@ $break-zoomed-in: 280px;
 // Mobile layout breakpoint
 $break-mobile-layout: $break-medium;
 
+// Height breakpoints
+$break-mobile-height: 800px;
+
 /**
  * Breakpoint mixins
  */
-
 @mixin break-xhuge() {
 
 	@media (min-width: #{ $break-xhuge }) {
@@ -86,6 +88,20 @@ $break-mobile-layout: $break-medium;
 @mixin break-mobile-layout() {
 
 	@media (min-width: #{ $break-mobile-layout }) {
+		@content;
+	}
+}
+
+@mixin show-desktop-menu() {
+
+	@media (min-width: #{ $break-mobile-layout }) and (min-height: #{ $break-mobile-height }) {
+		@content;
+	}
+}
+
+@mixin show-mobile-menu() {
+
+	@media (max-width: calc($break-mobile-layout - 1px)) or (max-height: calc($break-mobile-height - 1px)) {
 		@content;
 	}
 }

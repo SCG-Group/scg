@@ -108,7 +108,7 @@ a {
 				text-decoration: none;
 			}
 
-			@include breakpoints.break-mobile-layout {
+			@include breakpoints.show-desktop-menu {
 				font-size: var(--wp--preset--font-size--16);
 
 				a {

@@ -2,9 +2,10 @@ import { store, getElement, getContext } from '@wordpress/interactivity';
 import { gsap } from 'gsap';
 import { MODAL_OPEN } from '../../scripts/constants.ts';
 
-const MOBILE_BREAKPOINT = 782;
+const MOBILE_WIDTH = 781;
+const MOBILE_HEIGHT = 799;
 const MENU_LINKS = 'a:not([target="_blank"])';
-const ANIMATION_MEDIA_QUERY = `(max-width: ${ MOBILE_BREAKPOINT }px) and (prefers-reduced-motion: no-preference)`;
+const ANIMATION_MEDIA_QUERY = `((max-width: ${ MOBILE_WIDTH }px) or (max-height: ${ MOBILE_HEIGHT }px)) and (prefers-reduced-motion: no-preference)`;
 const MENU_ITEMS =
 	'.wp-block-scg-header :where(.wp-block-navigation-item, .wp-block-template-part)';
 const MOBILE_MENU = '.wp-block-scg-header__menu';
@@ -33,7 +34,7 @@ const { callbacks } = store( 'scg/header', {
 		onResize: () => {
 			const ctx = getContext< HeaderContext >();
 
-			if ( window.innerWidth >= MOBILE_BREAKPOINT ) {
+			if ( window.innerWidth >= MOBILE_WIDTH ) {
 				ctx.isOpen = false;
 			}
 		},
