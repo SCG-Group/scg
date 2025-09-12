@@ -18,12 +18,15 @@ function sanitize_svg() {
 
 	$svg_args = array(
 		'svg'  => array(
-			'xmlns'   => true,
-			'width'   => true,
-			'height'  => true,
-			'viewbox' => true,
-			'role'    => true,
-			'class'   => true,
+			'xmlns'       => true,
+			'width'       => true,
+			'height'      => true,
+			'viewbox'     => true,
+			'role'        => true,
+			'class'       => true,
+			'fill'        => true,
+			'aria-hidden' => true,
+			'focusable'   => true,
 		),
 		'path' => array(
 			'd'                 => true,

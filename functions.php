@@ -70,8 +70,3 @@ add_filter( 'render_block', __NAMESPACE__ . '\mask_emails' );
  * Admin
  */
 add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\enqueue_login_page_assets' );
-
-/**
- * TranslatePress.
- */
-add_filter( 'block_type_metadata', __NAMESPACE__ . '\allow_language_switcher_in_navigation' );

@@ -12,7 +12,10 @@
 @use "footer";
 @use "patterns";
 
-// Layout
+// Plugins
+@use "plugins/translatepress";
+
+// Global
 :root {
 	--screen-height: 100dvh;
 	--viewport-height: calc(var(--screen-height) - var(--wp-admin--admin-bar--height, 0px));
@@ -31,7 +34,6 @@ main {
 	margin-top: 0;
 }
 
-// Global
 a {
 
 	@include t.transition;
@@ -92,11 +94,6 @@ a {
 		drop-shadow(1px -1px 0 currentcolor)
 		drop-shadow(-1px 1px 0 currentcolor)
 		drop-shadow(1px 1px 0 currentcolor);
-}
-
-// Safe SVG.
-.safe-svg-cover svg {
-	fill: none;
 }
 
 // Navigation.

@@ -14,7 +14,7 @@
 		}
 
 		&__menu {
-			display: block;
+			display: flex;
 		}
 	}
 }
@@ -66,13 +66,20 @@
 
 	@include breakpoints.show-mobile-menu {
 
-		&__menu {
+		.wp-block-scg-header__menu {
 			order: 3;
 			padding: var(--wp--preset--spacing--16);
 			width: 100%;
 			overflow-y: auto;
 			max-height: calc(var(--viewport-height) - var(--navigation--height) - var(--navigation--border--width));
 			display: none;
+			flex-direction: column;
+			align-items: start;
+			position: relative;
+
+			> * {
+				width: 100%;
+			}
 		}
 
 		.wp-block-navigation {

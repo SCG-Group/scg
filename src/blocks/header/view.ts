@@ -7,7 +7,7 @@ const MOBILE_HEIGHT = 799;
 const MENU_LINKS = 'a:not([target="_blank"])';
 const ANIMATION_MEDIA_QUERY = `((max-width: ${ MOBILE_WIDTH }px) or (max-height: ${ MOBILE_HEIGHT }px)) and (prefers-reduced-motion: no-preference)`;
 const MENU_ITEMS =
-	'.wp-block-scg-header :where(.wp-block-navigation-item, .wp-block-template-part)';
+	'.wp-block-scg-header :where(.wp-block-navigation-item, .wp-block-template-part, .trp-block-container)';
 const MOBILE_MENU = '.wp-block-scg-header__menu';
 const MOBILE_NAVIGATION = '.wp-block-scg-header__bg';
 const LOGO_PATH = '.wp-block-scg-logo .scg-logo--main';
@@ -107,7 +107,7 @@ const { callbacks } = store( 'scg/header', {
 							MOBILE_MENU,
 							{
 								duration: 0.01,
-								display: 'block',
+								display: 'flex',
 							},
 							'-=0.5'
 						)

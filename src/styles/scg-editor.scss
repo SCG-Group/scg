@@ -1,3 +1,5 @@
+@use "utils/breakpoints" as b;
+
 :root :where(.is-layout-flow) > *:empty {
 	margin-top: 0;
 }
@@ -27,6 +29,63 @@
 
 		.wp-block-list-item > * {
 			display: inline;
+		}
+	}
+}
+
+// Plugins.
+.wp-block-trp-language-switcher {
+
+	.trp-shortcode-switcher__wrapper {
+		border: 0;
+	}
+
+	.trp-current-language-item__wrapper {
+		display: flex;
+		align-items: center;
+	}
+
+	.trp-language-item {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 7px 16px;
+		text-decoration: none;
+		min-height: 19px;
+		box-sizing: content-box;
+	}
+
+	.trp-language-item-name {
+		color: var(--text);
+	}
+
+	.trp-language-switcher.trp-shortcode-anchor .trp-shortcode-arrow {
+		display: block;
+	}
+
+	@include b.show-desktop-menu {
+
+		.trp-shortcode-overlay {
+			display: none;
+		}
+	}
+
+	@include b.show-mobile-menu {
+
+		.trp-shortcode-arrow {
+			display: none;
+		}
+
+		.trp-shortcode-anchor {
+			display: none;
+		}
+
+		.trp-shortcode-overlay {
+			display: flex;
+		}
+
+		.trp-switcher-dropdown-list {
+			display: block;
 		}
 	}
 }

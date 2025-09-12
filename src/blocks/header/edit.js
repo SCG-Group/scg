@@ -15,12 +15,12 @@ const TEMPLATE = [
 		{
 			metadata: { name: __( 'Menu', 'scg' ) },
 			className: 'wp-block-scg-header__menu',
+			layout: { type: 'flex', flexWrap: 'nowrap' },
 		},
 		[
 			[
 				'core/navigation',
 				{
-					templateLock: false,
 					className: 'is-style-main',
 					overlayMenu: 'never',
 				},
@@ -29,7 +29,6 @@ const TEMPLATE = [
 				'core/group',
 				{
 					metadata: { name: __( 'Mobile Menu', 'scg' ) },
-					templateLock: false,
 					className: 'wp-block-scg-header__mobile-menu',
 				},
 				[
@@ -59,7 +58,6 @@ export default () => {
 	const blockProps = useBlockProps( { ref } );
 	const { children, ...innerBlocksProps } = useInnerBlocksProps( blockProps, {
 		template: TEMPLATE,
-		templateLock: 'all',
 	} );
 
 	const handleClick = () => {
