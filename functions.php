@@ -67,6 +67,12 @@ add_filter( 'auto_update_translation', '__return_true' );
 add_filter( 'render_block', __NAMESPACE__ . '\mask_emails' );
 
 /**
- * Admin
+ * Admin.
  */
 add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\enqueue_login_page_assets' );
+
+/**
+ * Plugins.
+ */
+add_action( 'trp_save_editor_translations_gettext_strings', __NAMESPACE__ . '\purge_cache' );
+add_action( 'trp_save_editor_translations_regular_strings', __NAMESPACE__ . '\purge_cache' );
