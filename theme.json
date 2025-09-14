@@ -393,7 +393,7 @@
 		{
 			"name": "page-no-title",
 			"postTypes": [ "page" ],
-			"title": "Page w/o title"
+			"title": "One-page"
 		}
 	],
 	"templateParts": [

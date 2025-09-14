@@ -2,6 +2,7 @@
 import { __ } from '@wordpress/i18n';
 import {
 	registerBlockStyle,
+	unregisterBlockStyle,
 	registerBlockVariation,
 	unregisterBlockType,
 } from '@wordpress/blocks';
@@ -11,6 +12,7 @@ import domReady from '@wordpress/dom-ready';
 
 domReady( function () {
 	unregisterBlockType( 'core/details' );
+	unregisterBlockStyle( 'core/image', 'rounded' );
 } );
 
 // Add block styles to core blocks.
