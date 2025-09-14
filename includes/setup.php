@@ -29,6 +29,22 @@ function setup_theme() {
 	update_option( 'large_size_w', 1280 );
 	update_option( 'large_size_h', 1280 );
 	add_image_size( 'thumbnail_small', 298, 224, true );
+	add_image_size( 'fullscreen', 1920, 1920 );
+}
+
+/**
+ * Add custom image size to sizes list
+ *
+ * @return array
+ */
+function add_custom_image_sizes() {
+	return array(
+		'thumbnail'  => __( 'Thumbnail' ),
+		'medium'     => __( 'Medium' ),
+		'large'      => __( 'Large' ),
+		'fullscreen' => __( 'Fullscreen', 'scg' ),
+		'full'       => __( 'Full Size' ),
+	);
 }
 
 /**

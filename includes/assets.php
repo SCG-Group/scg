@@ -117,3 +117,21 @@ function enqueue_login_page_assets() {
 		);
 	}
 }
+
+/**
+ * Preload images.
+ */
+function preload_images() {
+	global $scg_preload_images;
+
+	if ( empty( $scg_preload_images ) ) {
+		return;
+	}
+
+	foreach ( array_unique( $scg_preload_images ) as $url ) {
+		printf(
+			'<link rel="preload" as="image" href="%s" />' . "\n",
+			esc_url( $url )
+		);
+	}
+}

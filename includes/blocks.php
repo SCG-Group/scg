@@ -46,15 +46,25 @@ function init_blocks() {
  * Modify core/cover block to include adminbar.
  *
  * @param string $block_content The block content.
+ * @param array  $block The full block, including name and attributes.
  * @return string
  */
-function modify_cover_block_render( $block_content ) {
+function modify_cover_block_render( $block_content, $block ) {
 	$tags = new \WP_HTML_Tag_Processor( $block_content );
 
 	if ( $tags->next_tag( array( 'class_name' => 'wp-block-cover' ) ) ) {
 		$style         = $tags->get_attribute( 'style' );
 		$updated_style = str_replace( '100vh', 'var(--viewport-height)', $style );
 		$tags->set_attribute( 'style', $updated_style );
+	}
+
+	if ( $tags->has_class( 'is-style-page-splash' ) ) {
+		$img_url = $block['attrs']['url'];
+
+		if ( ! empty( $img_url ) ) {
+			global $scg_preload_images;
+			$scg_preload_images[] = $img_url;
+		}
 	}
 
 	return $tags->get_updated_html();

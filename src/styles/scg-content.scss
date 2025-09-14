@@ -93,7 +93,7 @@ a {
 		drop-shadow(-1px 1px 0 currentcolor)
 		drop-shadow(1px 1px 0 currentcolor);
 
-	&[data-rich-text-format-boundary] {
+	.rich-text:focus &[data-rich-text-format-boundary] {
 		background-color: transparent;
 	}
 }
