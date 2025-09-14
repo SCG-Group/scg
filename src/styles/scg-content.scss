@@ -101,6 +101,13 @@ a {
 
 	&.is-style-main {
 
+		.wp-block-navigation__container {
+
+			@include breakpoints.show-desktop-menu {
+				row-gap: 0;
+			}
+		}
+
 		.wp-block-navigation-link {
 			font-weight: 700;
 			font-size: 1.5rem;

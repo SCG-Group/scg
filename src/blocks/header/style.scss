@@ -40,6 +40,7 @@
 	align-items: start;
 	flex-direction: column;
 	position: relative;
+	column-gap: var(--wp--preset--spacing--32);
 
 	&__bg,
 	&__bg--scroll {
