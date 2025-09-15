@@ -16,8 +16,8 @@
 
 	<!-- wp:group {"className":"scg-info-grid","layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"21rem"}} -->
 	<div class="wp-block-group scg-info-grid"><!-- wp:group {"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group"><!-- wp:image {"id":488,"sizeSlug":"thumbnail","linkDestination":"none"} -->
-			<figure class="wp-block-image size-thumbnail"><img src="https://scg.local/wp-content/uploads/2025/07/Rectangle-33.png-500x377.webp" alt="" class="wp-image-488" /></figure>
+		<div class="wp-block-group"><!-- wp:image {"sizeSlug":"thumbnail","linkDestination":"none"} -->
+			<figure class="wp-block-image size-thumbnail"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-image.webp" alt="" /></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"constrained"}} -->
@@ -34,8 +34,8 @@
 		<!-- /wp:group -->
 
 		<!-- wp:group {"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group"><!-- wp:image {"id":489,"sizeSlug":"thumbnail","linkDestination":"none"} -->
-			<figure class="wp-block-image size-thumbnail"><img src="https://scg.local/wp-content/uploads/2025/07/Rectangle-22_1.png-500x377.webp" alt="" class="wp-image-489" /></figure>
+		<div class="wp-block-group"><!-- wp:image {"sizeSlug":"thumbnail","linkDestination":"none"} -->
+			<figure class="wp-block-image size-thumbnail"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-image.webp" alt="" /></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"constrained"}} -->
@@ -52,8 +52,8 @@
 		<!-- /wp:group -->
 
 		<!-- wp:group {"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group"><!-- wp:image {"id":490,"sizeSlug":"thumbnail","linkDestination":"none"} -->
-			<figure class="wp-block-image size-thumbnail"><img src="https://scg.local/wp-content/uploads/2025/07/Rectangle-22.png-500x377.webp" alt="" class="wp-image-490" /></figure>
+		<div class="wp-block-group"><!-- wp:image {"sizeSlug":"thumbnail","linkDestination":"none"} -->
+			<figure class="wp-block-image size-thumbnail"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-image.webp" alt="" /></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"constrained"}} -->
@@ -70,8 +70,8 @@
 		<!-- /wp:group -->
 
 		<!-- wp:group {"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group"><!-- wp:image {"id":491,"sizeSlug":"thumbnail","linkDestination":"none"} -->
-			<figure class="wp-block-image size-thumbnail"><img src="https://scg.local/wp-content/uploads/2025/07/Rectangle-22_2.png-500x377.webp" alt="" class="wp-image-491" /></figure>
+		<div class="wp-block-group"><!-- wp:image {"sizeSlug":"thumbnail","linkDestination":"none"} -->
+			<figure class="wp-block-image size-thumbnail"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-image.webp" alt="" /></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"constrained"}} -->
@@ -88,8 +88,8 @@
 		<!-- /wp:group -->
 
 		<!-- wp:group {"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group"><!-- wp:image {"id":492,"sizeSlug":"thumbnail","linkDestination":"none"} -->
-			<figure class="wp-block-image size-thumbnail"><img src="https://scg.local/wp-content/uploads/2025/07/Rectangle-33_2.png-500x377.webp" alt="" class="wp-image-492" /></figure>
+		<div class="wp-block-group"><!-- wp:image {"sizeSlug":"thumbnail","linkDestination":"none"} -->
+			<figure class="wp-block-image size-thumbnail"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-image.webp" alt="" /></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"constrained"}} -->
@@ -106,8 +106,8 @@
 		<!-- /wp:group -->
 
 		<!-- wp:group {"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group"><!-- wp:image {"id":493,"sizeSlug":"thumbnail","linkDestination":"none"} -->
-			<figure class="wp-block-image size-thumbnail"><img src="https://scg.local/wp-content/uploads/2025/07/Rectangle-33_1.png-500x377.webp" alt="" class="wp-image-493" /></figure>
+		<div class="wp-block-group"><!-- wp:image {"sizeSlug":"thumbnail","linkDestination":"none"} -->
+			<figure class="wp-block-image size-thumbnail"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-image.webp" alt="" /></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|16"}},"layout":{"type":"constrained"}} -->

@@ -10,7 +10,7 @@
 
 ?>
 <!-- wp:group {"metadata":{"name":"Fleet Info"},"align":"full","style":{"spacing":{"blockGap":"var:preset|spacing|64"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull"><!-- wp:media-text {"align":"full","mediaPosition":"right","mediaId":517,"mediaLink":"https://scg.local/quality/frame-133-png/","mediaType":"image","mediaWidth":48,"verticalAlignment":"top","imageFill":true,"metadata":{"categories":["text"],"patternName":"scg/image-text-left","name":"Image \u0026 Text Left"}} -->
+<div class="wp-block-group alignfull"><!-- wp:media-text {"align":"full","mediaPosition":"right","mediaType":"image","mediaWidth":48,"verticalAlignment":"top","imageFill":true,"metadata":{"categories":["text"],"patternName":"scg/image-text-left","name":"Image \u0026 Text Left"}} -->
 	<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-top is-image-fill-element" style="grid-template-columns:auto 48%">
 	<div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 		<h3 class="wp-block-heading">Vans</h3>
@@ -24,7 +24,7 @@
 		<p>Our refrigerated vans are especially suited for pharmaceutical deliveries, ensuring strict temperature control and product safety. The compact size of our light-duty vehicles makes them ideal for deliveries in urban areas where larger vehicles would struggle to manoeuvre. With GPS tracking and optimised routing, these vehicles are perfect for handling multiple delivery stops per route, which is often required for e-commerce, retail and pharmaceutical distribution.</p>
 		<!-- /wp:paragraph -->
 	</div>
-	<figure class="wp-block-media-text__media"><img src="https://scg.local/wp-content/uploads/2025/07/Frame-133.png-1024x732.webp" alt="" class="wp-image-517 size-full" style="object-position:50% 50%" /></figure>
+	<figure class="wp-block-media-text__media"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-image.webp" alt="" style="object-position:50% 50%" /></figure>
 	</div>
 	<!-- /wp:media-text -->
 
@@ -34,8 +34,8 @@
 	<!-- /wp:spacer -->
 
 	<!-- wp:group {"metadata":{"name":"Model"},"className":"scg-fleet-model","layout":{"type":"grid","columnCount":4,"minimumColumnWidth":null}} -->
-	<div class="wp-block-group scg-fleet-model"><!-- wp:image {"id":864,"sizeSlug":"large","linkDestination":"none","style":{"layout":{"columnSpan":2}}} -->
-		<figure class="wp-block-image size-large"><img src="https://scg.local/wp-content/uploads/2025/08/fleet_icon-1.svg" alt="" class="wp-image-864" /></figure>
+	<div class="wp-block-group scg-fleet-model"><!-- wp:image {"linkDestination":"none","style":{"layout":{"columnSpan":2}}} -->
+		<figure class="wp-block-image"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-car-icon.svg" alt="" /></figure>
 		<!-- /wp:image -->
 
 		<!-- wp:paragraph {"metadata":{"name":"Name"},"style":{"typography":{"fontWeight":"700","fontStyle":"normal"}},"fontSize":"24"} -->

@@ -11,7 +11,7 @@
 ?>
 <!-- wp:group {"metadata":{"name":"Box"},"className":"scg-box","style":{"spacing":{"padding":{"top":"var:preset|spacing|32","bottom":"var:preset|spacing|32","left":"var:preset|spacing|32","right":"var:preset|spacing|32"}}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-group scg-box" style="padding-top:var(--wp--preset--spacing--32);padding-right:var(--wp--preset--spacing--32);padding-bottom:var(--wp--preset--spacing--32);padding-left:var(--wp--preset--spacing--32)"><!-- wp:image {"id":552,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://scg.local/wp-content/uploads/2025/07/Frame-6.svg" alt="" class="wp-image-552" /></figure>
+	<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-box-icon.svg" alt="" /></figure>
 	<!-- /wp:image -->
 
 	<!-- wp:paragraph {"placeholder":"Content…","style":{"typography":{"fontWeight":"700","fontStyle":"normal"},"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"32","fontFamily":"body"} -->

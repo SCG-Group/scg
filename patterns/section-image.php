@@ -14,7 +14,7 @@
 <h3 class="wp-block-heading">Benefits</h3>
 <!-- /wp:heading -->
 
-<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaId":94,"mediaLink":"https://scg.local/istockphoto-1166978137-2048x2048/","mediaType":"image","mediaWidth":40,"verticalAlignment":"top"} -->
+<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaType":"image","mediaWidth":40,"verticalAlignment":"top"} -->
 <div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-top" style="grid-template-columns:auto 40%"><div class="wp-block-media-text__content"><!-- wp:list {"className":"is-style-spaced"} -->
 <ul class="wp-block-list is-style-spaced"><!-- wp:list-item -->
 <li>A competitive salary, a contract of employment, and high monthly bonuses guaranteed in the employment contract depending on the profit earned</li>
@@ -43,6 +43,6 @@
 <!-- wp:list-item -->
 <li>LTL</li>
 <!-- /wp:list-item --></ul>
-<!-- /wp:list --></div><figure class="wp-block-media-text__media"><img src="https://scg.local/wp-content/uploads/2025/06/istockphoto-1166978137-2048x2048-1-1024x683.jpg" alt="" class="wp-image-94 size-full"/></figure></div>
+<!-- /wp:list --></div><figure class="wp-block-media-text__media"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-image.webp" alt="" /></figure></div>
 <!-- /wp:media-text --></div>
 <!-- /wp:group -->

@@ -10,8 +10,8 @@
 
 ?>
 <!-- wp:group {"metadata":{"name":"Model"},"className":"scg-fleet-model","layout":{"type":"grid","columnCount":4,"minimumColumnWidth":null}} -->
-<div class="wp-block-group scg-fleet-model"><!-- wp:image {"id":864,"sizeSlug":"large","linkDestination":"none","style":{"layout":{"columnSpan":2}}} -->
-	<figure class="wp-block-image size-large"><img src="https://scg.local/wp-content/uploads/2025/08/fleet_icon-1.svg" alt="" class="wp-image-864" /></figure>
+<div class="wp-block-group scg-fleet-model"><!-- wp:image {"linkDestination":"none","style":{"layout":{"columnSpan":2}}} -->
+	<figure class="wp-block-image"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-car-icon.svg" alt="" /></figure>
 	<!-- /wp:image -->
 
 	<!-- wp:paragraph {"metadata":{"name":"Name"},"style":{"typography":{"fontWeight":"700","fontStyle":"normal","textTransform":"uppercase"}},"fontSize":"24"} -->

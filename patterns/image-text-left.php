@@ -9,7 +9,7 @@
  */
 
 ?>
-<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaId":94,"mediaLink":"https://scg.local/istockphoto-1166978137-2048x2048/","mediaType":"image","mediaWidth":48,"verticalAlignment":"top","imageFill":true} -->
+<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaType":"image","mediaWidth":48,"verticalAlignment":"top","imageFill":true} -->
 <div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-top is-image-fill-element" style="grid-template-columns:auto 48%">
 	<div class="wp-block-media-text__content">
 	<!-- wp:heading {"level":3} -->
@@ -25,7 +25,7 @@
 	<!-- /wp:paragraph -->
 </div>
 <figure class="wp-block-media-text__media">
-	<img src="https://scg.local/wp-content/uploads/2025/06/istockphoto-1166978137-2048x2048-1-1024x683.jpg" alt="" class="wp-image-94 size-full" style="object-position:50% 50%"/>
+	<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/sample-image.webp" alt="" style="object-position:50% 50%"/>
 </figure>
 </div>
 <!-- /wp:media-text -->
