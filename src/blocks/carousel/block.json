@@ -6,7 +6,38 @@
 	"title": "SCG Carousel",
 	"category": "scg",
 	"description": "Image carousel block.",
-	"example": {},
+	"example": {
+		"innerBlocks": [
+			{
+				"name": "core/image",
+				"attributes": {
+					"url": "/wp-content/themes/scg/assets/images/sample-image.webp",
+					"sizeSlug": "thumbnail"
+				}
+			},
+			{
+				"name": "core/image",
+				"attributes": {
+					"url": "/wp-content/themes/scg/assets/images/sample-image.webp",
+					"sizeSlug": "thumbnail"
+				}
+			},
+			{
+				"name": "core/image",
+				"attributes": {
+					"url": "/wp-content/themes/scg/assets/images/sample-image.webp",
+					"sizeSlug": "thumbnail"
+				}
+			},
+			{
+				"name": "core/image",
+				"attributes": {
+					"url": "/wp-content/themes/scg/assets/images/sample-image.webp",
+					"sizeSlug": "thumbnail"
+				}
+			}
+		]
+	},
 	"allowedBlocks": [ "core/image" ],
 	"attributes": {
 		"spacing": {

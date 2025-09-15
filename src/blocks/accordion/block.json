@@ -7,7 +7,35 @@
 	"category": "scg",
 	"description": "Block containing collapisble elements with summary and content.",
 	"allowedBlocks": [ "scg/details", "core/spacer" ],
-	"example": {},
+	"example": {
+		"innerBlocks": [
+			{
+				"name": "core/spacer",
+				"attributes": { "height": "1px" }
+			},
+			{
+				"name": "scg/details"
+			},
+			{
+				"name": "core/spacer",
+				"attributes": { "height": "1px" }
+			},
+			{
+				"name": "scg/details"
+			},
+			{
+				"name": "core/spacer",
+				"attributes": { "height": "1px" }
+			},
+			{
+				"name": "scg/details"
+			},
+			{
+				"name": "core/spacer",
+				"attributes": { "height": "1px" }
+			}
+		]
+	},
 	"supports": {
 		"interactivity": true,
 		"layout": true,

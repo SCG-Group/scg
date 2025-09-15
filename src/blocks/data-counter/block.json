@@ -5,8 +5,29 @@
 	"version": "0.1.0",
 	"title": "Data Counter",
 	"category": "scg",
-	"description": "Block that takes data point and animates its numerical value to grow from 0.",
-	"example": {},
+	"description": "Block that takes data point and animates its numerical value to grow from 0 when scrolled into viewport.",
+	"example": {
+		"attributes": {
+			"value": 1500,
+			"prefix": "+",
+			"style": {
+				"elements": {
+					"link": {
+						"color": {
+							"text": "var:preset|color|accent"
+						}
+					}
+				},
+				"typography": {
+					"textAlign": "center"
+				}
+			},
+			"textColor": "accent",
+			"fontSize": "128",
+			"fontFamily": "headings"
+		},
+		"viewport": 320
+	},
 	"attributes": {
 		"value": {
 			"type": "number",

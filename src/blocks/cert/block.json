@@ -6,7 +6,15 @@
 	"title": "SCG Certificate",
 	"category": "scg",
 	"description": "Information about certificate and ability to display PDF.",
-	"example": {},
+	"example": {
+		"attributes": {
+			"name": "ISO 9001:2015",
+			"category": "Security",
+			"certId": 123,
+			"img": "/wp-content/themes/scg/assets/images/sample-cert.webp"
+		},
+		"viewportWidth": 1000
+	},
 	"icon": "star-empty",
 	"attributes": {
 		"name": {

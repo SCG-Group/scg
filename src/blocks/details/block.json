@@ -16,7 +16,8 @@
 			"type": "rich-text",
 			"source": "rich-text",
 			"selector": ".wp-block-scg-details__summary-title > p",
-			"role": "content"
+			"role": "content",
+			"default": "High Value"
 		},
 		"hasIcon": {
 			"type": "boolean",

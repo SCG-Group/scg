@@ -7,7 +7,6 @@
 	"category": "scg",
 	"icon": "media-interactive",
 	"description": "Block prompting viewers to scroll down. Used in splash section of one-page template.",
-	"example": {},
 	"supports": {
 		"interactivity": true
 	},

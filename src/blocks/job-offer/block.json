@@ -7,7 +7,11 @@
 	"category": "scg",
 	"icon": "smiley",
 	"description": "Block containing a link to external job ad.",
-	"example": {},
+	"example": {
+		"attributes": {
+			"position": "International forwarding assistant – English"
+		}
+	},
 	"attributes": {
 		"url": {
 			"type": "string"

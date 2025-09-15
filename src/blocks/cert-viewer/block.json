@@ -7,7 +7,6 @@
 	"category": "scg",
 	"icon": "star-filled",
 	"description": "Block for viewing certificate media.",
-	"example": {},
 	"supports": {
 		"interactivity": true
 	},
