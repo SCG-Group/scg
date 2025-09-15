@@ -70,7 +70,7 @@ add_filter( 'render_block', __NAMESPACE__ . '\mask_emails' );
 /**
  * Performance.
  */
-add_action( 'wp_head', __NAMESPACE__ . '\preload_images', 1 );
+add_action( 'wp_head', __NAMESPACE__ . '\add_responsive_section_images', 1 );
 
 /**
  * Admin.

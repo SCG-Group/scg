@@ -121,17 +121,24 @@ function enqueue_login_page_assets() {
 /**
  * Preload images.
  */
-function preload_images() {
-	global $scg_preload_images;
-
-	if ( empty( $scg_preload_images ) ) {
+function add_responsive_section_images() {
+	global $scg_section_responsive_images;
+	if ( empty( $scg_section_responsive_images ) ) {
 		return;
 	}
 
-	foreach ( array_unique( $scg_preload_images ) as $url ) {
-		printf(
-			'<link rel="preload" as="image" href="%s" />' . "\n",
-			esc_url( $url )
-		);
+	echo "<style id='scg-section-images'>\n";
+	foreach ( $scg_section_responsive_images as $item ) {
+		$id     = esc_attr( $item['id'] );
+		$medium = esc_url( $item['medium'] );
+		$large  = esc_url( $item['large'] );
+
+		if ( $medium ) {
+			echo "@media (max-width: 500px) { .{$id} .wp-block-cover__image-background { background-image: url('{$medium}') !important; } }\n"; //@codingStandardsIgnoreLine.
+		}
+		if ( $large ) {
+			echo "@media (max-width: 1280px) { .{$id} .wp-block-cover__image-background { background-image: url('{$large}') !important; } }\n"; //@codingStandardsIgnoreLine.
+		}
 	}
+	echo "</style>\n";
 }

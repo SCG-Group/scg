@@ -58,13 +58,19 @@ function modify_cover_block_render( $block_content, $block ) {
 		$tags->set_attribute( 'style', $updated_style );
 	}
 
-	if ( $tags->has_class( 'is-style-page-splash' ) ) {
-		$img_url = $block['attrs']['url'];
+	$has_parallax = $block['attrs']['hasParallax'] ?? false;
+	$img_id       = $block['attrs']['id'] ?? false;
 
-		if ( ! empty( $img_url ) ) {
-			global $scg_preload_images;
-			$scg_preload_images[] = $img_url;
-		}
+	if ( $has_parallax && ! empty( $img_id ) ) {
+		global $scg_section_responsive_images;
+
+		$id = wp_unique_id( 'scg-cover-' );
+		$tags->add_class( $id );
+		$scg_section_responsive_images[] = array(
+			'id'     => $id,
+			'medium' => wp_get_attachment_image_url( $img_id, 'medium' ) ?? false,
+			'large'  => wp_get_attachment_image_url( $img_id, 'large' ) ?? false,
+		);
 	}
 
 	return $tags->get_updated_html();
