@@ -58,6 +58,14 @@ const { actions, callbacks } = store( 'scg', {
 
 			// Animate elements on page load.
 			callbacks.showElements();
+
+			// Disable [inert] in langauge switcher [translatePress].
+			// Needed for mobile view when all items are visible.
+			window.setTimeout( () => {
+				document
+					.querySelector( '.trp-switcher-dropdown-list[inert]' )
+					?.removeAttribute( 'inert' );
+			}, 500 );
 		},
 		// Handle smooth page scrolling to anchors.
 		handleInternalLinks: () => {
