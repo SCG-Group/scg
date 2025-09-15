@@ -40,6 +40,10 @@
 				.trp-switcher-dropdown-list {
 					flex-direction: row;
 					flex-wrap: wrap;
+
+					&[inert] {
+						interactivity: auto;
+					}
 				}
 
 				&__wrapper {
