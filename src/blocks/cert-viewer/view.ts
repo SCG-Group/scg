@@ -52,7 +52,6 @@ interface State {
 	animation: gsap.core.Timeline;
 }
 
-const MODAL_MAX_WIDTH = 1000;
 const ZOOM_MAX = 5;
 const ZOOM_MIN = -3;
 const SCALE_FACTOR = 1.25;
@@ -256,12 +255,8 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 			}
 		},
 		getViewport: ( page: PDFPageProxy ) => {
-			const { width } = page.getViewport( { scale: 1 } );
-			const maxWidth =
-				window.innerWidth > MODAL_MAX_WIDTH
-					? MODAL_MAX_WIDTH
-					: window.innerWidth;
-			state.scale = state.scale || maxWidth / width;
+			const { height } = page.getViewport( { scale: 1 } );
+			state.scale = state.scale || window.innerHeight / height;
 
 			return page.getViewport( { scale: state.scale } );
 		},
