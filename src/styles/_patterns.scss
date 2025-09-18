@@ -80,6 +80,8 @@
 		align-items: unset;
 		justify-content: unset;
 
+		top: calc(-1 * var(--wp--preset--spacing--64));
+
 		.wp-block-cover {
 
 			// Override content position settings.
@@ -138,7 +140,7 @@
 			@include breakpoints.break-mobile {
 				left: unset;
 				transform: unset;
-				right: var(--navigation--padding);
+				right: var(--navigation--padding-x);
 				margin: 0 !important;
 			}
 		}

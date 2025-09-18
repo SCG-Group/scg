@@ -24,14 +24,15 @@
 	--navigation--toggle--background-color: var(--wp--preset--color--accent);
 	--navigation--toggle--color: var(--wp--preset--color--white);
 	--navigation--link--hover-color: var(--wp--preset--color--accent);
-	--navigation--padding: var(--wp--preset--spacing--40);
+	--navigation--padding-x: var(--wp--preset--spacing--32);
+	--navigation--padding-y: var(--wp--preset--spacing--20);
 	--navigation--background: var(--wp--preset--color--white);
 	--navigation--border--width: 4px;
 	--navigation--border: var(--navigation--border--width) solid var(--wp--preset--color--accent);
 	--navigation--height: var(--navigation--toggle--size);
 
 	@include breakpoints.show-desktop-menu {
-		--navigation--height: calc(var(--navigation--padding) * 2 + max(1vw + 24px, var(--wp--preset--font-size--16) * 1.2 + 0.5625em * 2));
+		--navigation--height: calc(var(--navigation--padding-y) * 2 + max(1vw + 24px, var(--wp--preset--font-size--16) * 1.2 + 0.5625em * 2));
 	}
 }
 
@@ -99,7 +100,7 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: nowrap;
-		padding: var(--navigation--padding);
+		padding: var(--navigation--padding-y) var(--navigation--padding-x);
 
 		& &__mobile-menu,
 		& &__toggle {
