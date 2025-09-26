@@ -61,7 +61,7 @@
 		height: var(--navigation--height);
 		transform: scale(1);
 		transform-origin: top;
-		border-bottom: 2px solid var(--wp--custom--border--base);
+		border-bottom: 1px solid var(--wp--custom--border--base);
 
 		@include t.transition(transform);
 	}
@@ -150,7 +150,6 @@
 		}
 
 		.wp-block-scg-header__bg--scroll {
-			border: 0;
 			transform: scale(1, 0);
 		}
 	}
@@ -162,6 +161,16 @@
 
 		.wp-block-scg-header__bg--scroll {
 			transform: scale(1);
+		}
+	}
+
+	&:not([data-is-scrolled="true"]) {
+
+		&.is-style-transparent {
+
+			.wp-block-scg-header__bg--scroll {
+				border-color: transparent;
+			}
 		}
 	}
 
