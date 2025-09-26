@@ -145,16 +145,6 @@
 	}
 }
 
-.wp-block-group {
-	// Stats
-	&.scg-stats {
-
-		@include breakpoints.break-wide {
-			max-width: calc(0.7 * var(--wp--style--global--content-size, 100%));
-		}
-	}
-}
-
 // Box.
 .scg-box {
 	border: 4px solid var(--wp--preset--color--accent);
