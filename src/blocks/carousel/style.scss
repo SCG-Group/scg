@@ -1,7 +1,7 @@
 :root {
 	--scg-carousel--aspect-ration: 352 / 265;
-	--scg-cariysel--height: max(21vw, 14rem);
-	--scg-cariysel--max-height: 377px;
+	--scg-carousel--height: max(21vw, 14rem);
+	--scg-carousel--max-height: 377px;
 }
 
 .wp-block-scg-carousel {
@@ -9,23 +9,16 @@
 	display: flex;
 	overflow: hidden;
 
-	&__wrapper {
-		padding-right: calc(100vw - var(--wp--style--global--content-size));
+	.wp-block-scg-carousel__wrapper {
+		gap: 0;
 
-		> * {
+		.wp-block-image {
 			margin: 0;
+			margin-left: var(--wp--style--block-gap);
 			width: auto;
 			aspect-ratio: var(--scg-carousel--aspect-ration);
-			height: var(--scg-cariysel--height);
-			max-height: var(--scg-cariysel--max-height);
-		}
-	}
-
-	&.alignfull {
-
-		.wp-block-scg-carousel__wrapper {
-			padding-left: calc((100vw - var(--wp--style--global--content-size)) / 2);
-			padding-right: var(--wp--style--block-gap, var(--wp--preset--spacing--32));
+			height: var(--scg-carousel--height);
+			max-height: var(--scg-carousel--max-height);
 		}
 	}
 }

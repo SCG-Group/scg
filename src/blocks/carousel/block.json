@@ -39,20 +39,9 @@
 		]
 	},
 	"allowedBlocks": [ "core/image" ],
-	"attributes": {
-		"spacing": {
-			"type": "object",
-			"blockGap": {
-				"default": "var:style|block-gap"
-			}
-		}
-	},
 	"supports": {
 		"html": false,
 		"align": [ "wide", "full" ],
-		"spacing": {
-			"blockGap": true
-		},
 		"layout": {
 			"allowEditing": false,
 			"default": {
