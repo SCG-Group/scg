@@ -1,5 +1,6 @@
 @use "../../styles/utils/breakpoints" as b;
 @use "../../styles/utils/misc" as m;
+@use "../../styles/utils/transitions" as t;
 
 :root {
 	--cert-viewer--background: var(--wp--custom--color--white-2);
@@ -7,6 +8,7 @@
 	--cert-viewer--control--size: 56px;
 	--cert-viewer--control--background: var(--wp--preset--color--accent);
 	--cert-viewer--control--color: var(--wp--preset--color--white);
+	--cert-viewer--control--border: var(--wp--preset--color--accent);
 	--cert-viewer--control--background--disabled: var(--wp--preset--color--base);
 }
 
@@ -93,22 +95,33 @@
 		width: var(--cert-viewer--control--size);
 		height: var(--cert-viewer--control--size);
 		background-color: var(--cert-viewer--control--background);
+		border: 2px solid var(--cert-viewer--control--border);
 		color: var(--cert-viewer--control--color);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: none;
 		position: absolute;
 		z-index: 10;
 		touch-action: manipulation;
 
-		&:active {
-			opacity: 0.75;
+		svg {
+
+			path {
+
+				&[stroke] {
+					stroke: currentcolor;
+				}
+
+				&[fill]:not([fill="none"]) {
+					fill: currentcolor;
+				}
+			}
 		}
 
 		&[disabled] {
 			cursor: not-allowed;
-			background-color: var(--cert-viewer--control--background--disabled);
+			--cert-viewer--control--background: var(--cert-viewer--control--background--disabled);
+			--cert-viewer--control--border: var(--cert-viewer--control--background--disabled);
 
 			svg {
 				opacity: 0.5;
@@ -117,6 +130,18 @@
 
 		&:not([disabled]) {
 			cursor: pointer;
+
+			&:hover {
+				--cert-viewer--control--background: var(--wp--preset--color--white);
+				--cert-viewer--control--color: var(--wp--preset--color--accent);
+			}
+
+			@include t.transition;
+
+			&:active {
+				opacity: 0.75;
+				transition: none;
+			}
 		}
 
 		&[hidden] {
@@ -128,6 +153,11 @@
 			right: 0;
 
 			@include m.close-icon("open");
+
+			&::before,
+			&::after {
+				background-color: currentcolor;
+			}
 		}
 
 		&--next,
