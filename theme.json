@@ -196,27 +196,27 @@
 			"fontSizes": [
 				{
 					"name": "200/128",
-					"size": "clamp(5rem, 5rem + ((100vw - 22.5rem) * 0.07964), calc(1vw + 11.7rem))",
+					"size": "clamp(4.25rem, 4.25rem + ((100vw - 22.5rem) * 0.07964), calc(1vw + 11.7rem))",
 					"slug": "200"
 				},
 				{
 					"name": "160/96",
-					"size": "clamp(5rem, 5rem + ((100vw - 22.5rem) * 0.06957), calc(1vw + 9.2rem))",
+					"size": "clamp(4rem, 4rem + ((100vw - 22.5rem) * 0.06957), calc(1vw + 9.2rem))",
 					"slug": "160"
 				},
 				{
 					"name": "128/80",
-					"size": "clamp(4rem, 4rem + ((100vw - 22.5rem) * 0.04248), calc(1vw + 7.2rem))",
+					"size": "clamp(3.75rem, 3.75rem + ((100vw - 22.5rem) * 0.04248), calc(1vw + 7.2rem))",
 					"slug": "128"
 				},
 				{
 					"name": "96/64",
-					"size": "clamp(4rem, 4rem + ((100vw - 22.5rem) * 0.03536), calc(1vw + 5.2rem))",
+					"size": "clamp(3.5rem, 3.5em + ((100vw - 22.5rem) * 0.03536), calc(1vw + 5.2rem))",
 					"slug": "96"
 				},
 				{
 					"name": "80/56",
-					"size": "clamp(3.5rem, 3.5rem + ((100vw - 22.5rem) * 0.02652), calc(1vw + 4.2rem))",
+					"size": "clamp(3.25rem, 3.25rem + ((100vw - 22.5rem) * 0.02652), calc(1vw + 4.2rem))",
 					"slug": "80"
 				},
 				{
