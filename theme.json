@@ -220,6 +220,11 @@
 					"slug": "80"
 				},
 				{
+					"name": "64/48",
+					"size": "clamp(3rem, 3rem + ((100vw - 22.5rem) * 0.01768), calc(1vw + 3.2rem))",
+					"slug": "64"
+				},
+				{
 					"name": "56/40",
 					"size": "clamp(2.5rem, 2.5rem + ((100vw - 22.5rem) * 0.01768), calc(1vw + 2.7rem))",
 					"slug": "56"

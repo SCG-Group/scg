@@ -1,4 +1,5 @@
 @use "utils/breakpoints";
+@use "utils/transitions" as t;
 
 .scg-site-footer {
 
@@ -28,6 +29,16 @@
 		.wp-block-navigation-item__content.wp-block-navigation-item__content
 	):hover {
 			color: var(--wp--preset--color--white);
+		}
+	}
+
+	&__contact {
+
+		a {
+			display: inline-block;
+			margin: 4px 0;
+
+			@include t.underline;
 		}
 	}
 }

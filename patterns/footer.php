@@ -16,20 +16,20 @@
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
 			<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"80","fontFamily":"headings"} -->
-			<p class="has-headings-font-family has-80-font-size">A partner <br><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">you can trust</mark></p>
+			<p class="has-headings-font-family has-64-font-size">A partner <br><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-accent-color">you can trust</mark></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
-			<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"32"} -->
-			<p class="has-32-font-size">For all inquires please contact us at <strong><a href="mailto:contact@scgtransport.com">contact@scgtransport.com</a></strong> <br>or <strong><a href="tel:0048539926274">0048 539 926 274</a></strong></p>
+			<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"32","className":"scg-site-footer__contact"} -->
+			<p class="has-32-font-size scg-site-footer__contact">For all inquires please contact us at <strong><a href="mailto:contact@scgtransport.com">contact@scgtransport.com</a></strong> <br>or <strong><a href="tel:0048539926274">0048 539 926 274</a></strong></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 	</div>
 	<!-- /wp:columns -->
-	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"className":"scg-footer__bottom","fontSize":"14"} -->
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"className":"scg-site-footer__bottom","fontSize":"14"} -->
 	<div class="wp-block-group scg-site-footer__bottom has-14-font-size">
 		<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
 		<div class="wp-block-group">
