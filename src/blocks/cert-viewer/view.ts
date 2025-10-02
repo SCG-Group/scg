@@ -53,9 +53,9 @@ interface State {
 	animation: gsap.core.Timeline;
 }
 
-const ZOOM_MAX = 5;
-const ZOOM_MIN = -3;
-const SCALE_FACTOR = 1.25;
+const ZOOM_MAX = 1;
+const ZOOM_MIN = 0;
+const SCALE_FACTOR = 2;
 const CANVAS = '.wp-block-scg-cert-viewer__canvas';
 const BACKDROP = '.wp-block-scg-cert-viewer__backdrop';
 const MODAL = '.wp-block-scg-cert-viewer__modal';
@@ -255,7 +255,7 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 		},
 		getViewport: ( page: PDFPageProxy ) => {
 			const { height } = page.getViewport( { scale: 1 } );
-			state.scale = state.scale || window.innerHeight / height;
+			state.scale = state.scale || ( window.innerHeight * 0.85 ) / height;
 
 			return page.getViewport( { scale: state.scale } );
 		},
@@ -289,7 +289,8 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 							opacity: 0,
 						} )
 						.set( CANVAS, {
-							y: '-100vh',
+							visibility: 'hidden',
+							opacity: 0,
 						} )
 						.to( BACKDROP, {
 							autoAlpha: 1,
@@ -304,7 +305,8 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 							duration: 0.25,
 						} )
 						.to( CANVAS, {
-							y: 0,
+							visibility: 'visible',
+							opacity: 1,
 							duration: 0.25,
 							ease: 'power3.inOut',
 						} )
