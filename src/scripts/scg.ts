@@ -20,11 +20,14 @@ const getSamePageHash = ( url: string ) => {
 interface State {
 	/* Body scroll Y position */
 	scrollY: number | null;
+	/* Detect mobile browser */
+	isMobile: boolean;
 }
 
 export const { actions, callbacks, state } = store( 'scg', {
 	state: {
 		scrollY: null,
+		isMobile: /iPhone|iPad|Android/i.test( navigator.userAgent ),
 	} as State,
 	actions: {
 		// Scroll window to hash or position.
@@ -109,9 +112,7 @@ export const { actions, callbacks, state } = store( 'scg', {
 		},
 		// Set fixed screen height on mobile to avoid layout shift in browsers with dynamic toolbars.
 		setScreenHeight: () => {
-			const isMobile = /iPhone|iPad|Android/i.test( navigator.userAgent );
-
-			if ( ! isMobile ) {
+			if ( ! state.isMobile ) {
 				return;
 			}
 

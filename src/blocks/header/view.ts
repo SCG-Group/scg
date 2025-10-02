@@ -55,11 +55,21 @@ const { callbacks } = store( 'scg/header', {
 			const ctx = getContext< HeaderContext >();
 
 			if ( ctx.isOpen ) {
+				if ( themeState.isMobile ) {
+					document.documentElement.style.overflow = 'hidden';
+				}
+
 				if ( ctx.animationTimeline ) {
 					ctx.animationTimeline.play( 0 );
 				}
-			} else if ( ctx.animationTimeline ) {
-				ctx.animationTimeline.reverse();
+			} else {
+				if ( themeState.isMobile ) {
+					document.documentElement.style.overflow = '';
+				}
+
+				if ( ctx.animationTimeline ) {
+					ctx.animationTimeline.reverse();
+				}
 			}
 		},
 		// Close mobile menu when user clicks on link inside block content.
