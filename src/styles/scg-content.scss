@@ -81,20 +81,21 @@ a {
 	color: var(--wp--preset--color--white, #fff);
 }
 
-// Text Filters
-.scg-text-shadow {
-	letter-spacing: 0.01em;
-	color: currentcolor;
-	-webkit-text-fill-color: #fff;
-	filter:
-		drop-shadow(-1px -1px 0 currentcolor)
-		drop-shadow(1px -1px 0 currentcolor)
-		drop-shadow(-1px 1px 0 currentcolor)
-		drop-shadow(1px 1px 0 currentcolor);
+// Text stroke fix.
+.is-style-with-stroke {
+	--stroke-color: var(--wp--preset--color--accent);
 
-	.rich-text:focus &[data-rich-text-format-boundary] {
-		background-color: transparent;
-	}
+	letter-spacing: 0.01em;
+	text-shadow:
+		0.013em 0 var(--stroke-color),
+		-0.013em 0 var(--stroke-color),
+		0 0.013em var(--stroke-color),
+		0 -0.013em var(--stroke-color),
+		0.0085em 0.0085em var(--stroke-color),
+		-0.0085em 0.0085em var(--stroke-color),
+		0.0085em -0.0085em var(--stroke-color),
+		-0.0085em -0.0085em var(--stroke-color);
+	caret-color: var(--stroke-color);
 }
 
 // Navigation.

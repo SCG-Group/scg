@@ -6,8 +6,6 @@ import {
 	registerBlockVariation,
 	unregisterBlockType,
 } from '@wordpress/blocks';
-import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
-import { RichTextToolbarButton } from '@wordpress/block-editor';
 import domReady from '@wordpress/dom-ready';
 
 domReady( function () {
@@ -41,6 +39,11 @@ registerBlockStyle( 'core/cover', {
 	label: __( 'Section Splash', 'scg' ),
 } );
 
+registerBlockStyle( 'core/paragraph', {
+	name: 'with-stroke',
+	label: __( 'With outline', 'scg' ),
+} );
+
 // Register block variations.
 registerBlockVariation( 'core/spacer', {
 	name: 'scg/spacer',
@@ -49,30 +52,5 @@ registerBlockVariation( 'core/spacer', {
 	category: 'scg',
 	attributes: {
 		height: '1px',
-	},
-} );
-
-// Register rich-text formats.
-registerFormatType( 'scg/text-shadow', {
-	title: __( 'Text Shadow', 'scg' ),
-	tagName: 'span',
-	className: 'scg-text-shadow',
-	edit( { isActive, onChange, value } ) {
-		const setTextShadow = () => {
-			onChange(
-				toggleFormat( value, {
-					type: 'scg/text-shadow',
-				} )
-			);
-		};
-
-		return (
-			<RichTextToolbarButton
-				isActive={ isActive }
-				icon="edit"
-				title={ __( 'Text Shadow', 'scg' ) }
-				onClick={ setTextShadow }
-			/>
-		);
 	},
 } );
