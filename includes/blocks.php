@@ -244,6 +244,40 @@ function modify_details_block_render( $block_content, $block ) {
 }
 
 /**
+ * Inline SVG icons in scg/details block summary.
+ *
+ * @param string $block_content The block content.
+ * @param array  $block The full block, including name and attributes.
+ * @return string
+ */
+function inline_icons_in_details_block_summary( $block_content, $block ) {
+	$attrs = $block['attrs'] ?? array();
+	if ( empty( $attrs['icon'] ) ) {
+		return $block_content;
+	}
+
+	$icon_url = $attrs['icon'];
+
+	if ( strtolower( pathinfo( $icon_url, PATHINFO_EXTENSION ) ) !== 'svg' ) {
+		return $block_content;
+	}
+
+	$svg      = '';
+	$response = wp_remote_get( $icon_url );
+
+	if ( ! is_wp_error( $response ) && wp_remote_retrieve_response_code( $response ) === 200 ) {
+		$svg = wp_remote_retrieve_body( $response );
+	}
+
+	if ( $svg ) {
+		$pattern       = '#<img[^>]+src=["\']' . preg_quote( $attrs['icon'], '#' ) . '["\'][^>]*>#i';
+		$block_content = preg_replace( $pattern, $svg, $block_content, 1 );
+	}
+
+	return $block_content;
+}
+
+/**
  * Move scg/cert-viewer to document footer.
  *
  * @param string $block_content The block content.

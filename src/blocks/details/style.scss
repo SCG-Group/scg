@@ -47,6 +47,11 @@
 			}
 		}
 
+		svg path {
+
+			@include t.transition(fill, stroke);
+		}
+
 		@include b.break-mobile-layout {
 
 			&:hover {
@@ -54,6 +59,17 @@
 
 				p::after {
 					transform: scale(1, 1);
+				}
+
+				svg {
+
+					[fill] {
+						fill: currentcolor;
+					}
+
+					[stroke] {
+						stroke: currentcolor;
+					}
 				}
 			}
 		}
