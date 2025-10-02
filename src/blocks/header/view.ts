@@ -1,6 +1,6 @@
 import { store, getElement, getContext } from '@wordpress/interactivity';
 import { gsap } from 'gsap';
-import { MODAL_OPEN } from '../../scripts/constants.ts';
+import { state as themeState } from '../../scripts/scg.ts';
 
 const MOBILE_WIDTH = 781;
 const MOBILE_HEIGHT = 799;
@@ -28,6 +28,10 @@ const { callbacks } = store( 'scg/header', {
 	},
 	callbacks: {
 		onScroll: () => {
+			if ( themeState.scrollY !== null ) {
+				return;
+			}
+
 			const ctx = getContext< HeaderContext >();
 			ctx.isScrolled = window.scrollY > 0;
 		},
@@ -51,17 +55,11 @@ const { callbacks } = store( 'scg/header', {
 			const ctx = getContext< HeaderContext >();
 
 			if ( ctx.isOpen ) {
-				document.documentElement.classList.add( MODAL_OPEN );
-
 				if ( ctx.animationTimeline ) {
 					ctx.animationTimeline.play( 0 );
 				}
-			} else {
-				document.documentElement.classList.remove( MODAL_OPEN );
-
-				if ( ctx.animationTimeline ) {
-					ctx.animationTimeline.reverse();
-				}
+			} else if ( ctx.animationTimeline ) {
+				ctx.animationTimeline.reverse();
 			}
 		},
 		// Close mobile menu when user clicks on link inside block content.
@@ -133,7 +131,8 @@ const { callbacks } = store( 'scg/header', {
 						)
 						.eventCallback( 'onReverseComplete', () => {
 							callbacks.resetAnimation( ctx.animationTimeline );
-						} );
+						} )
+						.eventCallback( 'onComplete', () => {} );
 
 					return () => {
 						callbacks.resetAnimation( ctx.animationTimeline );

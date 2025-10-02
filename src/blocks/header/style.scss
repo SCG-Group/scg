@@ -73,6 +73,7 @@
 			padding: var(--wp--preset--spacing--16);
 			width: 100%;
 			overflow-y: auto;
+			overscroll-behavior-y: contain;
 			max-height: calc(var(--viewport-height) - var(--navigation--height) - var(--navigation--border--width));
 			display: none;
 			flex-direction: column;

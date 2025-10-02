@@ -7,7 +7,8 @@ import { getContext, getElement, store } from '@wordpress/interactivity';
 // @ts-ignore
 // eslint-disable-next-line import/no-unresolved
 import { getDocument, GlobalWorkerOptions } from 'pdfjs';
-import { MODAL_OPEN, WITH_MOTION_QUERY } from '../../scripts/constants.ts';
+import { WITH_MOTION_QUERY } from '../../scripts/constants.ts';
+import { actions as themeActions } from '../../scripts/scg.ts';
 import gsap from 'gsap';
 
 interface CertViewer {
@@ -102,9 +103,13 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 		},
 		openModal: ( wait: boolean = true ) => {
 			if ( wait ) {
-				state.animation.tweenTo( 'modal' );
+				state.animation.tweenTo( 'modal' ).then( () => {
+					themeActions.lockScroll();
+				} );
 			} else {
-				state.animation.play( 0 );
+				state.animation.play( 0 ).then( () => {
+					themeActions.lockScroll();
+				} );
 			}
 			state.isModalOpen = true;
 		},
@@ -244,14 +249,8 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 
 				state.previousFocus = el.ownerDocument
 					.activeElement as HTMLElement;
-
-				document.documentElement.classList.add( MODAL_OPEN );
-			} else {
-				document.documentElement.classList.remove( MODAL_OPEN );
-
-				if ( state.previousFocus ) {
-					state.previousFocus.focus();
-				}
+			} else if ( state.previousFocus ) {
+				state.previousFocus.focus();
 			}
 		},
 		getViewport: ( page: PDFPageProxy ) => {
@@ -312,6 +311,7 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 						.eventCallback( 'onReverseComplete', () => {
 							state.animation.revert();
 							state.animation.invalidate();
+							themeActions.unlockScroll();
 						} );
 
 					return () => {

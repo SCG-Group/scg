@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
+const MODAL_OPEN = 'has-modal-open';
 const ANCHOR_LINKS = 'a[href*="#"]';
 const ADMIN_BAR_HEIGHT = '--wp-admin--admin-bar--height';
 const SCREEN_HEIGHT = '--screen-height';
@@ -16,7 +17,15 @@ const getSamePageHash = ( url: string ) => {
 		: '';
 };
 
-const { actions, callbacks } = store( 'scg', {
+interface State {
+	/* Body scroll Y position */
+	scrollY: number | null;
+}
+
+export const { actions, callbacks, state } = store( 'scg', {
+	state: {
+		scrollY: null,
+	} as State,
 	actions: {
 		// Scroll window to hash or position.
 		scrollTo: ( hash: string | number ) => {
@@ -36,6 +45,19 @@ const { actions, callbacks } = store( 'scg', {
 					offsetY,
 				},
 			} );
+		},
+		// Lock scroll helper for modals.
+		lockScroll: () => {
+			state.scrollY = window.scrollY;
+			document.body.style.top = `-${ state.scrollY }px`;
+			document.documentElement.classList.add( MODAL_OPEN );
+		},
+		// Unlock scroll helper for modals.
+		unlockScroll: () => {
+			document.documentElement.classList.remove( MODAL_OPEN );
+			window.scrollTo( { top: state.scrollY || 0, behavior: 'instant' } );
+			document.body.style.top = '';
+			state.scrollY = null;
 		},
 	},
 	callbacks: {
