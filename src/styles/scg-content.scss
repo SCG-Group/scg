@@ -54,6 +54,32 @@ a {
 	}
 }
 
+@media (max-width: 359px) {
+
+	:root {
+
+		.has-200-font-size {
+			font-size: 4.25rem !important;
+		}
+
+		.has-160-font-size {
+			font-size: 4rem !important;
+		}
+
+		.has-128-font-size {
+			font-size: 3.75rem !important;
+		}
+
+		.has-96-font-size {
+			font-size: 3.5rem !important;
+		}
+
+		.has-80-font-size {
+			font-size: 3.25rem !important;
+		}
+	}
+}
+
 .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
 
 	@media (max-width: 359px) {
@@ -87,14 +113,10 @@ a {
 
 	letter-spacing: 0.01em;
 	text-shadow:
-		0.013em 0 var(--stroke-color),
-		-0.013em 0 var(--stroke-color),
-		0 0.013em var(--stroke-color),
-		0 -0.013em var(--stroke-color),
-		0.0085em 0.0085em var(--stroke-color),
-		-0.0085em 0.0085em var(--stroke-color),
-		0.0085em -0.0085em var(--stroke-color),
-		-0.0085em -0.0085em var(--stroke-color);
+		max(1px, 0.0085em) max(1px, 0.0085em) var(--stroke-color),
+		min(-1px, -0.0085em) max(1px, 0.0085em) var(--stroke-color),
+		max(1px, 0.0085em) min(-1px, -0.0085em) var(--stroke-color),
+		min(-1px, -0.0085em) min(-1px, -0.0085em) var(--stroke-color);
 	caret-color: var(--stroke-color);
 }
 
