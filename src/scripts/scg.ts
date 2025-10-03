@@ -22,45 +22,53 @@ interface State {
 	scrollY: number | null;
 	/* Detect mobile browser */
 	isMobile: boolean;
+	/* WP admin bar height */
+	adminBarHeight: number;
 }
 
 export const { actions, callbacks, state } = store( 'scg', {
 	state: {
 		scrollY: null,
 		isMobile: /iPhone|iPad|Android/i.test( navigator.userAgent ),
-	} as State,
-	actions: {
-		// Scroll window to hash or position.
-		scrollTo: ( hash: string | number ) => {
+		get adminBarHeight() {
 			const adminBarHeight = parseInt(
 				window
 					.getComputedStyle( document.documentElement )
 					.getPropertyValue( ADMIN_BAR_HEIGHT )
 					.trim()
 			);
-			const offsetY = isNaN( adminBarHeight ) ? 0 : adminBarHeight;
-
+			return isNaN( adminBarHeight ) ? 0 : adminBarHeight;
+		},
+	} as State,
+	actions: {
+		// Scroll window to hash or position.
+		scrollTo: ( hash: string | number ) => {
 			gsap.to( window, {
 				duration: 1.8,
 				ease: 'power3.inOut',
 				scrollTo: {
 					y: hash,
-					offsetY,
+					offsetY: state.adminBarHeight,
 				},
 			} );
 		},
 		// Lock scroll helper for modals.
 		lockScroll: () => {
 			state.scrollY = window.scrollY;
-			document.body.style.top = `-${ state.scrollY }px`;
+			document.body.style.top = `-${
+				state.scrollY - state.adminBarHeight
+			}px`;
 			document.documentElement.classList.add( MODAL_OPEN );
 		},
 		// Unlock scroll helper for modals.
 		unlockScroll: () => {
 			document.documentElement.classList.remove( MODAL_OPEN );
 			window.scrollTo( { top: state.scrollY || 0, behavior: 'instant' } );
-			document.body.style.top = '';
 			state.scrollY = null;
+
+			window.requestAnimationFrame( () => {
+				document.body.style.top = '';
+			} );
 		},
 	},
 	callbacks: {

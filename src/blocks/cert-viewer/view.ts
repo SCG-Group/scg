@@ -81,6 +81,9 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 			return state.currentPage < state.pages;
 		},
 		pages: 0,
+		get hasPages() {
+			return state.pages > 1;
+		},
 		zoom: 0,
 		get canZoomIn() {
 			return state.zoom < ZOOM_MAX;

@@ -98,6 +98,10 @@
 		}
 	}
 
+	&__content {
+		overflow: hidden;
+	}
+
 	&[data-open="false"] {
 
 		> .wp-block-scg-details__content {

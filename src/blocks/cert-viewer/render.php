@@ -47,10 +47,10 @@ $icons = array(
 			<div class="wp-block-scg-cert-viewer__error" data-wp-bind--hidden="!state.error" aria-hidden="!state.error" role="alert"><?php esc_html_e( 'A problem occured while loading this document. Please try again later.', 'scg' ); ?></div>
 			<canvas data-wp-bind--hidden="state.error" aria-hidden="state.error" aria-label="Certificate document"></canvas>
 		</div>
-		<button class="wp-block-scg-cert-viewer__control wp-block-scg-cert-viewer__control--prev" type="button" data-wp-on-async--click="actions.prevPage" data-wp-bind--disabled="!state.hasPrevPage" wp-bind--inert="!state.hasPrevPage" aria-label="<?php esc_html_e( 'Previous page', 'scg' ); ?>">
+		<button class="wp-block-scg-cert-viewer__control wp-block-scg-cert-viewer__control--prev" type="button" data-wp-on-async--click="actions.prevPage" data-wp-bind--disabled="!state.hasPrevPage" data-wp-bind--hidden="!state.hasPages" wp-bind--inert="!state.hasPrevPage" aria-label="<?php esc_html_e( 'Previous page', 'scg' ); ?>">
 			<?php echo wp_kses_svg( $icons['prev'] ); // @codingStandardsIgnoreLine. ?>
 		</button>
-		<button class="wp-block-scg-cert-viewer__control wp-block-scg-cert-viewer__control--next" type="button" data-wp-on-async--click="actions.nextPage" data-wp-bind--disabled="!state.hasNextPage" wp-bind--inert="!state.hasNextPage" aria-label="<?php esc_html_e( 'Next page', 'scg' ); ?>">
+		<button class="wp-block-scg-cert-viewer__control wp-block-scg-cert-viewer__control--next" type="button" data-wp-on-async--click="actions.nextPage" data-wp-bind--disabled="!state.hasNextPage" data-wp-bind--hidden="!state.hasPages" wp-bind--inert="!state.hasNextPage" aria-label="<?php esc_html_e( 'Next page', 'scg' ); ?>">
 			<?php echo wp_kses_svg( $icons['next'] ); // @codingStandardsIgnoreLine. ?>
 		</button>
 		<button class="wp-block-scg-cert-viewer__control wp-block-scg-cert-viewer__control--close" type="button" data-wp-on-async--click="actions.closeModal" aria-label="<?php esc_html_e( 'Close', 'scg' ); ?>"></button>
