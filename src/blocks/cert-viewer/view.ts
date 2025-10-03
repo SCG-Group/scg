@@ -254,8 +254,14 @@ export const { state, actions, callbacks } = store( 'scg/cert-viewer', {
 			}
 		},
 		getViewport: ( page: PDFPageProxy ) => {
-			const { height } = page.getViewport( { scale: 1 } );
-			state.scale = state.scale || ( window.innerHeight * 0.85 ) / height;
+			const { height, width } = page.getViewport( { scale: 1 } );
+			const scaleFactor = 0.85;
+			const windowBasedScale =
+				window.innerHeight < window.innerWidth
+					? ( window.innerHeight * scaleFactor ) / height
+					: ( window.innerWidth * scaleFactor ) / width;
+
+			state.scale = state.scale || windowBasedScale;
 
 			return page.getViewport( { scale: state.scale } );
 		},
